@@ -12,7 +12,13 @@
     <!-- Anti-spam: honeypot field (hidden from humans, bots auto-fill it) -->
     <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
       <label for="website">Website</label>
-      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
     </div>
     <!-- Anti-spam: timestamp to detect speed bots -->
     <input type="hidden" id="_form_ts" name="_form_ts" />
@@ -20,50 +26,118 @@
     <!-- Step indicators -->
     <div class="mb-8 flex items-center justify-between">
       <div class="flex items-center gap-3" id="step-indicator-1">
-        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white transition-colors" id="step-circle-1">1</div>
-        <span class="text-sm font-medium text-dark">Your Information</span>
+        <div
+          class="bg-primary flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white transition-colors"
+          id="step-circle-1">
+          1
+        </div>
+        <span class="text-dark text-sm font-medium">Your Information</span>
       </div>
       <div class="mx-4 h-px flex-1 bg-gray-200" id="step-line"></div>
       <div class="flex items-center gap-3" id="step-indicator-2">
-        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-500 transition-colors" id="step-circle-2">2</div>
-        <span class="text-sm font-medium text-gray-400 transition-colors" id="step-label-2">Your Interests</span>
+        <div
+          class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-500 transition-colors"
+          id="step-circle-2">
+          2
+        </div>
+        <span
+          class="text-sm font-medium text-gray-400 transition-colors"
+          id="step-label-2">
+          Your Interests
+        </span>
       </div>
     </div>
 
     <!-- ═══ STEP 1: Contact Information ═══ -->
     <div id="form-step-1" class="space-y-5">
-      <h3 class="mb-6 text-2xl font-semibold text-dark">Tell Us About Yourself</h3>
+      <h3 class="text-dark mb-6 text-2xl font-semibold">
+        Tell Us About Yourself
+      </h3>
 
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-name">Full Name <span class="text-red-500">*</span></label>
-          <input type="text" id="field-name" name="name" placeholder="Your full name" required class="form-input" />
+          <label class="text-dark mb-1.5 text-sm font-medium" for="field-name">
+            Full Name <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="field-name"
+            name="name"
+            placeholder="Your full name"
+            required
+            class="form-input"
+          />
         </div>
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-email">Email Address <span class="text-red-500">*</span></label>
-          <input type="email" id="field-email" name="email" placeholder="your@email.com" required class="form-input" />
+          <label class="text-dark mb-1.5 text-sm font-medium" for="field-email">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="field-email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="form-input"
+          />
         </div>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-company">Company</label>
-          <input type="text" id="field-company" name="company" placeholder="Your company name" class="form-input" />
+          <label
+            class="text-dark mb-1.5 text-sm font-medium"
+            for="field-company">
+            Company
+          </label>
+          <input
+            type="text"
+            id="field-company"
+            name="company"
+            placeholder="Your company name"
+            class="form-input"
+          />
         </div>
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-position">Job Position</label>
-          <input type="text" id="field-position" name="position" placeholder="Your role or title" class="form-input" />
+          <label
+            class="text-dark mb-1.5 text-sm font-medium"
+            for="field-position">
+            Job Position
+          </label>
+          <input
+            type="text"
+            id="field-position"
+            name="position"
+            placeholder="Your role or title"
+            class="form-input"
+          />
         </div>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-phone">Phone</label>
-          <input type="text" id="field-phone" name="phone" placeholder="+1 (555) 000-0000" class="form-input" />
+          <label class="text-dark mb-1.5 text-sm font-medium" for="field-phone">
+            Phone
+          </label>
+          <input
+            type="text"
+            id="field-phone"
+            name="phone"
+            placeholder="+1 (555) 000-0000"
+            class="form-input"
+          />
         </div>
         <div class="flex flex-col">
-          <label class="mb-1.5 text-sm font-medium text-dark" for="field-industry">Industry <span class="text-red-500">*</span></label>
-          <select id="field-industry" name="industry" required class="form-input">
+          <label
+            class="text-dark mb-1.5 text-sm font-medium"
+            for="field-industry">
+            Industry <span class="text-red-500">*</span>
+          </label>
+          <select
+            id="field-industry"
+            name="industry"
+            required
+            class="form-input">
             <option value="" disabled selected>Select your industry</option>
             <option value="Technology">Technology & IT</option>
             <option value="Healthcare">Healthcare</option>
@@ -83,7 +157,10 @@
       </div>
 
       <div class="pt-2">
-        <button type="button" id="btn-next" class="btn btn-primary w-full cursor-pointer py-4 text-center uppercase tracking-wider">
+        <button
+          type="button"
+          id="btn-next"
+          class="btn btn-primary w-full cursor-pointer py-4 text-center tracking-wider uppercase">
           Continue →
         </button>
       </div>
@@ -91,19 +168,30 @@
 
     <!-- ═══ STEP 2: Solutions & Services Interest ═══ -->
     <div id="form-step-2" class="hidden space-y-5">
-      <h3 class="mb-2 text-2xl font-semibold text-dark">What Are You Interested In?</h3>
-      <p class="mb-4 text-sm text-gray-500">Select all the solutions and services that interest you.</p>
+      <h3 class="text-dark mb-2 text-2xl font-semibold">
+        What Are You Interested In?
+      </h3>
+      <p class="mb-4 text-sm text-gray-500">
+        Select all the solutions and services that interest you.
+      </p>
 
       <!-- Solutions -->
       <div>
-        <h4 class="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Solutions</h4>
+        <h4
+          class="text-primary mb-3 text-sm font-semibold tracking-wider uppercase">
+          Solutions
+        </h4>
         <div class="grid grid-cols-2 gap-2">
           <label class="interest-checkbox">
             <input type="checkbox" name="interests" value="Odoo ERP" />
             <span>Odoo ERP</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="Accounting & Finance" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="Accounting & Finance"
+            />
             <span>Accounting & Finance</span>
           </label>
           <label class="interest-checkbox">
@@ -115,7 +203,11 @@
             <span>Sales Management</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="Inventory & Supply Chain" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="Inventory & Supply Chain"
+            />
             <span>Inventory & Supply Chain</span>
           </label>
           <label class="interest-checkbox">
@@ -131,7 +223,11 @@
             <span>E-commerce</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="Project Management" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="Project Management"
+            />
             <span>Project Management</span>
           </label>
           <label class="interest-checkbox">
@@ -143,18 +239,33 @@
 
       <!-- Services -->
       <div>
-        <h4 class="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Services</h4>
+        <h4
+          class="text-accent mb-3 text-sm font-semibold tracking-wider uppercase">
+          Services
+        </h4>
         <div class="grid grid-cols-2 gap-2">
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="ERP Implementation" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="ERP Implementation"
+            />
             <span>ERP Implementation</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="Custom Development" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="Custom Development"
+            />
             <span>Custom Development</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="System Integration" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="System Integration"
+            />
             <span>System Integration</span>
           </label>
           <label class="interest-checkbox">
@@ -166,7 +277,11 @@
             <span>AI & Automation</span>
           </label>
           <label class="interest-checkbox">
-            <input type="checkbox" name="interests" value="Software Development" />
+            <input
+              type="checkbox"
+              name="interests"
+              value="Software Development"
+            />
             <span>Software Development</span>
           </label>
           <label class="interest-checkbox">
@@ -182,56 +297,119 @@
 
       <!-- Message -->
       <div class="flex flex-col">
-        <label class="mb-1.5 text-sm font-medium text-dark" for="field-message">How Can We Help?</label>
-        <textarea id="field-message" name="message" rows="4" placeholder="Tell us about your project, goals, or any specific requirements..." class="form-input"></textarea>
+        <label class="text-dark mb-1.5 text-sm font-medium" for="field-message">
+          How Can We Help?
+        </label>
+        <textarea
+          id="field-message"
+          name="message"
+          rows="4"
+          placeholder="Tell us about your project, goals, or any specific requirements..."
+          class="form-input">
+        </textarea>
       </div>
 
       <!-- Privacy consent -->
       <div class="flex items-start gap-3">
-        <input type="checkbox" id="field-privacy" name="privacy" required class="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300 text-primary accent-primary" />
-        <label for="field-privacy" class="text-sm leading-relaxed text-gray-600">
-          I agree to the <a href="/company/privacy-policy/" class="font-medium text-primary underline hover:text-primary/80">Privacy Policy</a> and <a href="/company/terms-of-use/" class="font-medium text-primary underline hover:text-primary/80">Terms of Use</a>. <span class="text-red-500">*</span>
+        <input
+          type="checkbox"
+          id="field-privacy"
+          name="privacy"
+          required
+          class="text-primary accent-primary mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300"
+        />
+        <label
+          for="field-privacy"
+          class="text-sm leading-relaxed text-gray-600">
+          I agree to the <a
+            href="/company/privacy-policy/"
+            class="text-primary hover:text-primary/80 font-medium underline">
+            Privacy Policy
+          </a> and <a
+            href="/company/terms-of-use/"
+            class="text-primary hover:text-primary/80 font-medium underline">
+            Terms of Use
+          </a>. <span class="text-red-500">*</span>
         </label>
       </div>
 
       <!-- Cloudflare Turnstile -->
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAACoLEed8WnPZbHH_" data-theme="light" data-size="normal"></div>
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAACoLEed8WnPZbHH_"
+        data-theme="light"
+        data-size="normal">
+      </div>
 
       <!-- Buttons -->
       <div class="flex gap-3 pt-2">
-        <button type="button" id="btn-back" class="btn btn-outline flex-1 cursor-pointer py-4 text-center uppercase tracking-wider">
+        <button
+          type="button"
+          id="btn-back"
+          class="btn btn-outline flex-1 cursor-pointer py-4 text-center tracking-wider uppercase">
           ← Back
         </button>
-        <button type="submit" id="btn-submit" class="btn btn-primary flex-1 cursor-pointer py-4 text-center uppercase tracking-wider">
+        <button
+          type="submit"
+          id="btn-submit"
+          class="btn btn-primary flex-1 cursor-pointer py-4 text-center tracking-wider uppercase">
           Send Message
         </button>
       </div>
 
       <!-- Success/Error Messages -->
       <div class="message success hidden" input-wrapper>
-        <div class="prose-styles rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-800" data-default="**Thank you!** Your inquiry has been received. We'll get back to you within 24 hours.">
-          <strong>Thank you!</strong> Your inquiry has been received. We'll get back to you within 24 hours.
+        <div
+          class="prose-styles rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-800"
+          data-default="**Thank you!** Your inquiry has been received. We'll get back to you within 24 hours.">
+          <strong>Thank you!</strong> Your inquiry has been received. We'll get back
+          to you within 24 hours.
         </div>
       </div>
       <div class="message error hidden" input-wrapper>
-        <div class="prose-styles rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800" data-default="**Oops!** Something went wrong. Please try again or email us at info@netlinks.net.">
-          <strong>Oops!</strong> Something went wrong. Please try again or email us at info@netlinks.net.
+        <div
+          class="prose-styles rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800"
+          data-default="**Oops!** Something went wrong. Please try again or email us at info@netlinks.net.">
+          <strong>Oops!</strong> Something went wrong. Please try again or email us
+          at info@netlinks.net.
         </div>
       </div>
     </div>
 
     <!-- ═══ Success State (replaces form after submit) ═══ -->
     <div id="form-success" class="hidden py-12 text-center">
-      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+      <div
+        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+        <svg
+          class="h-8 w-8 text-green-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7">
+          </path>
+        </svg>
       </div>
-      <h3 class="mb-2 text-2xl font-semibold text-dark">Thank You!</h3>
-      <p class="mb-6 text-gray-600">Your inquiry has been received. We'll get back to you within 24 business hours.</p>
-      <button type="button" id="btn-reset" class="btn btn-outline cursor-pointer">Submit Another Inquiry</button>
+      <h3 class="text-dark mb-2 text-2xl font-semibold">Thank You!</h3>
+      <p class="mb-6 text-gray-600">
+        Your inquiry has been received. We'll get back to you within 24 business
+        hours.
+      </p>
+      <button
+        type="button"
+        id="btn-reset"
+        class="btn btn-outline cursor-pointer">
+        Submit Another Inquiry
+      </button>
     </div>
   </form>
 
-  <p class="mt-4 text-center text-sm text-gray-500" id="form-note">We typically respond within 24 business hours.</p>
+  <p class="mt-4 text-center text-sm text-gray-500" id="form-note">
+    We typically respond within 24 business hours.
+  </p>
 </div>
 
 <style>
@@ -315,45 +493,66 @@
       if (step === 1) {
         step1.classList.remove("hidden");
         step2.classList.add("hidden");
-        circle1.className = "flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white transition-colors";
-        circle2.className = "flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-500 transition-colors";
-        label2.className = "text-sm font-medium text-gray-400 transition-colors";
+        circle1.className =
+          "flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white transition-colors";
+        circle2.className =
+          "flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-500 transition-colors";
+        label2.className =
+          "text-sm font-medium text-gray-400 transition-colors";
         stepLine.className = "mx-4 h-px flex-1 bg-gray-200";
       } else {
         step1.classList.add("hidden");
         step2.classList.remove("hidden");
-        circle1.className = "flex h-9 w-9 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white transition-colors";
-        circle2.className = "flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white transition-colors";
+        circle1.className =
+          "flex h-9 w-9 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white transition-colors";
+        circle2.className =
+          "flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white transition-colors";
         label2.className = "text-sm font-medium text-dark transition-colors";
         stepLine.className = "mx-4 h-px flex-1 bg-primary";
       }
     }
 
     function validateStep1(): boolean {
-      const name = (document.getElementById("field-name") as HTMLInputElement).value.trim();
-      const email = (document.getElementById("field-email") as HTMLInputElement).value.trim();
-      const industry = (document.getElementById("field-industry") as HTMLSelectElement).value;
+      const name = (
+        document.getElementById("field-name") as HTMLInputElement
+      ).value.trim();
+      const email = (
+        document.getElementById("field-email") as HTMLInputElement
+      ).value.trim();
+      const industry = (
+        document.getElementById("field-industry") as HTMLSelectElement
+      ).value;
 
       let valid = true;
 
       // Reset errors
-      document.querySelectorAll(".form-input.error").forEach(el => el.classList.remove("error"));
+      document
+        .querySelectorAll(".form-input.error")
+        .forEach((el) => el.classList.remove("error"));
 
       if (!name) {
-        (document.getElementById("field-name") as HTMLInputElement).classList.add("error");
+        (
+          document.getElementById("field-name") as HTMLInputElement
+        ).classList.add("error");
         valid = false;
       }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        (document.getElementById("field-email") as HTMLInputElement).classList.add("error");
+        (
+          document.getElementById("field-email") as HTMLInputElement
+        ).classList.add("error");
         valid = false;
       }
       if (!industry) {
-        (document.getElementById("field-industry") as HTMLSelectElement).classList.add("error");
+        (
+          document.getElementById("field-industry") as HTMLSelectElement
+        ).classList.add("error");
         valid = false;
       }
 
       if (!valid) {
-        const firstError = document.querySelector(".form-input.error") as HTMLElement;
+        const firstError = document.querySelector(
+          ".form-input.error",
+        ) as HTMLElement;
         firstError?.focus();
       }
 
@@ -389,7 +588,9 @@
       e.preventDefault();
 
       // Validate privacy checkbox
-      const privacy = (document.getElementById("field-privacy") as HTMLInputElement).checked;
+      const privacy = (
+        document.getElementById("field-privacy") as HTMLInputElement
+      ).checked;
       if (!privacy) {
         alert("Please accept the Privacy Policy and Terms of Use to continue.");
         return;
@@ -422,14 +623,21 @@
       try {
         const response = await fetch("/api/contact/", {
           method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
           body: JSON.stringify(data),
         });
 
         if (!response.ok) throw new Error(`Server error (${response.status})`);
 
         let result;
-        try { result = await response.json(); } catch { throw new Error("Invalid response"); }
+        try {
+          result = await response.json();
+        } catch {
+          throw new Error("Invalid response");
+        }
 
         if (result.success === true || result.success === "true") {
           // Show success state
@@ -439,11 +647,14 @@
           formNote.classList.add("hidden");
           form.reset();
         } else {
-          const msg = result.message || "Something went wrong. Please try again.";
+          const msg =
+            result.message || "Something went wrong. Please try again.";
           showErrorMessage(msg);
         }
       } catch (error: any) {
-        showErrorMessage("Could not submit the form. Please try again or email us at info@netlinks.net.");
+        showErrorMessage(
+          "Could not submit the form. Please try again or email us at info@netlinks.net.",
+        );
         console.error("Form submission error:", error);
       } finally {
         btnSubmit.textContent = "Send Message";
@@ -471,4 +682,5 @@
 </script>
 
 <!-- Cloudflare Turnstile Script -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer>
+</script>

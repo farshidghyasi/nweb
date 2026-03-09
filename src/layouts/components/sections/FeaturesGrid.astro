@@ -52,7 +52,12 @@ if (featureListLimit && !isFeatureListPage) {
 if (!enable) return;
 ---
 
-<section class:list={[ClassName, variant === "grey" && "bg-theme-light", "py-20 md:py-32"]}>
+<section
+  class:list={[
+    ClassName,
+    variant === "grey" && "bg-theme-light",
+    "py-10 md:py-16",
+  ]}>
   <div class="container space-y-10 md:space-y-16">
     {
       title && (
@@ -92,11 +97,12 @@ if (!enable) return;
                   : "sm:col-span-3 lg:col-span-2",
               ]}>
               {item.icon && (
-                <div class:list={[
-                  "size-14 mb-8 flex items-center justify-center rounded-xl shadow-sm",
-                  variant === "grey" ? "bg-theme-light" : "bg-white"
-                ]}>
-                  <Icons icon={item.icon as any} class="size-7 text-primary" />
+                <div
+                  class:list={[
+                    "mb-8 flex size-14 items-center justify-center rounded-xl shadow-sm",
+                    variant === "grey" ? "bg-theme-light" : "bg-white",
+                  ]}>
+                  <Icons icon={item.icon as any} class="text-primary size-7" />
                 </div>
               )}
               <div class="space-y-4 text-left">
@@ -116,8 +122,12 @@ if (!enable) return;
                       url={item.link}
                       variant="text"
                       hoverEffect="text-flip"
-                      icon={{ enable: true, name: "ArrowRight", position: "right" }}
-                      class="p-0! text-primary font-semibold"
+                      icon={{
+                        enable: true,
+                        name: "ArrowRight",
+                        position: "right",
+                      }}
+                      class="text-primary p-0! font-semibold"
                     />
                   </div>
                 )}

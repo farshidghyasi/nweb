@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "What We **Build**",
-  description: "Enterprise-grade applications engineered for your specific workflows, scale requirements, and competitive landscape.",
+  description:
+    "Enterprise-grade applications engineered for your specific workflows, scale requirements, and competitive landscape.",
   list: [
     {
       icon: "Globe",
       title: "Enterprise Web Applications",
-      description: "Scalable, secure web apps built with React, Node.js, and Python — designed for complex workflows and high concurrency."
+      description:
+        "Scalable, secure web apps built with React, Node.js, and Python — designed for complex workflows and high concurrency.",
     },
     {
       icon: "Cog",
       title: "Business Process Automation",
-      description: "Custom applications that automate manual processes, reduce errors, and free your team to focus on higher-value work."
+      description:
+        "Custom applications that automate manual processes, reduce errors, and free your team to focus on higher-value work.",
     },
     {
       icon: "LineChart",
       title: "Data & Analytics Platforms",
-      description: "Custom dashboards, reporting engines, and data pipelines that turn raw data into actionable business intelligence."
+      description:
+        "Custom dashboards, reporting engines, and data pipelines that turn raw data into actionable business intelligence.",
     },
     {
       icon: "Boxes",
       title: "API & Microservices",
-      description: "Modular, API-first architectures that connect your systems and enable seamless data flow across your organization."
+      description:
+        "Modular, API-first architectures that connect your systems and enable seamless data flow across your organization.",
     },
     {
       icon: "RefreshCw",
       title: "Legacy Modernization",
-      description: "Transform outdated applications into modern, maintainable systems without disrupting your current operations."
+      description:
+        "Transform outdated applications into modern, maintainable systems without disrupting your current operations.",
     },
     {
       icon: "Shield",
       title: "Enterprise Security",
-      description: "Security-first development with OAuth, encryption, RBAC, and compliance frameworks built into every application."
+      description:
+        "Security-first development with OAuth, encryption, RBAC, and compliance frameworks built into every application.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/sw-dev-process.png",
       imagePosition: "left",
       title: "400+ Engineers — **Your Extended Team**",
-      description: "When off-the-shelf software can't keep up, our team of 400+ engineers delivers custom solutions designed for your specific scale, security, and performance requirements — using the best-in-class technologies for your needs.",
+      description:
+        "When off-the-shelf software can't keep up, our team of 400+ engineers delivers custom solutions designed for your specific scale, security, and performance requirements — using the best-in-class technologies for your needs.",
       stats: [
         { label: "Engineers on Staff", value: "400+" },
         { label: "Applications Delivered", value: "2,000+" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/sw-scalable-arch.png",
       imagePosition: "right",
       title: "Agile Development, **Predictable Delivery**",
-      description: "Our development process — Discovery, Architecture, Agile Sprints, QA, Deployment, and Ongoing Evolution — ensures you get exactly what you need, delivered iteratively with continuous feedback loops.",
+      description:
+        "Our development process — Discovery, Architecture, Agile Sprints, QA, Deployment, and Ongoing Evolution — ensures you get exactly what you need, delivered iteratively with continuous feedback loops.",
       features: [
         "Discovery workshops to understand goals, users, and constraints.",
         "CI/CD pipelines, automated testing, and security audits.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Have a Software **Challenge?**",
-  description: "Tell us what you need built. We'll scope the project, recommend the right architecture, and deliver on time.",
+  description:
+    "Tell us what you need built. We'll scope the project, recommend the right architecture, and deliver on time.",
   background: "/src/assets/images/cta/cta-custom-software.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Custom Software Development — Enterprise Applications" description="Bespoke enterprise applications by NETLINKS — web apps, automation, APIs, analytics platforms, and legacy modernization. 400+ engineers, 2,000+ applications delivered." keywords={["custom software development", "bespoke enterprise applications", "web application development", "API development services", "legacy system modernization", "software development company", "enterprise software solutions", "custom app development"]}>
+<Base
+  title="Custom Software Development — Enterprise Applications"
+  description="Bespoke enterprise applications by NETLINKS — web apps, automation, APIs, analytics platforms, and legacy modernization. 400+ engineers, 2,000+ applications delivered."
+  keywords={[
+    "custom software development",
+    "bespoke enterprise applications",
+    "web application development",
+    "API development services",
+    "legacy system modernization",
+    "software development company",
+    "enterprise software solutions",
+    "custom app development",
+  ]}>
   <PageHeader
     title="Enterprise Software Built for **Your Business**"
     description="When off-the-shelf software can't keep up, NETLINKS builds custom solutions that can — enterprise-grade applications designed for your workflows, scale, and competitive landscape."
-  image="/images/heroes/hero-software-dev.png"
-  button={{ enable: true, label: "START YOUR PROJECT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-software-dev.png"
+    button={{
+      enable: true,
+      label: "START YOUR PROJECT",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

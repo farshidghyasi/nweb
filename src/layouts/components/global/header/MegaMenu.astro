@@ -14,11 +14,13 @@ const hasCta = menu.cta && menu.cta.enable;
 
 <div
   class:list={[
-    "hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden rounded-xl border bg-white shadow-xl opacity-0 transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:absolute lg:h-fit",
+    "hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden rounded-xl border bg-white opacity-0 shadow-xl transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:absolute lg:h-fit",
     {
-      "lg:left-1/2 lg:-translate-x-1/2 lg:w-[1100px]": IsMultiColMenu && hasCta,
-      "lg:right-0 lg:w-[640px]": IsMultiColMenu && !hasCta && menu.name === "Company",
-      "lg:left-0 lg:w-[780px]": IsMultiColMenu && !hasCta && menu.name !== "Company",
+      "lg:left-1/2 lg:w-[1100px] lg:-translate-x-1/2": IsMultiColMenu && hasCta,
+      "lg:right-0 lg:w-[640px]":
+        IsMultiColMenu && !hasCta && menu.name === "Company",
+      "lg:left-0 lg:w-[780px]":
+        IsMultiColMenu && !hasCta && menu.name !== "Company",
       "lg:left-0 lg:w-fit": !IsMultiColMenu,
     },
   ]}>
@@ -27,14 +29,14 @@ const hasCta = menu.cta && menu.cta.enable;
       menu.menus && enabledMenus.length > 0 && (
         <div
           class:list={[
-            "flex-1 min-w-0 p-2 md:p-4 lg:flex lg:flex-row lg:gap-x-2",
+            "min-w-0 flex-1 p-2 md:p-4 lg:flex lg:flex-row lg:gap-x-2",
           ]}>
           {menu.menus
             .filter((menu) => menu.enable)
             .map((menuGroup) => (
               <ul
                 class:list={[
-                  "flex-1 min-w-0 [&>li:not(:first-child)>a]:pt-1",
+                  "min-w-0 flex-1 [&>li:not(:first-child)>a]:pt-1",
                   {
                     "w-full md:w-[320px]": !IsMultiColMenu,
                   },
@@ -59,11 +61,8 @@ const hasCta = menu.cta && menu.cta.enable;
                       )}
                       class="group/item flex gap-x-3 rounded-lg px-3 py-2.5 text-inherit transition-colors hover:bg-slate-50">
                       {child.icon && (
-                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-100 text-slate-600 transition-colors group-hover/item:bg-white group-hover/item:text-primary group-hover/item:shadow-sm">
-                          <Icons
-                            icon={child.icon as any}
-                            class="h-4 w-4"
-                          />
+                        <span class="group-hover/item:text-primary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-100 text-slate-600 transition-colors group-hover/item:bg-white group-hover/item:shadow-sm">
+                          <Icons icon={child.icon as any} class="h-4 w-4" />
                         </span>
                       )}
                       <div class="min-w-0">
@@ -91,8 +90,7 @@ const hasCta = menu.cta && menu.cta.enable;
 
     {
       menu.cta && menu.cta.enable && (
-        <div
-          class="w-full space-y-4 border-l border-slate-100 bg-slate-50 p-5 md:w-[280px] md:shrink-0">
+        <div class="w-full space-y-4 border-l border-slate-100 bg-slate-50 p-5 md:w-[280px] md:shrink-0">
           {menu.cta.image && (
             <OptimizedImage
               width={260}
@@ -102,7 +100,10 @@ const hasCta = menu.cta && menu.cta.enable;
           )}
           <div class="space-y-1.5">
             {menu.cta.title && (
-              <div class="text-base font-semibold tracking-normal text-slate-900" set:html={menu.cta.title} />
+              <div
+                class="text-base font-semibold tracking-normal text-slate-900"
+                set:html={menu.cta.title}
+              />
             )}
             {menu.cta.description && (
               <p

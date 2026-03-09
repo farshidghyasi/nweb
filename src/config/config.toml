@@ -1,7 +1,7 @@
 # Site Configuration
 [site]
   title            = "NETLINKS" # Shared title for SEO and OpenGraph
-  description      = "Enterprise Technology Partner — Odoo ERP Implementation, Custom Software Development, AI & Automation Solutions for 4,500+ Clients Globally" # Shared description for SEO and OpenGraph
+  description      = "Enterprise Technology Partner — Odoo ERP Implementation, Custom Software Development, AI & Automation Solutions for 5,000+ Clients Globally" # Shared description for SEO and OpenGraph
   tagline          = "Making Technology Work"
   taglineSeparator = " — "
   baseUrl          = "https://www.netlinks.net" # Base URL for the site and used in OpenGraph meta tags.

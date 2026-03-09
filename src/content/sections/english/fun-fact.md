@@ -4,7 +4,7 @@ title: "Delivering Enterprise Technology **Worldwide**"
 description: "Two decades of proven expertise powering digital transformation across industries and continents."
 list:
   - title:
-      value: 4500
+      value: 5000
       prependValue:
       appendValue: +
     caption: "Global clients trust NETLINKS to power their business operations."

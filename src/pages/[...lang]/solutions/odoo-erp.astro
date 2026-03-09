@@ -14,43 +14,51 @@ export function getStaticPaths() {
 
 const pageData = {
   title: "Odoo ERP Solutions",
-  metaDescription: "Comprehensive Odoo ERP solutions from NETLINKS — CRM, Accounting, HR, Manufacturing, Inventory, and more. Certified Odoo implementation partner.",
+  metaDescription:
+    "Comprehensive Odoo ERP solutions from NETLINKS — CRM, Accounting, HR, Manufacturing, Inventory, and more. Certified Odoo implementation partner.",
 };
 
 const featuresContent = {
   enable: true,
   title: "Everything Your Business Needs, **Fully Integrated**",
-  description: "Odoo's 82+ integrated apps cover every business function. Here's how NETLINKS implements the core modules.",
+  description:
+    "Odoo's 82+ integrated apps cover every business function. Here's how NETLINKS implements the core modules.",
   list: [
     {
       icon: "Users",
       title: "CRM & Sales",
-      description: "Manage your pipeline, track leads, and close deals faster with AI-powered insights and automated follow-ups."
+      description:
+        "Manage your pipeline, track leads, and close deals faster with AI-powered insights and automated follow-ups.",
     },
     {
       icon: "Calculator",
       title: "Accounting & Finance",
-      description: "Automated bank reconciliation, multi-currency support, tax compliance, and real-time financial reporting."
+      description:
+        "Automated bank reconciliation, multi-currency support, tax compliance, and real-time financial reporting.",
     },
     {
       icon: "Package",
       title: "Inventory & Warehouse",
-      description: "Real-time stock tracking across locations, automated reordering, barcode scanning, and lot/serial traceability."
+      description:
+        "Real-time stock tracking across locations, automated reordering, barcode scanning, and lot/serial traceability.",
     },
     {
       icon: "UserCheck",
       title: "Human Resources",
-      description: "Recruitment, payroll, time tracking, expense management, and employee lifecycle — all in one platform."
+      description:
+        "Recruitment, payroll, time tracking, expense management, and employee lifecycle — all in one platform.",
     },
     {
       icon: "ShoppingCart",
       title: "Purchase & Procurement",
-      description: "Vendor management, automated purchase orders, three-way matching, and spending analytics."
+      description:
+        "Vendor management, automated purchase orders, three-way matching, and spending analytics.",
     },
     {
       icon: "ClipboardList",
       title: "Project Management",
-      description: "Kanban boards, Gantt charts, timesheets, and resource planning for on-time project delivery."
+      description:
+        "Kanban boards, Gantt charts, timesheets, and resource planning for on-time project delivery.",
     },
   ],
 };
@@ -62,7 +70,8 @@ const showcaseContent = {
       image: "/images/features/sections/erp-unified-platform.png",
       imagePosition: "left",
       title: "One Platform, **Zero Data Silos**",
-      description: "Unlike piecing together disconnected tools, Odoo ERP gives your teams a single source of truth. Sales sees real-time inventory. Accounting auto-reconciles with the bank. HR syncs with payroll. Every department works from the same data.",
+      description:
+        "Unlike piecing together disconnected tools, Odoo ERP gives your teams a single source of truth. Sales sees real-time inventory. Accounting auto-reconciles with the bank. HR syncs with payroll. Every department works from the same data.",
       stats: [
         { label: "Integrated Apps", value: "82+" },
         { label: "Cost vs Traditional ERP", value: "60% less" },
@@ -79,7 +88,8 @@ const showcaseContent = {
       image: "/images/features/sections/erp-open-source.png",
       imagePosition: "right",
       title: "Open Source. **No Vendor Lock-In.**",
-      description: "Odoo's open-source foundation means unlimited users, full code access, and the freedom to customize without per-seat licensing fees. NETLINKS ensures your Odoo instance is tailored, secure, and built to scale.",
+      description:
+        "Odoo's open-source foundation means unlimited users, full code access, and the freedom to customize without per-seat licensing fees. NETLINKS ensures your Odoo instance is tailored, secure, and built to scale.",
       features: [
         "Full source code access — customize anything.",
         "No per-user licensing — scale without cost penalties.",
@@ -103,20 +113,26 @@ const processContent = {
     {
       step: "01.",
       title: "Discovery & Requirements",
-      description: "Stakeholder interviews, process mapping, pain point identification, and success criteria definition. We invest in understanding before building.",
+      description:
+        "Stakeholder interviews, process mapping, pain point identification, and success criteria definition. We invest in understanding before building.",
       button: { label: "Contact Us", url: "/contact/" },
     },
     {
       step: "02.",
       title: "Solution Design",
-      description: "Architecture design, module selection, integration mapping, data migration strategy, and detailed timeline planning.",
+      description:
+        "Architecture design, module selection, integration mapping, data migration strategy, and detailed timeline planning.",
       button: { label: "Our Services", url: "/services/odoo-implementation/" },
     },
     {
       step: "03.",
       title: "Build & Configure",
-      description: "Iterative development with sprint demos and continuous feedback. Configuration, customization, integration, and trial data migrations.",
-      button: { label: "Our methodology", url: "/company/implementation-methodology/" },
+      description:
+        "Iterative development with sprint demos and continuous feedback. Configuration, customization, integration, and trial data migrations.",
+      button: {
+        label: "Our methodology",
+        url: "/company/implementation-methodology/",
+      },
     },
   ],
 };
@@ -128,19 +144,22 @@ const processContentTwo = {
     {
       step: "04.",
       title: "Testing & Validation",
-      description: "User acceptance testing, integration testing, performance testing, security review, and comprehensive data validation.",
+      description:
+        "User acceptance testing, integration testing, performance testing, security review, and comprehensive data validation.",
       button: { label: "Contact Us", url: "/contact/", enable: false },
     },
     {
       step: "05.",
       title: "Training & Go-Live",
-      description: "Role-based training, administrator certification, go-live support with on-site team, and hypercare with rapid response.",
+      description:
+        "Role-based training, administrator certification, go-live support with on-site team, and hypercare with rapid response.",
       button: { label: "Contact Us", url: "/contact/", enable: false },
     },
     {
       step: "06.",
       title: "Continuous Improvement",
-      description: "Monthly check-ins, optimization reviews, feature enhancement planning, performance monitoring, and ongoing user support.",
+      description:
+        "Monthly check-ins, optimization reviews, feature enhancement planning, performance monitoring, and ongoing user support.",
       button: { label: "Contact Us", url: "/contact/", enable: false },
     },
   ],
@@ -149,7 +168,8 @@ const processContentTwo = {
 const ctaContent = {
   enable: true,
   title: "Ready to See Odoo ERP **In Action?**",
-  description: "Get a personalized demo of Odoo configured for your specific industry and business processes. No obligation, no pressure — just solutions.",
+  description:
+    "Get a personalized demo of Odoo configured for your specific industry and business processes. No obligation, no pressure — just solutions.",
   background: "/src/assets/images/cta/cta-odoo-erp.png",
   button: {
     enable: true,
@@ -158,7 +178,7 @@ const ctaContent = {
     hoverEffect: "text-flip",
   },
   stats: {
-    title: "4,500+",
+    title: "5,000+",
     description: "Businesses powered <br /> by NETLINKS",
     avatars: [
       "/images/customers/avatar/1.jpg",
@@ -169,12 +189,31 @@ const ctaContent = {
 };
 ---
 
-<Base title={pageData.title} description={pageData.metaDescription} keywords={["Odoo ERP", "Odoo ERP solutions", "enterprise resource planning", "Odoo certified partner", "ERP platform", "integrated business software", "Odoo modules", "open source ERP", "Odoo implementation partner"]}>
+<Base
+  title={pageData.title}
+  description={pageData.metaDescription}
+  keywords={[
+    "Odoo ERP",
+    "Odoo ERP solutions",
+    "enterprise resource planning",
+    "Odoo certified partner",
+    "ERP platform",
+    "integrated business software",
+    "Odoo modules",
+    "open source ERP",
+    "Odoo implementation partner",
+  ]}>
   <PageHeader
     title="The Complete Business Platform — **Odoo ERP**"
     description="82+ integrated apps. One platform. Zero data silos. NETLINKS is your certified Odoo partner for implementation, customization, and support."
-  image="/images/heroes/hero-erp.png"
-  button={{ enable: true, label: "SCHEDULE A DEMO", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-erp.png"
+    button={{
+      enable: true,
+      label: "SCHEDULE A DEMO",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} variant="white" />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

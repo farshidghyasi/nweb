@@ -44,7 +44,10 @@ export default function JsonLdGenerator(content: JSONLDProps, Astro: any) {
   };
 
   // Determine if this is the homepage
-  const urlPath = new URL(canonical, config.site.baseUrl || "https://www.netlinks.net").pathname;
+  const urlPath = new URL(
+    canonical,
+    config.site.baseUrl || "https://www.netlinks.net",
+  ).pathname;
   const isHomepage = urlPath === "/" || urlPath === "";
 
   if (isHomepage) {

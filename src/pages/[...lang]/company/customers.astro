@@ -7,20 +7,57 @@ import FunFact from "@/layouts/components/sections/FunFact.astro";
 import TestimonialSection from "@/layouts/components/sections/TestimonialSection.astro";
 import CallToAction from "@/layouts/components/sections/CallToAction.astro";
 
-export function getStaticPaths() { return generatePaths(); }
+export function getStaticPaths() {
+  return generatePaths();
+}
 
 const ctaContent = {
   enable: true,
   title: "Ready to Join a **Growing Community?**",
-  description: "Join 4,500+ organizations that trust NETLINKS for their technology transformation.",
+  description:
+    "Join 5,000+ organizations that trust NETLINKS for their technology transformation.",
   background: "/src/assets/images/cta/cta-customers.png",
-  button: { enable: true, label: "BECOME A CLIENT", url: "/contact/", hoverEffect: "text-flip" },
-  stats: { title: "98%", description: "Client satisfaction <br /> rate", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+  button: {
+    enable: true,
+    label: "BECOME A CLIENT",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "98%",
+    description: "Client satisfaction <br /> rate",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
 };
 ---
 
-<Base title="Our Customers" description="See how NETLINKS technology solutions have transformed businesses across industries. 4,500+ clients worldwide trust us." keywords={["NETLINKS customers", "client success stories", "ERP customer testimonials", "Odoo implementation clients", "enterprise technology clients", "global technology partner"]}>
-  <PageHeader title="Trusted by **4,500+ Organizations Worldwide**" description="From startups to multinationals, government agencies to international NGOs — NETLINKS serves organizations across every continent and every industry." image="/images/heroes/hero-customers.png" button={{ enable: true, label: "BECOME A CLIENT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+<Base
+  title="Our Customers"
+  description="See how NETLINKS technology solutions have transformed businesses across industries. 5,000+ clients worldwide trust us."
+  keywords={[
+    "NETLINKS customers",
+    "client success stories",
+    "ERP customer testimonials",
+    "Odoo implementation clients",
+    "enterprise technology clients",
+    "global technology partner",
+  ]}>
+  <PageHeader
+    title="Trusted by **5,000+ Organizations Worldwide**"
+    description="From startups to multinationals, government agencies to international NGOs — NETLINKS serves organizations across every continent and every industry."
+    image="/images/heroes/hero-customers.png"
+    button={{
+      enable: true,
+      label: "BECOME A CLIENT",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
+  />
   <FunFact />
   <Customers variant="grey" />
   <TestimonialSection />

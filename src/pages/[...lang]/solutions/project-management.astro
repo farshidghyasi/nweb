@@ -5,34 +5,104 @@ import PageHeader from "@/layouts/components/PageHeader.astro";
 import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
 import CallToAction from "@/layouts/components/sections/CallToAction.astro";
 
-export function getStaticPaths() { return generatePaths(); }
+export function getStaticPaths() {
+  return generatePaths();
+}
 
 const featuresContent = {
   enable: true,
   title: "Deliver Every Project **On Time**",
-  description: "Visual planning, real-time collaboration, and integrated time tracking — everything your team needs to deliver outstanding results.",
+  description:
+    "Visual planning, real-time collaboration, and integrated time tracking — everything your team needs to deliver outstanding results.",
   list: [
-    { icon: "LayoutDashboard", title: "Kanban & Lists", description: "Organize tasks with intuitive Kanban boards or structured list views. Drag-and-drop with enterprise-grade power." },
-    { icon: "GitBranch", title: "Gantt Charts", description: "Visual project timelines with task dependencies, milestones, and critical path analysis." },
-    { icon: "Timer", title: "Timesheets", description: "Track time on tasks and projects for accurate billing, resource planning, and productivity analysis." },
-    { icon: "Users", title: "Resource Planning", description: "Allocate teams across projects, monitor workloads, and prevent burnout with capacity planning." },
-    { icon: "ExternalLink", title: "Client Portal", description: "Share progress through a secure portal where clients view tasks, approve deliverables, and communicate." },
-    { icon: "Receipt", title: "Integrated Invoicing", description: "Convert tracked time and milestones directly into invoices. Billable hours flow seamlessly to accounting." },
+    {
+      icon: "LayoutDashboard",
+      title: "Kanban & Lists",
+      description:
+        "Organize tasks with intuitive Kanban boards or structured list views. Drag-and-drop with enterprise-grade power.",
+    },
+    {
+      icon: "GitBranch",
+      title: "Gantt Charts",
+      description:
+        "Visual project timelines with task dependencies, milestones, and critical path analysis.",
+    },
+    {
+      icon: "Timer",
+      title: "Timesheets",
+      description:
+        "Track time on tasks and projects for accurate billing, resource planning, and productivity analysis.",
+    },
+    {
+      icon: "Users",
+      title: "Resource Planning",
+      description:
+        "Allocate teams across projects, monitor workloads, and prevent burnout with capacity planning.",
+    },
+    {
+      icon: "ExternalLink",
+      title: "Client Portal",
+      description:
+        "Share progress through a secure portal where clients view tasks, approve deliverables, and communicate.",
+    },
+    {
+      icon: "Receipt",
+      title: "Integrated Invoicing",
+      description:
+        "Convert tracked time and milestones directly into invoices. Billable hours flow seamlessly to accounting.",
+    },
   ],
 };
 
 const ctaContent = {
   enable: true,
   title: "Ready to Elevate **Project Delivery?**",
-  description: "See how Odoo Project Management can help your team deliver on time, every time — with full visibility and control.",
+  description:
+    "See how Odoo Project Management can help your team deliver on time, every time — with full visibility and control.",
   background: "/src/assets/images/cta/cta-project.png",
-  button: { enable: true, label: "GET A FREE PROJECT DEMO", url: "/contact/", hoverEffect: "text-flip" },
-  stats: { title: "40%", description: "Faster project <br /> delivery", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+  button: {
+    enable: true,
+    label: "GET A FREE PROJECT DEMO",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "40%",
+    description: "Faster project <br /> delivery",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
 };
 ---
 
-<Base title="Odoo Project Management — Plan, Track & Deliver" description="Plan, track, and deliver projects on time with Odoo Project — Kanban boards, Gantt charts, timesheets, and resource planning by NETLINKS." keywords={["Odoo project management", "project tracking software", "Kanban project tool", "Gantt chart ERP", "timesheet management", "resource planning", "Odoo project module", "task management software"]}>
-  <PageHeader title="Deliver On Time, **Every Time**" description="Keep your projects on track with powerful planning tools, real-time collaboration, and integrated time tracking." image="/images/heroes/hero-project-mgmt.png" button={{ enable: true, label: "STREAMLINE YOUR PROJECTS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+<Base
+  title="Odoo Project Management — Plan, Track & Deliver"
+  description="Plan, track, and deliver projects on time with Odoo Project — Kanban boards, Gantt charts, timesheets, and resource planning by NETLINKS."
+  keywords={[
+    "Odoo project management",
+    "project tracking software",
+    "Kanban project tool",
+    "Gantt chart ERP",
+    "timesheet management",
+    "resource planning",
+    "Odoo project module",
+    "task management software",
+  ]}>
+  <PageHeader
+    title="Deliver On Time, **Every Time**"
+    description="Keep your projects on track with powerful planning tools, real-time collaboration, and integrated time tracking."
+    image="/images/heroes/hero-project-mgmt.png"
+    button={{
+      enable: true,
+      label: "STREAMLINE YOUR PROJECTS",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
+  />
   <FeaturesSectionTwo content={featuresContent} />
   <CallToAction content={ctaContent} />
 </Base>

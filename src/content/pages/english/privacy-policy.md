@@ -19,6 +19,7 @@ NETLINKS ("we," "our," or "us") respects your privacy and is committed to protec
 ### How We Use Your Information
 
 We use the information we collect to:
+
 - Respond to your inquiries and provide requested services
 - Send you relevant updates, news, and marketing communications (with your consent)
 - Improve our website and user experience

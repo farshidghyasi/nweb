@@ -33,7 +33,13 @@ let actualContent = overrideObjects(
 ) as SectionType;
 
 // Extracting required values from 'content' object
-let { enable = true, title, description, button, list } = actualContent as SectionType;
+let {
+  enable = true,
+  title,
+  description,
+  button,
+  list,
+} = actualContent as SectionType;
 
 const { class: ClassName, variant = "grey" } = Astro.props;
 
@@ -43,7 +49,7 @@ if (!enable) return;
 <section class={ClassName}>
   <div
     class:list={[
-      "py-20 md:py-32",
+      "py-10 md:py-16",
       variant === "grey" ? "bg-theme-light" : "bg-white",
     ]}>
     <div class="container">

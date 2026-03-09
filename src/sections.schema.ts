@@ -439,12 +439,16 @@ export const aboutSectionSchema = z.object({
   enable: z.boolean().default(false),
   title: z.string(),
   description: z.string(),
-  image: z.string().url(),
-  ctaBlock: z.object({
-    title: z.string(),
-    description: z.string(),
-    button: sharedButton,
-  }),
+  image: z.string().optional(),
+  images: z.array(z.string()).optional(),
+  ctaBlock: z
+    .object({
+      title: z.string().optional(),
+      description: z.string(),
+      button: sharedButton.optional(),
+      buttons: z.array(sharedButton).optional(),
+    })
+    .optional(),
 });
 
 const statsItemSchema = z.object({

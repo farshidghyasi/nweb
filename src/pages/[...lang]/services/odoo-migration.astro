@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "Migration Scenarios We **Handle**",
-  description: "Whether you're moving from a legacy ERP, upgrading Odoo versions, or migrating from spreadsheets — we've done it all.",
+  description:
+    "Whether you're moving from a legacy ERP, upgrading Odoo versions, or migrating from spreadsheets — we've done it all.",
   list: [
     {
       icon: "ArrowRightLeft",
       title: "Legacy ERP to Odoo",
-      description: "Migrate from SAP, Oracle, Microsoft Dynamics, QuickBooks, or any other ERP system. We've handled hundreds of complex migrations."
+      description:
+        "Migrate from SAP, Oracle, Microsoft Dynamics, QuickBooks, or any other ERP system. We've handled hundreds of complex migrations.",
     },
     {
       icon: "ArrowUpCircle",
       title: "Odoo Version Upgrades",
-      description: "Upgrade from Odoo 12–16 to the latest version while preserving your customizations, data, and integrations."
+      description:
+        "Upgrade from Odoo 12–16 to the latest version while preserving your customizations, data, and integrations.",
     },
     {
       icon: "Table2",
       title: "Spreadsheet to Odoo",
-      description: "Transform spreadsheet-based operations into a professional Odoo ERP with structured data and automated workflows."
+      description:
+        "Transform spreadsheet-based operations into a professional Odoo ERP with structured data and automated workflows.",
     },
     {
       icon: "Cloud",
       title: "Cloud Migration",
-      description: "Move on-premise Odoo to the cloud — or vice versa — with complete data integrity and zero-downtime transition."
+      description:
+        "Move on-premise Odoo to the cloud — or vice versa — with complete data integrity and zero-downtime transition.",
     },
     {
       icon: "ShieldCheck",
       title: "Data Integrity Validation",
-      description: "Every data point is audited, mapped, and verified at each phase. Our process guarantees 100% data integrity."
+      description:
+        "Every data point is audited, mapped, and verified at each phase. Our process guarantees 100% data integrity.",
     },
     {
       icon: "Clock",
       title: "Near-Zero Downtime",
-      description: "Trial migrations and phased rollouts minimize business disruption. Planned cut-overs happen during off-hours."
+      description:
+        "Trial migrations and phased rollouts minimize business disruption. Planned cut-overs happen during off-hours.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/migr-data-transfer.png",
       imagePosition: "left",
       title: "5-Phase Migration That **Eliminates Risk**",
-      description: "Our proven methodology — Assessment, Data Mapping, Trial Migration, Production Cut-Over, and Post-Migration Validation — ensures zero data loss and a smooth transition every time.",
+      description:
+        "Our proven methodology — Assessment, Data Mapping, Trial Migration, Production Cut-Over, and Post-Migration Validation — ensures zero data loss and a smooth transition every time.",
       stats: [
         { label: "Data Integrity Rate", value: "100%" },
         { label: "Migrations Completed", value: "800+" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/migr-zero-downtime.png",
       imagePosition: "right",
       title: "Trial Migration First — **Then Go Live**",
-      description: "We never gamble with your data. Every migration includes a full trial run in a sandbox environment, giving you complete confidence to validate accuracy before the production switch.",
+      description:
+        "We never gamble with your data. Every migration includes a full trial run in a sandbox environment, giving you complete confidence to validate accuracy before the production switch.",
       features: [
         "Complete data audit and mapping before any migration begins.",
         "Full sandbox trial migration with user acceptance testing.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Stuck on an **Outdated ERP?**",
-  description: "Get a free migration assessment. We'll evaluate your current system and provide a clear roadmap to Odoo.",
+  description:
+    "Get a free migration assessment. We'll evaluate your current system and provide a clear roadmap to Odoo.",
   background: "/src/assets/images/cta/cta-odoo-migration.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Odoo Migration & Upgrade Services — Zero Data Loss" description="Seamlessly migrate from legacy ERP systems or older Odoo versions with zero data loss. NETLINKS handles 800+ migrations with 100% data integrity." keywords={["Odoo migration", "ERP data migration", "legacy system migration", "Odoo version upgrade", "ERP migration services", "data migration specialist", "Odoo upgrade partner", "zero downtime migration"]}>
+<Base
+  title="Odoo Migration & Upgrade Services — Zero Data Loss"
+  description="Seamlessly migrate from legacy ERP systems or older Odoo versions with zero data loss. NETLINKS handles 800+ migrations with 100% data integrity."
+  keywords={[
+    "Odoo migration",
+    "ERP data migration",
+    "legacy system migration",
+    "Odoo version upgrade",
+    "ERP migration services",
+    "data migration specialist",
+    "Odoo upgrade partner",
+    "zero downtime migration",
+  ]}>
   <PageHeader
     title="Painless ERP Migration — **Zero Data Loss**"
     description="Stuck on an outdated ERP or running an old Odoo version? We handle the complete transition — data extraction, transformation, validation, and go-live — with near-zero disruption."
-  image="/images/heroes/hero-migration.png"
-  button={{ enable: true, label: "PLAN YOUR MIGRATION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-migration.png"
+    button={{
+      enable: true,
+      label: "PLAN YOUR MIGRATION",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

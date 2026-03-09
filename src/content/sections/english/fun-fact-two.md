@@ -3,7 +3,7 @@ enable: true
 list:
   # For Icon Name - Capitalize Icon Name [Lucide Icons](https://lucide.dev/icons/?search=) (remember to capitalize the icon name)
   - icon: "Globe"
-    title: "4,500+"
+    title: "5,000+"
     description: "Clients served globally"
   - icon: "Users"
     title: "400+"

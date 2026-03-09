@@ -1,7 +1,7 @@
 ---
 title: "NETLINKS"
 metaTitle: "NETLINKS — Odoo ERP Implementation & Enterprise Technology Partner"
-metaDescription: "Enterprise technology partner delivering Odoo ERP, custom software, AI automation, and digital transformation. Offices in Virginia, UAE & Afghanistan. 4,500+ clients globally. ISO 9001, ISO 27001 certified."
+metaDescription: "Enterprise technology partner delivering Odoo ERP, custom software, AI automation, and digital transformation. Offices in Virginia, UAE & Afghanistan. 5,000+ clients globally. ISO 9001, ISO 27001 certified."
 keywords:
   - "NETLINKS"
   - "Odoo ERP implementation"

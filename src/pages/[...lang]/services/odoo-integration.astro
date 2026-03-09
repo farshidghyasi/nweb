@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "Connect Odoo With **Everything**",
-  description: "Seamless integrations with 100+ third-party platforms, APIs, and cloud services for unified data flow across your business.",
+  description:
+    "Seamless integrations with 100+ third-party platforms, APIs, and cloud services for unified data flow across your business.",
   list: [
     {
       icon: "ShoppingCart",
       title: "eCommerce Integrations",
-      description: "Connect with Shopify, WooCommerce, and Magento for real-time inventory sync, order management, and unified customer data."
+      description:
+        "Connect with Shopify, WooCommerce, and Magento for real-time inventory sync, order management, and unified customer data.",
     },
     {
       icon: "CreditCard",
       title: "Payment Gateways",
-      description: "Integrate Stripe, PayPal, Square, and regional payment providers for automated payment processing and reconciliation."
+      description:
+        "Integrate Stripe, PayPal, Square, and regional payment providers for automated payment processing and reconciliation.",
     },
     {
       icon: "Truck",
       title: "Shipping & Logistics",
-      description: "Connect with FedEx, UPS, DHL, and local carriers for automated shipping labels, tracking, and delivery management."
+      description:
+        "Connect with FedEx, UPS, DHL, and local carriers for automated shipping labels, tracking, and delivery management.",
     },
     {
       icon: "Landmark",
       title: "Accounting & Banking",
-      description: "Sync with banking systems, QuickBooks, and financial platforms for automated bank reconciliation and reporting."
+      description:
+        "Sync with banking systems, QuickBooks, and financial platforms for automated bank reconciliation and reporting.",
     },
     {
       icon: "Users",
       title: "CRM & Marketing Tools",
-      description: "Integrate with HubSpot, Salesforce, Mailchimp, and marketing platforms to maintain one source of truth for customer data."
+      description:
+        "Integrate with HubSpot, Salesforce, Mailchimp, and marketing platforms to maintain one source of truth for customer data.",
     },
     {
       icon: "Code",
       title: "Custom API Development",
-      description: "Build custom REST and XML-RPC integrations for proprietary systems, legacy applications, and industry-specific software."
+      description:
+        "Build custom REST and XML-RPC integrations for proprietary systems, legacy applications, and industry-specific software.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/integ-connected-systems.png",
       imagePosition: "left",
       title: "API-First Architecture — **Built for Scale**",
-      description: "Our integration architecture is designed for reliability and performance. Robust error handling, real-time synchronization, and comprehensive monitoring ensure your connected systems work flawlessly at any scale.",
+      description:
+        "Our integration architecture is designed for reliability and performance. Robust error handling, real-time synchronization, and comprehensive monitoring ensure your connected systems work flawlessly at any scale.",
       stats: [
         { label: "Third-Party Integrations", value: "100+" },
         { label: "Uptime Reliability", value: "99.9%" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/integ-seamless-flow.png",
       imagePosition: "right",
       title: "End-to-End Integration **Lifecycle**",
-      description: "From system audit and architecture design to development, testing, and ongoing maintenance — we manage the complete integration lifecycle to keep your data flowing seamlessly.",
+      description:
+        "From system audit and architecture design to development, testing, and ongoing maintenance — we manage the complete integration lifecycle to keep your data flowing seamlessly.",
       features: [
         "System audit to map your current technology landscape.",
         "Rigorous testing at every integration point before go-live.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Need to Connect **Your Systems?**",
-  description: "Tell us what systems need to talk to Odoo — we'll architect and build a reliable integration solution.",
+  description:
+    "Tell us what systems need to talk to Odoo — we'll architect and build a reliable integration solution.",
   background: "/src/assets/images/cta/cta-odoo-integration.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Odoo Integration Services — Connect 100+ Systems" description="Connect Odoo with 100+ third-party platforms — eCommerce, payments, shipping, banking, CRM, and custom APIs. Seamless data flow by NETLINKS." keywords={["Odoo integration", "ERP integration services", "API integration", "Odoo third-party connectors", "eCommerce integration", "payment gateway integration", "Odoo API development", "system integration services"]}>
+<Base
+  title="Odoo Integration Services — Connect 100+ Systems"
+  description="Connect Odoo with 100+ third-party platforms — eCommerce, payments, shipping, banking, CRM, and custom APIs. Seamless data flow by NETLINKS."
+  keywords={[
+    "Odoo integration",
+    "ERP integration services",
+    "API integration",
+    "Odoo third-party connectors",
+    "eCommerce integration",
+    "payment gateway integration",
+    "Odoo API development",
+    "system integration services",
+  ]}>
   <PageHeader
     title="Seamless Integrations That **Unify Your Stack**"
     description="Your ERP doesn't exist in isolation. We connect Odoo with every system in your technology stack — payment gateways, eCommerce, shipping, banking, CRM, and custom APIs."
-  image="/images/heroes/hero-odoo-integration.png"
-  button={{ enable: true, label: "EXPLORE INTEGRATIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-odoo-integration.png"
+    button={{
+      enable: true,
+      label: "EXPLORE INTEGRATIONS",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

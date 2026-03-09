@@ -5,34 +5,104 @@ import PageHeader from "@/layouts/components/PageHeader.astro";
 import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
 import CallToAction from "@/layouts/components/sections/CallToAction.astro";
 
-export function getStaticPaths() { return generatePaths(); }
+export function getStaticPaths() {
+  return generatePaths();
+}
 
 const featuresContent = {
   enable: true,
   title: "Modernize Government **Operations**",
-  description: "Technology solutions that meet stringent governance requirements while delivering modern efficiency.",
+  description:
+    "Technology solutions that meet stringent governance requirements while delivering modern efficiency.",
   list: [
-    { icon: "Calculator", title: "Financial Management", description: "Budget management, fund accounting, and audit trails that meet government financial reporting standards." },
-    { icon: "FileCheck", title: "Procurement", description: "Transparent procurement workflows, vendor management, and comprehensive asset tracking across departments." },
-    { icon: "Users", title: "HR & Workforce", description: "Manage large workforces with structured hierarchies, civil service rules, and payroll compliance." },
-    { icon: "FileText", title: "Document Management", description: "Digital workflows for approvals, records management, and inter-departmental correspondence." },
-    { icon: "Globe", title: "Citizen Services", description: "Digital portals for citizen engagement, service requests, and transparent communication." },
-    { icon: "Shield", title: "Security & Privacy", description: "Enterprise-grade security, role-based access, and compliance with data protection regulations." },
+    {
+      icon: "Calculator",
+      title: "Financial Management",
+      description:
+        "Budget management, fund accounting, and audit trails that meet government financial reporting standards.",
+    },
+    {
+      icon: "FileCheck",
+      title: "Procurement",
+      description:
+        "Transparent procurement workflows, vendor management, and comprehensive asset tracking across departments.",
+    },
+    {
+      icon: "Users",
+      title: "HR & Workforce",
+      description:
+        "Manage large workforces with structured hierarchies, civil service rules, and payroll compliance.",
+    },
+    {
+      icon: "FileText",
+      title: "Document Management",
+      description:
+        "Digital workflows for approvals, records management, and inter-departmental correspondence.",
+    },
+    {
+      icon: "Globe",
+      title: "Citizen Services",
+      description:
+        "Digital portals for citizen engagement, service requests, and transparent communication.",
+    },
+    {
+      icon: "Shield",
+      title: "Security & Privacy",
+      description:
+        "Enterprise-grade security, role-based access, and compliance with data protection regulations.",
+    },
   ],
 };
 
 const ctaContent = {
   enable: true,
   title: "Ready to Modernize **Public Services?**",
-  description: "Learn how NETLINKS helps government agencies deliver better services with modern technology — while meeting every compliance requirement.",
+  description:
+    "Learn how NETLINKS helps government agencies deliver better services with modern technology — while meeting every compliance requirement.",
   background: "/src/assets/images/cta/cta-public-sector.png",
-  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
-  stats: { title: "20+", description: "Years serving <br /> public sector", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+  button: {
+    enable: true,
+    label: "SCHEDULE A CONSULTATION",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "20+",
+    description: "Years serving <br /> public sector",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
 };
 ---
 
-<Base title="ERP for Government & Public Sector" description="Technology solutions for government and public sector — compliance, transparency, and citizen services by NETLINKS." keywords={["public sector ERP", "government technology solutions", "civic technology", "government ERP", "compliance management", "citizen services platform", "transparent governance software", "public sector digital transformation"]}>
-  <PageHeader title="Government Technology That **Serves Citizens**" description="Accountability, transparency, and efficiency — NETLINKS delivers technology that modernizes public services while meeting stringent governance requirements." image="/images/heroes/hero-public-sector.png" button={{ enable: true, label: "EXPLORE GOV SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+<Base
+  title="ERP for Government & Public Sector"
+  description="Technology solutions for government and public sector — compliance, transparency, and citizen services by NETLINKS."
+  keywords={[
+    "public sector ERP",
+    "government technology solutions",
+    "civic technology",
+    "government ERP",
+    "compliance management",
+    "citizen services platform",
+    "transparent governance software",
+    "public sector digital transformation",
+  ]}>
+  <PageHeader
+    title="Government Technology That **Serves Citizens**"
+    description="Accountability, transparency, and efficiency — NETLINKS delivers technology that modernizes public services while meeting stringent governance requirements."
+    image="/images/heroes/hero-public-sector.png"
+    button={{
+      enable: true,
+      label: "EXPLORE GOV SOLUTIONS",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
+  />
   <FeaturesSectionTwo content={featuresContent} />
   <CallToAction content={ctaContent} />
 </Base>

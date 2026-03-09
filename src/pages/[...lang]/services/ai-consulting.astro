@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "Strategic Consulting **Services**",
-  description: "Expert guidance to navigate AI adoption, build technology roadmaps, and maximize your IT investments.",
+  description:
+    "Expert guidance to navigate AI adoption, build technology roadmaps, and maximize your IT investments.",
   list: [
     {
       icon: "Microscope",
       title: "AI Readiness Assessment",
-      description: "We evaluate your data maturity, infrastructure, team capabilities, and processes to identify where AI delivers the highest impact."
+      description:
+        "We evaluate your data maturity, infrastructure, team capabilities, and processes to identify where AI delivers the highest impact.",
     },
     {
       icon: "Map",
       title: "Technology Roadmap",
-      description: "A clear, actionable plan aligning technology investments with business goals — prioritized by ROI, feasibility, and strategic importance."
+      description:
+        "A clear, actionable plan aligning technology investments with business goals — prioritized by ROI, feasibility, and strategic importance.",
     },
     {
       icon: "Scale",
       title: "Vendor & Platform Selection",
-      description: "Unbiased guidance on choosing the right tools, platforms, and vendors for your specific needs — without vendor lock-in."
+      description:
+        "Unbiased guidance on choosing the right tools, platforms, and vendors for your specific needs — without vendor lock-in.",
     },
     {
       icon: "Database",
       title: "Data Strategy & Governance",
-      description: "Build the data foundation AI requires — including data quality, governance frameworks, privacy compliance, and architecture."
+      description:
+        "Build the data foundation AI requires — including data quality, governance frameworks, privacy compliance, and architecture.",
     },
     {
       icon: "Users",
       title: "Change Management",
-      description: "Manage the human side of transformation — stakeholder buy-in, training programs, adoption strategies, and cultural alignment."
+      description:
+        "Manage the human side of transformation — stakeholder buy-in, training programs, adoption strategies, and cultural alignment.",
     },
     {
       icon: "Target",
       title: "ROI-Focused Advisory",
-      description: "Practical, actionable outcomes — not just reports. Every recommendation targets specific, measurable business value."
+      description:
+        "Practical, actionable outcomes — not just reports. Every recommendation targets specific, measurable business value.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/aic-strategy-session.png",
       imagePosition: "left",
       title: "20+ Years of **Enterprise Experience**",
-      description: "Navigating the technology landscape requires strategic vision, not just technical skills. Our consultants bring decades of enterprise experience across industries — providing vendor-agnostic advice focused entirely on your best interests.",
+      description:
+        "Navigating the technology landscape requires strategic vision, not just technical skills. Our consultants bring decades of enterprise experience across industries — providing vendor-agnostic advice focused entirely on your best interests.",
       stats: [
         { label: "Years of Experience", value: "20+" },
         { label: "Industries Served", value: "15+" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/aic-model-deployment.png",
       imagePosition: "right",
       title: "Strategy **Plus** Execution",
-      description: "Unlike pure consultancies, we don't just advise — we build and implement. Our team combines strategic thinking with deep technical execution capability, ensuring your plans translate into real, measurable results.",
+      description:
+        "Unlike pure consultancies, we don't just advise — we build and implement. Our team combines strategic thinking with deep technical execution capability, ensuring your plans translate into real, measurable results.",
       features: [
         "End-to-end capability from strategy to implementation.",
         "Global perspective with local, hands-on delivery.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Need Technology **Guidance?**",
-  description: "Book a strategy session with our senior consultants. We'll help you make informed decisions about AI, technology investments, and digital transformation.",
+  description:
+    "Book a strategy session with our senior consultants. We'll help you make informed decisions about AI, technology investments, and digital transformation.",
   background: "/src/assets/images/cta/cta-ai-consulting.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="AI & Technology Consulting — Enterprise Strategy" description="Strategic technology advisory by NETLINKS — AI readiness assessment, technology roadmaps, vendor selection, data strategy, and change management. 20+ years of enterprise expertise." keywords={["AI consulting", "technology consulting", "IT strategy consulting", "digital transformation advisory", "AI readiness assessment", "technology roadmap", "enterprise IT consulting", "data strategy consulting"]}>
+<Base
+  title="AI & Technology Consulting — Enterprise Strategy"
+  description="Strategic technology advisory by NETLINKS — AI readiness assessment, technology roadmaps, vendor selection, data strategy, and change management. 20+ years of enterprise expertise."
+  keywords={[
+    "AI consulting",
+    "technology consulting",
+    "IT strategy consulting",
+    "digital transformation advisory",
+    "AI readiness assessment",
+    "technology roadmap",
+    "enterprise IT consulting",
+    "data strategy consulting",
+  ]}>
   <PageHeader
     title="Strategic Technology Advisory That **Drives Results**"
     description="Navigate AI adoption, build technology roadmaps, and maximize your IT investments with expert guidance from consultants who don't just advise — they build and implement."
-  image="/images/heroes/hero-ai-consulting.png"
-  button={{ enable: true, label: "BOOK AN AI STRATEGY SESSION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-ai-consulting.png"
+    button={{
+      enable: true,
+      label: "BOOK AN AI STRATEGY SESSION",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

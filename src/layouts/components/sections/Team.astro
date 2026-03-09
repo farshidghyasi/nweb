@@ -33,7 +33,12 @@ const { class: ClassName, variant = "white" } = Astro.props;
 if (!enable) return;
 ---
 
-<section class:list={[ClassName, variant === "grey" && "bg-theme-light", "py-20 md:py-32"]}>
+<section
+  class:list={[
+    ClassName,
+    variant === "grey" && "bg-theme-light",
+    "py-10 md:py-16",
+  ]}>
   <div class="container space-y-10 md:space-y-16">
     {
       title && (

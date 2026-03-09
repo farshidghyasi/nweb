@@ -18,7 +18,7 @@ const {
 const hasSplitLayout = !!image;
 ---
 
-<Element class:list={[ClassName, "overflow-hidden relative"]}>
+<Element class:list={[ClassName, "relative overflow-hidden"]}>
   <!-- Gradient Shapes -->
   <OptimizedImage
     class="max-md:translate-x-centered absolute bottom-0 -z-10 h-128 opacity-70 md:top-[100px] md:-left-25 md:h-225"
@@ -42,7 +42,7 @@ const hasSplitLayout = !!image;
     src="/images/line.svg"
   />
 
-  <div class="container relative">
+  <div class="relative container">
     {
       hasSplitLayout ? (
         <div class="flex flex-col items-center gap-10 md:flex-row md:gap-16 lg:gap-20">
@@ -89,8 +89,7 @@ const hasSplitLayout = !!image;
             class="w-full md:w-1/2"
             data-aos="fade-left"
             data-aos-duration="800"
-            data-aos-delay="200"
-          >
+            data-aos-delay="200">
             <OptimizedImage
               src={image}
               class="mx-auto w-full max-w-lg"

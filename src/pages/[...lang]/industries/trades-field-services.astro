@@ -5,34 +5,104 @@ import PageHeader from "@/layouts/components/PageHeader.astro";
 import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
 import CallToAction from "@/layouts/components/sections/CallToAction.astro";
 
-export function getStaticPaths() { return generatePaths(); }
+export function getStaticPaths() {
+  return generatePaths();
+}
 
 const featuresContent = {
   enable: true,
   title: "Technology That **Works in the Field**",
-  description: "Solutions that manage your crews, jobs, and customers from a single platform — online and offline.",
+  description:
+    "Solutions that manage your crews, jobs, and customers from a single platform — online and offline.",
   list: [
-    { icon: "Calendar", title: "Job Scheduling", description: "Visual scheduling boards, drag-and-drop dispatch, and automated assignment based on skills, location, and availability." },
-    { icon: "Smartphone", title: "Mobile Workforce", description: "Mobile apps with job details, customer history, checklists, and digital forms — works online and offline." },
-    { icon: "UserCheck", title: "Customer Management", description: "Track service history, manage contracts, and automate follow-up communications for every client." },
-    { icon: "Receipt", title: "Field Invoicing", description: "Create quotes in the field, convert to invoices on completion, and accept mobile payments on-site." },
-    { icon: "Wrench", title: "Parts & Inventory", description: "Track parts across trucks and warehouses. Know what's on each vehicle in real-time." },
-    { icon: "Truck", title: "Fleet Management", description: "Vehicle tracking, maintenance schedules, and fuel management to keep your fleet running efficiently." },
+    {
+      icon: "Calendar",
+      title: "Job Scheduling",
+      description:
+        "Visual scheduling boards, drag-and-drop dispatch, and automated assignment based on skills, location, and availability.",
+    },
+    {
+      icon: "Smartphone",
+      title: "Mobile Workforce",
+      description:
+        "Mobile apps with job details, customer history, checklists, and digital forms — works online and offline.",
+    },
+    {
+      icon: "UserCheck",
+      title: "Customer Management",
+      description:
+        "Track service history, manage contracts, and automate follow-up communications for every client.",
+    },
+    {
+      icon: "Receipt",
+      title: "Field Invoicing",
+      description:
+        "Create quotes in the field, convert to invoices on completion, and accept mobile payments on-site.",
+    },
+    {
+      icon: "Wrench",
+      title: "Parts & Inventory",
+      description:
+        "Track parts across trucks and warehouses. Know what's on each vehicle in real-time.",
+    },
+    {
+      icon: "Truck",
+      title: "Fleet Management",
+      description:
+        "Vehicle tracking, maintenance schedules, and fuel management to keep your fleet running efficiently.",
+    },
   ],
 };
 
 const ctaContent = {
   enable: true,
   title: "Ready to Equip **Your Field Teams?**",
-  description: "See how NETLINKS can give your field teams the tools they need to deliver exceptional service — every time.",
+  description:
+    "See how NETLINKS can give your field teams the tools they need to deliver exceptional service — every time.",
   background: "/src/assets/images/cta/cta-trades.png",
-  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
-  stats: { title: "4,500+", description: "Businesses powered <br /> by NETLINKS", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+  button: {
+    enable: true,
+    label: "SCHEDULE A CONSULTATION",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "5,000+",
+    description: "Businesses powered <br /> by NETLINKS",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
 };
 ---
 
-<Base title="ERP for Trades & Field Service Management" description="Technology solutions for trades and field service businesses — scheduling, dispatch, mobile workforce, and invoicing by NETLINKS." keywords={["field service management", "trades business software", "job scheduling software", "dispatch management", "mobile workforce management", "field service ERP", "service business automation", "work order management"]}>
-  <PageHeader title="Field Service, **Fully Connected**" description="Plumbers, electricians, HVAC, construction — your field teams need technology that works in the field, not just the office." image="/images/heroes/hero-field-services.png" button={{ enable: true, label: "EXPLORE FIELD SERVICE SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+<Base
+  title="ERP for Trades & Field Service Management"
+  description="Technology solutions for trades and field service businesses — scheduling, dispatch, mobile workforce, and invoicing by NETLINKS."
+  keywords={[
+    "field service management",
+    "trades business software",
+    "job scheduling software",
+    "dispatch management",
+    "mobile workforce management",
+    "field service ERP",
+    "service business automation",
+    "work order management",
+  ]}>
+  <PageHeader
+    title="Field Service, **Fully Connected**"
+    description="Plumbers, electricians, HVAC, construction — your field teams need technology that works in the field, not just the office."
+    image="/images/heroes/hero-field-services.png"
+    button={{
+      enable: true,
+      label: "EXPLORE FIELD SERVICE SOLUTIONS",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
+  />
   <FeaturesSectionTwo content={featuresContent} />
   <CallToAction content={ctaContent} />
 </Base>

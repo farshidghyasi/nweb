@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "AI Solutions That **Think & Act**",
-  description: "Go beyond simple automation. Our agentic AI systems learn from your data, make informed decisions, and continuously improve.",
+  description:
+    "Go beyond simple automation. Our agentic AI systems learn from your data, make informed decisions, and continuously improve.",
   list: [
     {
       icon: "Bot",
       title: "Intelligent Process Automation",
-      description: "Combine AI with RPA to automate complex end-to-end workflows — document processing, data extraction, decision-making, and communication."
+      description:
+        "Combine AI with RPA to automate complex end-to-end workflows — document processing, data extraction, decision-making, and communication.",
     },
     {
       icon: "MessageSquare",
       title: "AI-Powered Customer Service",
-      description: "Intelligent chatbots and virtual assistants that understand context, handle complex queries, and escalate appropriately — 24/7."
+      description:
+        "Intelligent chatbots and virtual assistants that understand context, handle complex queries, and escalate appropriately — 24/7.",
     },
     {
       icon: "TrendingUp",
       title: "Predictive Analytics",
-      description: "Machine learning models that predict demand, identify risks, optimize pricing, and support data-driven decisions before problems arise."
+      description:
+        "Machine learning models that predict demand, identify risks, optimize pricing, and support data-driven decisions before problems arise.",
     },
     {
       icon: "FileSearch",
       title: "Document Intelligence",
-      description: "Extract, classify, and process information from invoices, contracts, and emails using AI — eliminating 95% of manual data entry."
+      description:
+        "Extract, classify, and process information from invoices, contracts, and emails using AI — eliminating 95% of manual data entry.",
     },
     {
       icon: "GitBranch",
       title: "Workflow Orchestration",
-      description: "Intelligent workflows that route tasks, manage approvals, and coordinate systems and people based on real-time business context."
+      description:
+        "Intelligent workflows that route tasks, manage approvals, and coordinate systems and people based on real-time business context.",
     },
     {
       icon: "Brain",
       title: "Custom AI Agents",
-      description: "Purpose-built AI agents that handle multi-step reasoning, complex decision trees, and autonomous task execution for your business."
+      description:
+        "Purpose-built AI agents that handle multi-step reasoning, complex decision trees, and autonomous task execution for your business.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/ai-neural-automation.png",
       imagePosition: "left",
       title: "Beyond Rules — **AI That Adapts**",
-      description: "Traditional automation follows rigid rules. Our agentic AI systems think, adapt, and act — handling complex workflows that previously required human judgment. They process unstructured data, handle exceptions, and learn from outcomes.",
+      description:
+        "Traditional automation follows rigid rules. Our agentic AI systems think, adapt, and act — handling complex workflows that previously required human judgment. They process unstructured data, handle exceptions, and learn from outcomes.",
       stats: [
         { label: "Process Automation", value: "Up to 85%" },
         { label: "Error Reduction", value: "95%" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/ai-intelligent-agents.png",
       imagePosition: "right",
       title: "Business-First AI — **Measurable ROI**",
-      description: "We solve business problems, not just build technology. Every AI project targets specific, quantifiable outcomes — with ethical, transparent, and explainable AI practices that integrate with your existing systems.",
+      description:
+        "We solve business problems, not just build technology. Every AI project targets specific, quantifiable outcomes — with ethical, transparent, and explainable AI practices that integrate with your existing systems.",
       features: [
         "Business-first approach with measurable ROI targets.",
         "Ethical AI: transparent, explainable, and bias-aware solutions.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Ready to Automate With **AI?**",
-  description: "See how agentic AI can transform your operations. Get a personalized assessment of automation opportunities in your business.",
+  description:
+    "See how agentic AI can transform your operations. Get a personalized assessment of automation opportunities in your business.",
   background: "/src/assets/images/cta/cta-ai-automation.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Agentic AI & Intelligent Process Automation" description="Intelligent automation powered by AI agents that learn, decide, and optimize your business processes. RPA, ML, predictive analytics, and custom AI solutions by NETLINKS." keywords={["agentic AI", "AI automation", "robotic process automation", "RPA services", "predictive analytics", "machine learning consulting", "intelligent process automation", "AI agents for business"]}>
+<Base
+  title="Agentic AI & Intelligent Process Automation"
+  description="Intelligent automation powered by AI agents that learn, decide, and optimize your business processes. RPA, ML, predictive analytics, and custom AI solutions by NETLINKS."
+  keywords={[
+    "agentic AI",
+    "AI automation",
+    "robotic process automation",
+    "RPA services",
+    "predictive analytics",
+    "machine learning consulting",
+    "intelligent process automation",
+    "AI agents for business",
+  ]}>
   <PageHeader
     title="Intelligent Automation That **Thinks & Adapts**"
     description="The future of business isn't just automated — it's intelligent. We build AI-powered systems that learn from your data, make informed decisions, and continuously improve your operations."
-  image="/images/heroes/hero-ai-automation.png"
-  button={{ enable: true, label: "EXPLORE AI SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-ai-automation.png"
+    button={{
+      enable: true,
+      label: "EXPLORE AI SOLUTIONS",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

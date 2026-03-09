@@ -72,15 +72,15 @@ Core module modifications that touch fundamental data models will break with eve
 
 ## Types of Customization (From Low to High Risk)
 
-| Type | Risk Level | Example | Upgrade Impact |
-|---|---|---|---|
-| **Configuration** | Very Low | Changing field labels, adding dropdown values | None |
-| **Custom reports** | Low | New dashboard or financial report | Minimal |
-| **Custom fields** | Low | Adding fields to existing models | Minimal |
-| **Automation rules** | Low-Medium | Automated email on status change | Low |
-| **Custom modules** | Medium | New standalone module for specialized workflow | Moderate |
-| **Core modifications** | High | Changing how standard modules work internally | Significant |
-| **Data model changes** | Very High | Modifying database structure of core modules | Major |
+| Type                   | Risk Level | Example                                        | Upgrade Impact |
+| ---------------------- | ---------- | ---------------------------------------------- | -------------- |
+| **Configuration**      | Very Low   | Changing field labels, adding dropdown values  | None           |
+| **Custom reports**     | Low        | New dashboard or financial report              | Minimal        |
+| **Custom fields**      | Low        | Adding fields to existing models               | Minimal        |
+| **Automation rules**   | Low-Medium | Automated email on status change               | Low            |
+| **Custom modules**     | Medium     | New standalone module for specialized workflow | Moderate       |
+| **Core modifications** | High       | Changing how standard modules work internally  | Significant    |
+| **Data model changes** | Very High  | Modifying database structure of core modules   | Major          |
 
 ### The Golden Rule
 
@@ -91,6 +91,7 @@ Core module modifications that touch fundamental data models will break with eve
 ### 1. Document the Business Case
 
 For every customization request, document:
+
 - **What** the customization does
 - **Why** it's needed (business justification)
 - **Who** benefits and how
@@ -113,6 +114,7 @@ Before any customization, ask: "What happens when we upgrade to the next version
 ### 4. Use Standard APIs and Extension Points
 
 Odoo provides official extension mechanisms:
+
 - **Inherited views** — modify forms and lists without replacing them
 - **Server actions** — add automation without custom code
 - **Computed fields** — add calculated data without new database columns
@@ -123,6 +125,7 @@ Using these mechanisms ensures better compatibility and maintainability.
 ### 5. Keep a Customization Registry
 
 Maintain a living document that tracks every customization:
+
 - Module name and version
 - Business justification
 - Technical approach
@@ -135,11 +138,12 @@ Maintain a living document that tracks every customization:
 At NETLINKS Inc., we follow a simple principle: **maximize business value while minimizing customization risk.**
 
 Our approach:
+
 1. **Configure first** — exhaust standard configuration options before proposing custom development
 2. **Evaluate process change** — challenge legacy habits and demonstrate standard best practices
 3. **Design for maintainability** — build custom modules that are upgrade-safe and well-documented
 4. **Document everything** — every customization has a business case, technical specification, and maintenance plan
 
-This disciplined approach delivers 4,500+ implementations where the system continues to evolve with the business — not fight against it.
+This disciplined approach delivers 5,000+ implementations where the system continues to evolve with the business — not fight against it.
 
 [Discuss your customization needs with our team →](/contact/)

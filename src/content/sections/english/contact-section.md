@@ -92,5 +92,5 @@ list:
     description: "Offices in Virginia, UAE, Afghanistan, and India."
   - icon: "Shield"
     title: "Trusted Partner"
-    description: "4,500+ clients trust NETLINKS worldwide."
+    description: "5,000+ clients trust NETLINKS worldwide."
 ---

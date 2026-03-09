@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "CRM Features That **Close More Deals**",
-  description: "Every tool your sales team needs to manage relationships, track opportunities, and grow revenue.",
+  description:
+    "Every tool your sales team needs to manage relationships, track opportunities, and grow revenue.",
   list: [
     {
       icon: "BarChart3",
       title: "Visual Pipeline",
-      description: "Drag-and-drop Kanban boards give instant visibility into every deal stage. Customize pipelines per team, product, or region."
+      description:
+        "Drag-and-drop Kanban boards give instant visibility into every deal stage. Customize pipelines per team, product, or region.",
     },
     {
       icon: "Target",
       title: "Lead Scoring",
-      description: "AI-powered scoring prioritizes the opportunities most likely to convert. Never miss a hot lead again."
+      description:
+        "AI-powered scoring prioritizes the opportunities most likely to convert. Never miss a hot lead again.",
     },
     {
       icon: "Mail",
       title: "Integrated Email",
-      description: "Send emails, track opens, and log all activity directly from Odoo. Full integration with Gmail and Outlook."
+      description:
+        "Send emails, track opens, and log all activity directly from Odoo. Full integration with Gmail and Outlook.",
     },
     {
       icon: "TrendingUp",
       title: "Revenue Forecasting",
-      description: "Real-time dashboards showing pipeline value, conversion rates, team performance, and projected revenue."
+      description:
+        "Real-time dashboards showing pipeline value, conversion rates, team performance, and projected revenue.",
     },
     {
       icon: "Phone",
       title: "VoIP Integration",
-      description: "Click-to-call, automatic logging, and call analytics built right into your CRM workflow."
+      description:
+        "Click-to-call, automatic logging, and call analytics built right into your CRM workflow.",
     },
     {
       icon: "Zap",
       title: "Workflow Automation",
-      description: "Automated follow-ups, task assignments, and stage transitions that keep your pipeline moving."
+      description:
+        "Automated follow-ups, task assignments, and stage transitions that keep your pipeline moving.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/crm-360-customer.png",
       imagePosition: "left",
       title: "360° Customer View — **Know Everything**",
-      description: "Every interaction — emails, calls, meetings, purchases, support tickets — in one unified record. Your team always has the context they need to deliver exceptional service.",
+      description:
+        "Every interaction — emails, calls, meetings, purchases, support tickets — in one unified record. Your team always has the context they need to deliver exceptional service.",
       stats: [
         { label: "Response Time Improvement", value: "45%" },
         { label: "Deal Close Rate Increase", value: "30%" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/crm-growth-engine.png",
       imagePosition: "right",
       title: "Not Just a CRM — **A Growth Engine**",
-      description: "Odoo CRM integrates natively with Sales, Marketing, Invoicing, and Support — creating a seamless flow from first touch to loyal customer. No more switching between disconnected tools.",
+      description:
+        "Odoo CRM integrates natively with Sales, Marketing, Invoicing, and Support — creating a seamless flow from first touch to loyal customer. No more switching between disconnected tools.",
       features: [
         "Automatic lead capture from website, email, and social channels.",
         "Smart activity scheduling with reminders and escalation rules.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Ready to Transform Your **Sales Pipeline?**",
-  description: "Get a personalized demo of Odoo CRM configured for your sales process. See how NETLINKS can help you close more deals, faster.",
+  description:
+    "Get a personalized demo of Odoo CRM configured for your sales process. See how NETLINKS can help you close more deals, faster.",
   background: "/src/assets/images/cta/cta-crm.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Odoo CRM Solutions" description="Manage leads, pipeline, and customer relationships with Odoo CRM implemented by NETLINKS. Track opportunities, automate follow-ups, and close deals faster." keywords={["Odoo CRM", "customer relationship management", "lead management software", "sales pipeline management", "CRM implementation", "Odoo CRM partner", "sales automation", "opportunity tracking"]}>
+<Base
+  title="Odoo CRM Solutions"
+  description="Manage leads, pipeline, and customer relationships with Odoo CRM implemented by NETLINKS. Track opportunities, automate follow-ups, and close deals faster."
+  keywords={[
+    "Odoo CRM",
+    "customer relationship management",
+    "lead management software",
+    "sales pipeline management",
+    "CRM implementation",
+    "Odoo CRM partner",
+    "sales automation",
+    "opportunity tracking",
+  ]}>
   <PageHeader
     title="Manage Your Pipeline, Close More **Deals**"
     description="Odoo CRM gives your sales team powerful, intuitive tools to manage the entire customer journey — from first contact to closed deal and beyond."
-  image="/images/heroes/hero-crm.png"
-  button={{ enable: true, label: "SEE CRM IN ACTION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-crm.png"
+    button={{
+      enable: true,
+      label: "SEE CRM IN ACTION",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

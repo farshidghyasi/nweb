@@ -55,7 +55,11 @@ if (!enable) return;
 ---
 
 <Element
-  class:list={[className, variant === "grey" && "bg-theme-light", "py-10 md:py-16"]}
+  class:list={[
+    className,
+    variant === "grey" && "bg-theme-light",
+    "py-10 md:py-16",
+  ]}
   {...rest}>
   <div class="container">
     <div class="mx-auto text-center">

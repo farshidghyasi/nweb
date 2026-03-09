@@ -13,10 +13,26 @@ async function createOdooLead(fields: {
   interests?: string;
   message?: string;
 }) {
-  const url      = (process.env.ODOO_URL      || import.meta.env.ODOO_URL      || "https://netlinks-erp.odoo.com").trim();
-  const db       = (process.env.ODOO_DB       || import.meta.env.ODOO_DB       || "netlinksaf-netlinks-erp-v15-main-6588773").trim();
-  const username = (process.env.ODOO_USERNAME  || import.meta.env.ODOO_USERNAME || "afghyasi@netlinks.net").trim();
-  const apiKey   = (process.env.ODOO_API_KEY   || import.meta.env.ODOO_API_KEY  || "").trim();
+  const url = (
+    process.env.ODOO_URL ||
+    import.meta.env.ODOO_URL ||
+    "https://netlinks-erp.odoo.com"
+  ).trim();
+  const db = (
+    process.env.ODOO_DB ||
+    import.meta.env.ODOO_DB ||
+    "netlinksaf-netlinks-erp-v15-main-6588773"
+  ).trim();
+  const username = (
+    process.env.ODOO_USERNAME ||
+    import.meta.env.ODOO_USERNAME ||
+    "afghyasi@netlinks.net"
+  ).trim();
+  const apiKey = (
+    process.env.ODOO_API_KEY ||
+    import.meta.env.ODOO_API_KEY ||
+    ""
+  ).trim();
 
   if (!apiKey) throw new Error("ODOO_API_KEY env var not set");
 
@@ -43,7 +59,7 @@ async function createOdooLead(fields: {
   const authJson = await authRes.json();
   if (authJson.error) {
     throw new Error(
-      `Odoo auth error: ${authJson.error?.data?.message || JSON.stringify(authJson.error)}`
+      `Odoo auth error: ${authJson.error?.data?.message || JSON.stringify(authJson.error)}`,
     );
   }
 
@@ -51,7 +67,16 @@ async function createOdooLead(fields: {
   if (!uid) throw new Error("Odoo auth failed: invalid credentials or API key");
 
   // Step 2: create crm.lead
-  const { name, email, phone, company, position, industry, interests, message } = fields;
+  const {
+    name,
+    email,
+    phone,
+    company,
+    position,
+    industry,
+    interests,
+    message,
+  } = fields;
   const leadTitle = `Website Inquiry: ${name}${interests ? ` — ${interests.split(", ").slice(0, 2).join(", ")}` : ""}`;
   const notes = [
     message || "",
@@ -101,14 +126,14 @@ async function createOdooLead(fields: {
   if (!createRes.ok) {
     const text = await createRes.text().catch(() => "(unreadable)");
     throw new Error(
-      `Odoo create HTTP ${createRes.status}: ${text.substring(0, 300)}`
+      `Odoo create HTTP ${createRes.status}: ${text.substring(0, 300)}`,
     );
   }
 
   const createJson = await createRes.json();
   if (createJson.error) {
     throw new Error(
-      `Odoo create error: ${createJson.error?.data?.message || JSON.stringify(createJson.error)}`
+      `Odoo create error: ${createJson.error?.data?.message || JSON.stringify(createJson.error)}`,
     );
   }
 
@@ -125,10 +150,10 @@ export const POST: APIRoute = async ({ request }) => {
     if (body.website) {
       console.log("[contact] SPAM blocked: honeypot triggered");
       // Return fake success to not tip off the bot
-      return new Response(
-        JSON.stringify({ success: true, leadId: 0 }),
-        { status: 200, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ success: true, leadId: 0 }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     // ── Anti-spam: time check ─────────────────────────────────────────────────
@@ -138,44 +163,55 @@ export const POST: APIRoute = async ({ request }) => {
       const elapsed = Date.now() - formTs;
       if (elapsed < 3000) {
         console.log(`[contact] SPAM blocked: too fast (${elapsed}ms)`);
-        return new Response(
-          JSON.stringify({ success: true, leadId: 0 }),
-          { status: 200, headers: { "Content-Type": "application/json" } }
-        );
+        return new Response(JSON.stringify({ success: true, leadId: 0 }), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        });
       }
     }
 
     // ── Anti-spam: Cloudflare Turnstile verification ──────────────────────────
     const turnstileToken = body["cf-turnstile-response"] || "";
-    const turnstileSecret = (process.env.TURNSTILE_SECRET_KEY || import.meta.env.TURNSTILE_SECRET_KEY || "").trim();
+    const turnstileSecret = (
+      process.env.TURNSTILE_SECRET_KEY ||
+      import.meta.env.TURNSTILE_SECRET_KEY ||
+      ""
+    ).trim();
 
     if (turnstileSecret && turnstileToken) {
-      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          secret: turnstileSecret,
-          response: turnstileToken,
-        }),
-      });
+      const verifyRes = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: turnstileSecret,
+            response: turnstileToken,
+          }),
+        },
+      );
       const verifyData = await verifyRes.json();
       if (!verifyData.success) {
-        console.log("[contact] SPAM blocked: Turnstile verification failed", verifyData["error-codes"]);
+        console.log(
+          "[contact] SPAM blocked: Turnstile verification failed",
+          verifyData["error-codes"],
+        );
         return new Response(
           JSON.stringify({
             success: false,
-            message: "Security verification failed. Please refresh and try again.",
+            message:
+              "Security verification failed. Please refresh and try again.",
           }),
-          { status: 403, headers: { "Content-Type": "application/json" } }
+          { status: 403, headers: { "Content-Type": "application/json" } },
         );
       }
     } else if (turnstileSecret && !turnstileToken) {
       // Secret is configured but no token was sent — likely a bot bypassing the widget
       console.log("[contact] SPAM blocked: no Turnstile token provided");
-      return new Response(
-        JSON.stringify({ success: true, leadId: 0 }),
-        { status: 200, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ success: true, leadId: 0 }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     const name = (body.name || "").trim();
@@ -194,18 +230,27 @@ export const POST: APIRoute = async ({ request }) => {
           success: false,
           message: "Please fill in all required fields.",
         }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
     // Create Odoo lead
-    const leadId = await createOdooLead({ name, email, company, position, phone, industry, interests, message });
+    const leadId = await createOdooLead({
+      name,
+      email,
+      company,
+      position,
+      phone,
+      industry,
+      interests,
+      message,
+    });
     console.log(`[contact] Odoo lead ${leadId} created | ${email}`);
 
-    return new Response(
-      JSON.stringify({ success: true, leadId }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ success: true, leadId }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err: any) {
     console.error("[contact] Odoo failed:", err.message);
     return new Response(
@@ -214,7 +259,7 @@ export const POST: APIRoute = async ({ request }) => {
         message:
           "There was a problem submitting your inquiry. Please email us directly at info@netlinks.net.",
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 };

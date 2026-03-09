@@ -1,18 +1,19 @@
 ---
 enable: true
-title: "About NETLINKS"
-description: "Founded in 2005, NETLINKS has grown from Afghanistan's leading IT company into a global technology powerhouse. With 400+ experts across four offices worldwide, we deliver enterprise solutions that help organizations thrive in the digital age."
-image: "/images/about/group-photo.jpg"
+title: "About Us"
+description: "A **global technology firm** delivering localized, cutting-edge, and highly scalable digital solutions to enterprise organizations worldwide."
+image: "/images/about/dotted-world-map-transparent.png"
+images:
+  - "/images/about/icon-us.png"
+  - "/images/about/icon-ae.png"
+  - "/images/about/icon-af.png"
+  - "/images/about/icon-in.png"
 
 ctaBlock:
-  title: "Making Technology Work Since 2005"
-  description: "From our roots in Kabul to our headquarters in Virginia, we've built a reputation for delivering technology that drives real business results. Our team of 400+ certified experts has served 4,500+ clients across every continent — because great technology should know no borders."
-  button:
-    enable: true
-    label: "Learn More About Us"
-    url: "/about/"
-    rel: ""
-    target: ""
-    variant: "text"
-    hoverEffect: "text-flip"
+  description: "Headquartered in Virginia, United States, **NETLINKS Inc.** is an industry leader in business automation, custom software, and Odoo ERP implementation. Backed by rigorous **ISO 9001:2015, ISO 27001:2022, and ISO 12207** certifications, our team of 400+ certified experts seamlessly drives digital transformation for over 5,000 global clients."
+  buttons:
+    - enable: true
+      label: "Explore our services"
+      url: "/services/"
+      variant: "primary"
 ---

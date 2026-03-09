@@ -15,12 +15,12 @@ body {
 /* Global Section Spacing */
 main.has-section-spacing-md section,
 .has-call-to-action {
-  @apply pt-16;
+  @apply pt-10;
 }
 
 main.has-section-spacing-lg > section,
 .has-call-to-action {
-  @apply pt-16 md:pt-24;
+  @apply pt-10 md:pt-16;
 }
 
 h1,

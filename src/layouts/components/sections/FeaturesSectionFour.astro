@@ -41,7 +41,12 @@ const { class: ClassName, variant = "white" } = Astro.props;
 if (!enable) return;
 ---
 
-<section class:list={[ClassName, variant === "grey" && "bg-theme-light", "py-20 md:py-32"]}>
+<section
+  class:list={[
+    ClassName,
+    variant === "grey" && "bg-theme-light",
+    "py-10 md:py-16",
+  ]}>
   <div class="container space-y-20">
     {
       items.map((item, index) => (
@@ -62,8 +67,6 @@ if (!enable) return;
               alt={item.title}
               height={item.imageHeight || 600}
             />
-
-
           </div>
 
           <div class="space-y-10">

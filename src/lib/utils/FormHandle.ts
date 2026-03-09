@@ -320,8 +320,7 @@ export const odooSubmit = async (form: HTMLFormElement, action: string) => {
         alert("✅ Thank you! Your inquiry has been received.");
       }
     } else {
-      const msg =
-        result.message || "Something went wrong. Please try again.";
+      const msg = result.message || "Something went wrong. Please try again.";
       setMessage(msg, false, false, form);
 
       if (!form.querySelector(".message.error")) {

@@ -13,37 +13,44 @@ export function getStaticPaths() {
 const featuresContent = {
   enable: true,
   title: "Transform Every Dimension of **Your Business**",
-  description: "A holistic approach that modernizes operations, customer experiences, data capabilities, and workforce enablement.",
+  description:
+    "A holistic approach that modernizes operations, customer experiences, data capabilities, and workforce enablement.",
   list: [
     {
       icon: "Cog",
       title: "Operations & Processes",
-      description: "Digitize manual workflows, automate repetitive tasks, and create data-driven operations that are faster, cheaper, and more reliable."
+      description:
+        "Digitize manual workflows, automate repetitive tasks, and create data-driven operations that are faster, cheaper, and more reliable.",
     },
     {
       icon: "Heart",
       title: "Customer Experience",
-      description: "Build seamless digital experiences across every touchpoint — website, mobile app, customer service, and post-sale support."
+      description:
+        "Build seamless digital experiences across every touchpoint — website, mobile app, customer service, and post-sale support.",
     },
     {
       icon: "BarChart3",
       title: "Data & Analytics",
-      description: "Transform raw data into strategic insights with modern analytics platforms, dashboards, and AI-powered decision support."
+      description:
+        "Transform raw data into strategic insights with modern analytics platforms, dashboards, and AI-powered decision support.",
     },
     {
       icon: "Users",
       title: "Workforce Enablement",
-      description: "Equip your team with modern tools — collaboration platforms, digital workspaces, and continuous learning programs."
+      description:
+        "Equip your team with modern tools — collaboration platforms, digital workspaces, and continuous learning programs.",
     },
     {
       icon: "Map",
       title: "Strategic Roadmapping",
-      description: "Practical roadmaps that sequence initiatives for maximum impact — quick wins that build momentum alongside transformational projects."
+      description:
+        "Practical roadmaps that sequence initiatives for maximum impact — quick wins that build momentum alongside transformational projects.",
     },
     {
       icon: "TrendingUp",
       title: "Measure & Scale",
-      description: "Track transformation progress with KPIs and metrics that matter — then scale successes across the organization."
+      description:
+        "Track transformation progress with KPIs and metrics that matter — then scale successes across the organization.",
     },
   ],
 };
@@ -55,7 +62,8 @@ const showcaseContent = {
       image: "/images/features/sections/dt-strategy-exec.png",
       imagePosition: "left",
       title: "Strategy **Plus** Execution",
-      description: "Digital transformation isn't just about technology — it's about reimagining how your business creates value. We guide organizations through every stage: strategic planning, technology implementation, and organizational change management.",
+      description:
+        "Digital transformation isn't just about technology — it's about reimagining how your business creates value. We guide organizations through every stage: strategic planning, technology implementation, and organizational change management.",
       stats: [
         { label: "Transformations Led", value: "500+" },
         { label: "Avg. Efficiency Gain", value: "45%" },
@@ -72,7 +80,8 @@ const showcaseContent = {
       image: "/images/features/sections/dt-build-not-advise.png",
       imagePosition: "right",
       title: "We Don't Just Advise — **We Build**",
-      description: "Unlike pure consultancies, NETLINKS combines strategic thinking with deep technical execution. We build and implement the ERP systems, custom applications, AI tools, and cloud infrastructure that power your transformation.",
+      description:
+        "Unlike pure consultancies, NETLINKS combines strategic thinking with deep technical execution. We build and implement the ERP systems, custom applications, AI tools, and cloud infrastructure that power your transformation.",
       features: [
         "Assessment of your current digital maturity and competitive position.",
         "Technology implementation: ERP, custom apps, AI, and cloud infrastructure.",
@@ -92,7 +101,8 @@ const showcaseContent = {
 const ctaContent = {
   enable: true,
   title: "Ready to **Transform?**",
-  description: "Start with a digital maturity assessment. We'll benchmark your organization and create a clear, actionable transformation roadmap.",
+  description:
+    "Start with a digital maturity assessment. We'll benchmark your organization and create a clear, actionable transformation roadmap.",
   background: "/src/assets/images/cta/cta-digital-transformation.png",
   button: {
     enable: true,
@@ -112,12 +122,30 @@ const ctaContent = {
 };
 ---
 
-<Base title="Digital Transformation — Strategy to Execution" description="Modernize operations, customer experiences, and data capabilities with NETLINKS. Strategy + execution — from assessment and roadmap to implementation and change management." keywords={["digital transformation services", "business modernization", "digital transformation company", "cloud migration services", "process digitization", "enterprise digital strategy", "change management consulting", "digital innovation"]}>
+<Base
+  title="Digital Transformation — Strategy to Execution"
+  description="Modernize operations, customer experiences, and data capabilities with NETLINKS. Strategy + execution — from assessment and roadmap to implementation and change management."
+  keywords={[
+    "digital transformation services",
+    "business modernization",
+    "digital transformation company",
+    "cloud migration services",
+    "process digitization",
+    "enterprise digital strategy",
+    "change management consulting",
+    "digital innovation",
+  ]}>
   <PageHeader
     title="Reimagine How Your Business **Creates Value**"
     description="Digital transformation isn't just about technology — it's about fundamentally rethinking your operations, customer experiences, and competitive position. We guide the journey from strategy to execution."
-  image="/images/heroes/hero-digital-transformation.png"
-  button={{ enable: true, label: "BEGIN YOUR TRANSFORMATION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+    image="/images/heroes/hero-digital-transformation.png"
+    button={{
+      enable: true,
+      label: "BEGIN YOUR TRANSFORMATION",
+      url: "/contact/",
+      variant: "fill",
+      hoverEffect: "text-flip",
+    }}
   />
   <FeaturesSectionTwo content={featuresContent} />
   <FeaturesSectionFour content={showcaseContent as any} variant="grey" />

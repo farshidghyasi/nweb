@@ -7,7 +7,6 @@ import HomeBanner from "@/components/sections/HomeBanner.astro";
 import FeaturesGrid from "@/components/sections/FeaturesGrid.astro";
 import CallToAction from "@/components/sections/CallToAction.astro";
 import InsightSection from "@/components/sections/InsightSection.astro";
-import TestimonialSection from "@/components/sections/TestimonialSection.astro";
 import FeaturesSectionFour from "@/components/sections/FeaturesSectionFour.astro";
 
 export function getStaticPaths() {
@@ -16,13 +15,41 @@ export function getStaticPaths() {
 
 const homepage = await getEntryCTM("homepage", "-index", Astro.currentLocale);
 
+const featuresSectionFourData = (
+  await getEntryCTM("sections", "features-section-four", Astro.currentLocale)
+)?.data as any;
+
+const featuresPartOne = featuresSectionFourData
+  ? { ...featuresSectionFourData, items: [featuresSectionFourData.items[0]] }
+  : undefined;
+const featuresPartTwo = featuresSectionFourData
+  ? { ...featuresSectionFourData, items: [featuresSectionFourData.items[1]] }
+  : undefined;
+const featuresPartThree = featuresSectionFourData
+  ? { ...featuresSectionFourData, items: [featuresSectionFourData.items[2]] }
+  : undefined;
+
 const ctaContent = {
   enable: true,
   title: "Ready to Transform Your Business with **Technology That Works?**",
-  description: "Join 4,500+ organizations worldwide that trust NETLINKS to power their digital transformation.",
+  description:
+    "Join 5,000+ organizations worldwide that trust NETLINKS to power their digital transformation.",
   background: "/src/assets/images/cta/cta-home.png",
-  button: { enable: true, label: "SCHEDULE A FREE CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
-  stats: { title: "4,500+", description: "Clients served <br /> worldwide", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+  button: {
+    enable: true,
+    label: "SCHEDULE A FREE CONSULTATION",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "5,000+",
+    description: "Clients served <br /> worldwide",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
 };
 ---
 
@@ -30,8 +57,9 @@ const ctaContent = {
   <HomeBanner />
   <FunFact />
   <FeaturesGrid variant="grey" />
-  <FeaturesSectionFour />
+  <FeaturesSectionFour content={featuresPartOne as any} variant="white" />
+  <FeaturesSectionFour content={featuresPartTwo as any} variant="grey" />
+  <FeaturesSectionFour content={featuresPartThree as any} variant="white" />
   <InsightSection variant="grey" />
-  <TestimonialSection />
   <CallToAction content={ctaContent} />
 </Base>

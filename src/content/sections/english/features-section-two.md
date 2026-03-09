@@ -1,17 +1,17 @@
 ---
 enable: true
-title: "Enterprise-Grade Capabilities, **Simple to Use**"
-description: "Built for enterprise scale, designed for everyday simplicity. Our solutions deliver powerful results without the complexity."
+title: "Our **Corporate Identity**"
+description: "Everything we do at NETLINKS is governed by a strict set of principles designed to ensure delivery of world-class technology solutions."
 
 # Control list
 list:
-  - icon: "Zap"
-    title: "Rapid Implementation"
-    description: "Go live 40% faster than the industry average with our proven deployment methodology."
-  - icon: "Shield"
-    title: "Enterprise Security"
-    description: "ISO 27001 certified infrastructure to keep your data protected at every layer."
-  - icon: "TrendingUp"
-    title: "Measurable ROI"
-    description: "Our clients see an average 30% cost reduction within the first year of implementation."
+  - icon: "Eye"
+    title: "Our Vision"
+    description: "To be the leading global firm in providing accessible, relevant, and effective enterprise ICT solutions."
+  - icon: "Target"
+    title: "Our Mission"
+    description: "Making Technology Work to empower customers to achieve unparalleled efficiency, transparency, effectiveness, and growth."
+  - icon: "ShieldCheck"
+    title: "Core Values"
+    description: "Creativity & Innovation, Sustainability, Customer Orientation, Equal Opportunity, Integrity & Discipline."
 ---

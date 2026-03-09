@@ -1,6 +1,6 @@
 ---
 title: "Transform Your Business with Technology That **Actually Works**"
-description: "From Odoo ERP implementation to AI-powered automation, NETLINKS delivers enterprise technology solutions that drive measurable growth for 4,500+ clients worldwide."
+description: "From Odoo ERP implementation to AI-powered automation, NETLINKS delivers enterprise technology solutions that drive measurable growth for 5,000+ clients worldwide."
 
 image: ""
 lineShape: "/images/line.svg"
@@ -8,7 +8,7 @@ gradientLeft: "/images/bannerGradient.svg"
 gradientRight: "/images/bannerGradientTwo.svg"
 
 announcementBar:
-  label: "Trusted by 4,500+ Clients Globally"
+  label: "Trusted by 5,000+ Clients Globally"
   icon: "Globe"
   url: "/customers/"
 

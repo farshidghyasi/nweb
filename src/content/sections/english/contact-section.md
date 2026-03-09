@@ -68,6 +68,12 @@ form:
       tag: "textarea"
       rows: "5"
       name: "message"
+    - note: "success"
+      content: "**Thank you!** Your inquiry has been received. We'll get back to you within 24 hours."
+      parentClass: "message success hidden"
+    - note: "warning"
+      content: "**Oops!** Something went wrong. Please try again or email us at info@netlinks.net."
+      parentClass: "message error hidden"
 
 testimonial:
   enable: true

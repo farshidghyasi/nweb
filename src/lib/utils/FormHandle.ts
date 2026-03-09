@@ -300,25 +300,43 @@ export const odooSubmit = async (form: HTMLFormElement, action: string) => {
       body: JSON.stringify(data),
     });
 
-    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(`Server error (${response.status})`);
+    }
+
+    let result;
+    try {
+      result = await response.json();
+    } catch {
+      throw new Error("Invalid server response");
+    }
 
     if (result.success === "true" || result.success === true) {
       setMessage("default", true, false, form);
       formReset(form);
+
+      // Fallback: if no message element exists, show alert
+      if (!form.querySelector(".message.success")) {
+        alert("✅ Thank you! Your inquiry has been received.");
+      }
     } else {
-      setMessage(
-        result.message || "Something went wrong. Please try again.",
-        false,
-        false,
-        form,
-      );
+      const msg =
+        result.message || "Something went wrong. Please try again.";
+      setMessage(msg, false, false, form);
+
+      if (!form.querySelector(".message.error")) {
+        alert("❌ " + msg);
+      }
     }
-  } catch (error) {
-    setMessage(
-      "Network error. Please try again or email us at info@netlinks.net.",
-      false,
-      false,
-      form,
-    );
+  } catch (error: any) {
+    const msg =
+      "Could not submit the form. Please try again or email us at info@netlinks.net.";
+    setMessage(msg, false, false, form);
+
+    // Fallback alert if no message element exists in DOM
+    if (!form.querySelector(".message.error")) {
+      alert("❌ " + msg);
+    }
+    console.error("Form submission error:", error);
   }
 };

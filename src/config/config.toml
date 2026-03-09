@@ -87,7 +87,7 @@
 
   # documentation - https://formspree.io/ | https://formsubmit.co/ | https://docs.netlify.com/forms/setup/
   # Form action URL for the contact form (For more settings related to form see "src/content/sections/contact-section.md")
-  contactFormAction = "/api/contact"
+  contactFormAction = "/api/contact/"
 
   # formspree | formsubmit.co | netlify | odoo (default is formsubmit.co) 
   contactFormProvider = "odoo"

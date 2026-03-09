@@ -10,6 +10,7 @@ import remarkParseContent from "./src/lib/utils/remarkParseContent.ts";
 import config from "./.astro/config.generated.json";
 import fontsJson from "./src/config/fonts.json";
 import { generateAstroFontsConfig } from "./src/lib/utils/AstroFont.ts";
+import vercel from "@astrojs/vercel";
 
 const fonts = generateAstroFontsConfig(fontsJson);
 
@@ -22,6 +23,7 @@ let {
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: vercel(),
   site: config.site.baseUrl ? config.site.baseUrl : "http://examplesite.com",
   trailingSlash: config.site.trailingSlash ? "always" : "never",
   image: {

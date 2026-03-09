@@ -24,6 +24,7 @@
     "node": ">=18.20.8 <19 || >=20.3.0 <21 || >=22.0.0"
   },
   "dependencies": {
+    "@astrojs/vercel": "^9.0.4",
     "@floating-ui/dom": "^1.7.4",
     "@lucide/astro": "^0.548.0",
     "@preline/accordion": "^3.2.3",

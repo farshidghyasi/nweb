@@ -14,10 +14,11 @@ const hasCta = menu.cta && menu.cta.enable;
 
 <div
   class:list={[
-    "hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden rounded-xl border bg-white shadow-xl opacity-0 transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:fixed lg:h-fit",
+    "hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden rounded-xl border bg-white shadow-xl opacity-0 transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:absolute lg:h-fit",
     {
       "lg:left-1/2 lg:-translate-x-1/2 lg:w-[1100px]": IsMultiColMenu && hasCta,
-      "lg:right-0 lg:w-[780px]": IsMultiColMenu && !hasCta,
+      "lg:right-0 lg:w-[640px]": IsMultiColMenu && !hasCta && menu.name === "Company",
+      "lg:left-0 lg:w-[780px]": IsMultiColMenu && !hasCta && menu.name !== "Company",
       "lg:left-0 lg:w-fit": !IsMultiColMenu,
     },
   ]}>

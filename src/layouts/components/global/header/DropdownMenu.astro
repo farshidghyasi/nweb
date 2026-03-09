@@ -12,7 +12,7 @@ const menu = Astro.props.menu as NavigationLink;
   class:list={[
     "hs-dropdown nav-dropdown group [--auto-close:inside] [--offset:0px]",
     recursive ? "nav-dropdown-item [--placement:right-start]" : "nav-item",
-    menu.hasMegaMenu || menu.hasChildren ? "lg:static relative" : "",
+    menu.hasMegaMenu || menu.hasChildren ? "relative" : "",
     menu.hasMegaMenu
       ? "lg:[--strategy:absolute]"
       : menu.hasChildren

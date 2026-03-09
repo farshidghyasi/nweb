@@ -7,6 +7,7 @@ import Header from "@/components/global/header/Header.astro";
 import type { JSONLDProps } from "@/lib/utils/JsonLdGenerator";
 import PageLoader from "./components/utilities/PageLoader.astro";
 import GlobalScripts from "./components/widgets/GlobalScripts.astro";
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 import config from ".astro/config.generated.json" with { type: "json" };
 import BreakpointIndicator from "./components/widgets/BreakpointIndicator.astro";
@@ -54,6 +55,7 @@ const sectionSpacingClass =
 
     <GlobalScripts />
     <BreakpointIndicator />
+    <SpeedInsights />
 
   </body>
 </html>

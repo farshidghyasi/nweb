@@ -87,6 +87,7 @@ if (!enable) return null;
       formspreeSubmit,
       netlifySubmit,
       formSubmit,
+      odooSubmit,
       isFormFilled,
       setMessage,
       validateSelectTag,
@@ -127,14 +128,6 @@ if (!enable) return null;
         selectTags.forEach(validateSelectTag);
 
         if (isFormFilled(form)) {
-          // Console.log form data for debugging
-          // const formData = Object.fromEntries(new FormData(form).entries());
-          // console.log(
-          //   Object.entries(formData)
-          //     .map(([key, value]) => `${key}: ${value}`)
-          //     .join("\n\n"),
-          // );
-
           setMessage("Form Submitting!...", true, true, form);
 
           try {
@@ -147,6 +140,9 @@ if (!enable) return null;
                   form,
                   action,
                 });
+                break;
+              case "odoo":
+                await odooSubmit(form, action);
                 break;
               case "formspree":
                 await formspreeSubmit(
@@ -161,7 +157,7 @@ if (!enable) return null;
           } catch (error) {
             setMessage(
               error +
-                "! Please use this mail - [finzo-astro-theme@gmail.com](mailto:finzo-astro-theme@gmail.com) to submit a ticket!",
+                "! Please email us directly at [info@netlinks.net](mailto:info@netlinks.net)",
               false,
               false,
               form,

@@ -245,7 +245,7 @@ export const formspreeSubmit = async (
   } catch (error) {
     setMessage(
       error +
-        "! Please use this mail - [finzo-astro-theme@gmail.com](mailto:finzo-astro-theme@gmail.com) to submit a ticket!",
+        "! Please email us directly at [info@netlinks.net](mailto:info@netlinks.net)",
       true,
       false,
       form,

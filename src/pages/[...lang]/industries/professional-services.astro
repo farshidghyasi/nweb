@@ -1,0 +1,38 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Built for **Services Firms**",
+  description: "Profitability depends on utilization, accurate billing, and project delivery. We build systems that optimize all three.",
+  list: [
+    { icon: "ClipboardList", title: "Project Delivery", description: "Manage engagements with Kanban boards, Gantt charts, task dependencies, and milestone tracking." },
+    { icon: "Timer", title: "Time & Billing", description: "Accurate timesheet tracking with mobile entry, approval workflows, and direct invoicing integration." },
+    { icon: "Users", title: "Resource Planning", description: "Allocate team members, monitor utilization rates, and forecast capacity across all engagements." },
+    { icon: "ExternalLink", title: "Client Portal", description: "Share project updates, deliverables, and invoices through a branded, secure portal." },
+    { icon: "DollarSign", title: "Financial Management", description: "Revenue recognition, WIP tracking, and project profitability analysis for informed decisions." },
+    { icon: "Target", title: "Business Development", description: "Track opportunities, manage proposals, and forecast pipeline alongside active project delivery." },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Optimize **Your Services Business?**",
+  description: "See how NETLINKS can improve utilization, billing accuracy, and project margins for your team.",
+  background: "/src/assets/images/cta/cta-profserv.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "60%", description: "Admin time <br /> reduction", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="ERP for Professional Services — Odoo Solutions" description="Odoo ERP for professional services — project management, time tracking, resource planning, and invoicing by NETLINKS." keywords={["professional services ERP", "consulting firm software", "project-based ERP", "time and billing software", "resource planning tool", "professional services automation", "Odoo for consultants", "services firm management"]}>
+  <PageHeader title="Services Firms Run Better, **Bill More Accurately**" description="For consulting firms, agencies, and service organizations — NETLINKS implements solutions tailored for the professional services model." image="/images/heroes/hero-services.png" button={{ enable: true, label: "EXPLORE SERVICE SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <CallToAction content={ctaContent} />
+</Base>

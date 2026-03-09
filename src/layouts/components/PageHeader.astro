@@ -1,0 +1,143 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import AnimatedText from "./widgets/AnimatedText.astro";
+import CustomButton from "./CustomButton.astro";
+import OptimizedImage from "./utilities/OptimizedImage.astro";
+
+const {
+  textAnimation = true,
+  title,
+  description,
+  image,
+  button,
+  class: ClassName = "pt-16 pb-10 md:pb-16",
+  tag: Element = "section",
+} = Astro.props;
+
+// Determine layout: split if image is provided, centered if not
+const hasSplitLayout = !!image;
+---
+
+<Element class:list={[ClassName, "overflow-hidden relative"]}>
+  <!-- Gradient Shapes -->
+  <OptimizedImage
+    class="max-md:translate-x-centered absolute bottom-0 -z-10 h-128 opacity-70 md:top-[100px] md:-left-25 md:h-225"
+    src="/images/bannerGradient.svg"
+  />
+
+  <OptimizedImage
+    class="absolute -right-37.5 -z-10 hidden h-175 w-auto md:top-[200px] md:block"
+    src="/images/bannerGradientTwo.svg"
+  />
+
+  <OptimizedImage
+    class="absolute top-[30%] -left-36 -z-10 h-100 w-212.5 rotate-[-40deg] opacity-15 md:top-[-300px] md:left-[-550px] md:h-300 md:opacity-5"
+    alt="Vector"
+    src="/images/line.svg"
+  />
+
+  <OptimizedImage
+    class="absolute top-[30%] -right-40 -z-10 h-100 w-212.5 rotate-60 opacity-15 md:-top-36 md:-right-134 md:h-280 md:opacity-5"
+    alt="Vector"
+    src="/images/line.svg"
+  />
+
+  <div class="container relative">
+    {
+      hasSplitLayout ? (
+        <div class="flex flex-col items-center gap-10 md:flex-row md:gap-16 lg:gap-20">
+          <div class="w-full space-y-6 text-center md:w-1/2 md:text-left">
+            {title && textAnimation ? (
+              <AnimatedText
+                tag="h1"
+                duration={0.6}
+                stagger={0.07}
+                class="has-italic-text text-h2 capitalize"
+                content={markdownify(title)}
+              />
+            ) : (
+              <h1
+                class="has-italic-text text-h2 capitalize"
+                set:html={markdownify(title)}
+              />
+            )}
+
+            {description && textAnimation ? (
+              <AnimatedText
+                tag="p"
+                stagger={0.015}
+                duration={0.4}
+                delay={0.2}
+                content={markdownify(description)}
+                class="text-lg/relaxed opacity-80"
+              />
+            ) : (
+              <p
+                class="text-lg/relaxed opacity-80"
+                set:html={markdownify(description)}
+              />
+            )}
+
+            {button?.enable && (
+              <div data-aos="fade-up" data-aos-delay="400" class="pt-2">
+                <CustomButton {...button} />
+              </div>
+            )}
+          </div>
+
+          <div
+            class="w-full md:w-1/2"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
+            <OptimizedImage
+              src={image}
+              class="mx-auto w-full max-w-lg"
+              alt={
+                typeof title === "string"
+                  ? title.replace(/\*\*/g, "")
+                  : "Hero image"
+              }
+            />
+          </div>
+        </div>
+      ) : (
+        <div class="space-y-4 text-center">
+          {title && textAnimation ? (
+            <AnimatedText
+              tag="h1"
+              duration={0.6}
+              stagger={0.07}
+              class="has-italic-text text-h2 capitalize"
+              content={markdownify(title)}
+            />
+          ) : (
+            <h1
+              class="has-italic-text text-h2 capitalize"
+              set:html={markdownify(title)}
+            />
+          )}
+
+          {description && textAnimation ? (
+            <AnimatedText
+              tag="p"
+              stagger={0.015}
+              duration={0.4}
+              delay={0.2}
+              content={markdownify(description)}
+            />
+          ) : (
+            <p set:html={markdownify(description)} />
+          )}
+
+          {button?.enable && (
+            <div data-aos="fade-up" data-aos-delay="400" class="pt-4">
+              <CustomButton {...button} />
+            </div>
+          )}
+        </div>
+      )
+    }
+  </div>
+</Element>

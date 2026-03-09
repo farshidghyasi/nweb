@@ -1,0 +1,37 @@
+{
+  "common": {
+    "readMore": "Read More Details",
+    "category": "Category",
+    "emailPlaceholder": "Email Address",
+    "paginationNext": "Next",
+    "paginationPrevious": "Previous",
+    "contactDropdownSearch404": "No results were found",
+    "404Heading": "404 - Page Not Found",
+    "404Description": "The page you're looking for doesn't exist or has been moved.",
+    "404ButtonLabel": "Go Back to Home"
+  },
+  "navigation": {
+    "buttonLabel": "Get Started"
+  },
+  "contactInfo": {
+    "locationLabel": "Headquarters",
+    "location": "Virginia, United States",
+    "phoneLabel": "Phone Number",
+    "phone": "+1 (703) 555-0199",
+    "emailLabel": "Email",
+    "email": "info@netlinks.net"
+  },
+  "subscription": {
+    "title": "Stay Updated",
+    "description": "Subscribe to get the latest insights on ERP, AI, and digital transformation."
+  },
+  "integration": {
+    "relatedIntegrationSectionTitle": "Related **Services**",
+    "backToIntegration": "All Services"
+  },
+  "footerBlock": {
+    "description": "Making Technology Work — Enterprise technology partner delivering Odoo ERP, custom software, and AI solutions to 4,500+ clients globally.",
+    "copyright": "Copyright © 2026 NETLINKS. All Rights Reserved.",
+    "contactBlockLabel": "Contact Us"
+  }
+}

@@ -1,0 +1,97 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import HowItWorks from "@/layouts/components/sections/HowItWorks.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const processContent = {
+  enable: true,
+  title: "Our 6-Phase **Implementation Methodology**",
+  list: [
+    {
+      step: "01.",
+      title: "Discovery & Requirements",
+      description: "Stakeholder interviews, process mapping, pain point identification, and success criteria definition. We invest in understanding before building.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+    {
+      step: "02.",
+      title: "Solution Design",
+      description: "Architecture design, module selection, integration mapping, data migration strategy, and detailed timeline planning.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+    {
+      step: "03.",
+      title: "Build & Configure",
+      description: "Iterative development with sprint demos and continuous feedback. Configuration, customization, integration, and trial data migrations.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+  ],
+};
+
+const processContentTwo = {
+  enable: true,
+  title: "Deploy, Train, and **Continuously Improve**",
+  list: [
+    {
+      step: "04.",
+      title: "Testing & Validation",
+      description: "User acceptance testing, integration testing, performance testing, security review, and comprehensive data validation.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+    {
+      step: "05.",
+      title: "Training & Go-Live",
+      description: "Role-based training, administrator certification, go-live support with on-site team, and hypercare with rapid response.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+    {
+      step: "06.",
+      title: "Continuous Improvement",
+      description: "Monthly check-ins, optimization reviews, feature enhancement planning, performance monitoring, and ongoing user support.",
+      button: { label: "Contact Us", url: "/contact/", enable: false },
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/method-6phase.png", imagePosition: "left",
+      title: "Agile Discipline + **Enterprise Rigor**",
+      description: "Our methodology isn't just Agile and it isn't just Waterfall — it's a refined hybrid that gives you the best of both. Sprint-based delivery keeps momentum. Phase gates ensure nothing slips through the cracks.",
+      list: [],
+      stats: [{ label: "Faster Than Industry Average", value: "40%" }, { label: "On-Time Delivery Rate", value: "95%" }],
+      button: { enable: true, label: "Start Your Project", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Start **With Confidence?**",
+  description: "Every great project starts with a conversation. Tell us about your goals and we'll show you exactly how we'll get there.",
+  background: "/src/assets/images/cta/cta-methodology.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "1,000+", description: "Projects delivered <br /> on methodology", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="ERP Implementation Methodology — 6-Phase Process" description="NETLINKS proven 6-phase implementation methodology — from discovery to go-live and beyond." keywords={["ERP implementation methodology", "Odoo deployment process", "project methodology", "phased implementation", "ERP go-live process", "implementation best practices", "agile ERP implementation"]}>
+  <PageHeader
+    title="A Proven Path From **Vision to Reality**"
+    description="Great technology is only as good as its implementation. Our refined 6-phase methodology — developed across thousands of projects — ensures every engagement succeeds."
+    image="/images/heroes/hero-methodology.png"
+    class="pt-16 pb-0"
+    button={{ enable: true, label: "START YOUR PROJECT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <HowItWorks content={processContent} variant="white" class="pt-0" />
+  <HowItWorks content={processContentTwo} variant="grey" />
+  <FeaturesSectionFour content={showcaseContent as any} />
+  <CallToAction content={ctaContent} />
+</Base>

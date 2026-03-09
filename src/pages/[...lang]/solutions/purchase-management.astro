@@ -1,0 +1,38 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Smarter Procurement **From End to End**",
+  description: "Control spending, optimize vendor relationships, and automate your entire purchasing workflow.",
+  list: [
+    { icon: "RefreshCw", title: "Auto Reordering", description: "Set minimum stock rules and Odoo generates purchase orders automatically when inventory drops below threshold." },
+    { icon: "Users", title: "Vendor Management", description: "Track vendor performance, compare prices, manage contracts, and always negotiate from a position of knowledge." },
+    { icon: "FileCheck", title: "Purchase Agreements", description: "Manage blanket orders and framework agreements with automated call-offs and price tracking." },
+    { icon: "ScanLine", title: "Receipt & QC", description: "Streamline receiving with barcode scanning, quality inspections, and three-way matching verification." },
+    { icon: "BarChart", title: "Spend Analytics", description: "Analyze spending by vendor, category, and department. Identify savings opportunities with data-driven insights." },
+    { icon: "Workflow", title: "Approval Workflows", description: "Multi-level approval chains based on amount, department, or product category ensure compliance and control." },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Optimize **Your Procurement?**",
+  description: "See how Odoo Purchase Management can reduce costs and streamline your vendor relationships.",
+  background: "/src/assets/images/cta/cta-purchase.png",
+  button: { enable: true, label: "SCHEDULE A FREE DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "30%", description: "Average procurement <br /> cost savings", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo Purchase & Procurement Management" description="Automate procurement and vendor management with Odoo Purchase Management — implemented by NETLINKS." keywords={["Odoo purchase management", "procurement automation", "vendor management", "purchase order software", "supply chain procurement", "Odoo procurement module", "automated purchasing", "supplier management system"]}>
+  <PageHeader title="Procurement That **Pays for Itself**" description="Optimize your purchasing with automated reordering, vendor scoring, and spend analytics that deliver measurable cost savings." image="/images/heroes/hero-purchase.png" button={{ enable: true, label: "OPTIMIZE PROCUREMENT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <CallToAction content={ctaContent} />
+</Base>

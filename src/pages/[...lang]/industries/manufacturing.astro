@@ -1,0 +1,53 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Solutions for **Modern Manufacturing**",
+  description: "Integrated ERP systems that connect planning, production, quality, and supply chain into one real-time platform.",
+  list: [
+    { icon: "Factory", title: "Production Planning", description: "MRP, capacity planning, and real-time shop floor data optimize your production schedules for maximum throughput." },
+    { icon: "Layers", title: "Bill of Materials", description: "Multi-level BOMs with routing operations, work centers, and configurable product variants." },
+    { icon: "ShieldCheck", title: "Quality Control", description: "Integrated quality checkpoints — incoming inspection, in-process checks, and final QA at every stage." },
+    { icon: "Package", title: "Inventory & Supply Chain", description: "Real-time tracking, automated reordering, vendor management, and multi-warehouse operations." },
+    { icon: "Wrench", title: "Maintenance", description: "Preventive and corrective maintenance scheduling to maximize uptime and extend equipment life." },
+    { icon: "BarChart3", title: "OEE Analytics", description: "Real-time dashboards for OEE, production throughput, scrap rates, and cost analysis." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/mfg-shopfloor-connect.png", imagePosition: "left",
+      title: "From Shop Floor **to Top Floor**",
+      description: "NETLINKS connects your production operations to your business systems. When an order is placed, production is scheduled. When goods are finished, inventory updates — and accounting records it — all automatically.",
+      stats: [{ label: "Manufacturing Efficiency Gain", value: "35%" }, { label: "Scrap Rate Reduction", value: "25%" }],
+      button: { enable: true, label: "See Manufacturing Solutions", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Transform **Your Factory?**",
+  description: "Get a consultation on how NETLINKS can optimize your manufacturing operations with integrated ERP and automation.",
+  background: "/src/assets/images/cta/cta-manufacturing.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "35%", description: "Average efficiency <br /> improvement", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="ERP for Manufacturing — Odoo Solutions" description="Odoo ERP solutions for manufacturing — production planning, MRP, quality control, and shop floor management by NETLINKS." keywords={["manufacturing ERP", "Odoo manufacturing", "production planning software", "MRP system", "quality control software", "shop floor management", "manufacturing automation", "industrial ERP solution"]}>
+  <PageHeader title="Manufacturing Solutions That **Scale With You**" description="From discrete manufacturing to process production — NETLINKS delivers integrated solutions that connect your shop floor to your business." image="/images/heroes/hero-manufacturing.png" button={{ enable: true, label: "EXPLORE MANUFACTURING SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

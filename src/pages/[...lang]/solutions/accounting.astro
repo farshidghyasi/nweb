@@ -1,0 +1,60 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Financial Management **Made Simple**",
+  description: "Everything your finance team needs — from automated reconciliation to multi-currency reporting — in one powerful platform.",
+  list: [
+    { icon: "Building2", title: "Bank Reconciliation", description: "Connect your bank accounts and let Odoo match transactions automatically. Days of work reduced to minutes." },
+    { icon: "Globe", title: "Multi-Currency", description: "Manage finances across currencies, companies, and countries with automatic exchange rate updates and consolidated reporting." },
+    { icon: "Shield", title: "Tax Compliance", description: "Stay compliant with automated tax calculations, VAT returns, and country-specific fiscal requirements worldwide." },
+    { icon: "PieChart", title: "Financial Reporting", description: "Balance sheets, P&L, cash flow reports, and custom financial dashboards — all updated in real-time." },
+    { icon: "CreditCard", title: "AP & AR Automation", description: "Automate vendor payments, customer invoicing, and aging reports with configurable rules and smart reminders." },
+    { icon: "Wallet", title: "Budget Management", description: "Set budgets by department, project, or account. Track actuals vs. budget with automatic threshold alerts." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/acct-financial-dashboard.png", imagePosition: "left",
+      title: "Close Your Books **In Hours, Not Weeks**",
+      description: "Odoo Accounting automates the tedious work — bank reconciliation, expense categorization, and revenue recognition — so your team can focus on strategic financial decisions instead of data entry.",
+      stats: [{ label: "Month-End Close Time", value: "75% faster" }, { label: "Manual Entry Reduction", value: "90%" }],
+      button: { enable: true, label: "See Accounting in Action", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+    {
+      image: "/images/features/sections/acct-compliance-reporting.png", imagePosition: "right",
+      title: "Real-Time Visibility, **Confident Decisions**",
+      description: "No more waiting for month-end to understand your financial position. Odoo gives you live dashboards, automated alerts, and drill-down reports that keep leadership informed and empowered.",
+      features: ["Real-time P&L and balance sheet dashboards.", "Custom KPI tracking with threshold alerts.", "Multi-company consolidation in a single view."],
+      button: { enable: true, label: "Schedule a Demo", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Simplify **Your Finances?**",
+  description: "See how Odoo Accounting can automate your financial operations and give you real-time visibility across your business.",
+  background: "/src/assets/images/cta/cta-accounting.png",
+  button: { enable: true, label: "GET A FREE ACCOUNTING DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "90%", description: "Less manual <br /> data entry", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo Accounting — Financial Management Software" description="Full-featured financial management with Odoo Accounting — automated reconciliation, tax compliance, and real-time reporting by NETLINKS." keywords={["Odoo accounting", "financial management software", "ERP accounting", "automated reconciliation", "tax compliance software", "invoicing software", "Odoo finance module", "cloud accounting solution"]}>
+  <PageHeader title="Financial Management **Made Simple**" description="Odoo Accounting automates your financial workflows — from bank reconciliation to tax reporting — giving you real-time visibility into your business." image="/images/heroes/hero-accounting.png" button={{ enable: true, label: "EXPLORE ACCOUNTING", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

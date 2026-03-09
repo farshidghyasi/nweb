@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "Connect Odoo With **Everything**",
+  description: "Seamless integrations with 100+ third-party platforms, APIs, and cloud services for unified data flow across your business.",
+  list: [
+    {
+      icon: "ShoppingCart",
+      title: "eCommerce Integrations",
+      description: "Connect with Shopify, WooCommerce, and Magento for real-time inventory sync, order management, and unified customer data."
+    },
+    {
+      icon: "CreditCard",
+      title: "Payment Gateways",
+      description: "Integrate Stripe, PayPal, Square, and regional payment providers for automated payment processing and reconciliation."
+    },
+    {
+      icon: "Truck",
+      title: "Shipping & Logistics",
+      description: "Connect with FedEx, UPS, DHL, and local carriers for automated shipping labels, tracking, and delivery management."
+    },
+    {
+      icon: "Landmark",
+      title: "Accounting & Banking",
+      description: "Sync with banking systems, QuickBooks, and financial platforms for automated bank reconciliation and reporting."
+    },
+    {
+      icon: "Users",
+      title: "CRM & Marketing Tools",
+      description: "Integrate with HubSpot, Salesforce, Mailchimp, and marketing platforms to maintain one source of truth for customer data."
+    },
+    {
+      icon: "Code",
+      title: "Custom API Development",
+      description: "Build custom REST and XML-RPC integrations for proprietary systems, legacy applications, and industry-specific software."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/integ-connected-systems.png",
+      imagePosition: "left",
+      title: "API-First Architecture — **Built for Scale**",
+      description: "Our integration architecture is designed for reliability and performance. Robust error handling, real-time synchronization, and comprehensive monitoring ensure your connected systems work flawlessly at any scale.",
+      stats: [
+        { label: "Third-Party Integrations", value: "100+" },
+        { label: "Uptime Reliability", value: "99.9%" },
+      ],
+      button: {
+        enable: true,
+        label: "Plan Your Integration",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/integ-seamless-flow.png",
+      imagePosition: "right",
+      title: "End-to-End Integration **Lifecycle**",
+      description: "From system audit and architecture design to development, testing, and ongoing maintenance — we manage the complete integration lifecycle to keep your data flowing seamlessly.",
+      features: [
+        "System audit to map your current technology landscape.",
+        "Rigorous testing at every integration point before go-live.",
+        "Real-time monitoring and alerting for all active integrations.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Approach",
+        url: "/company/implementation-methodology/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Need to Connect **Your Systems?**",
+  description: "Tell us what systems need to talk to Odoo — we'll architect and build a reliable integration solution.",
+  background: "/src/assets/images/cta/cta-odoo-integration.png",
+  button: {
+    enable: true,
+    label: "DISCUSS YOUR INTEGRATION",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "99.9%",
+    description: "Integration <br /> uptime",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="Odoo Integration Services — Connect 100+ Systems" description="Connect Odoo with 100+ third-party platforms — eCommerce, payments, shipping, banking, CRM, and custom APIs. Seamless data flow by NETLINKS." keywords={["Odoo integration", "ERP integration services", "API integration", "Odoo third-party connectors", "eCommerce integration", "payment gateway integration", "Odoo API development", "system integration services"]}>
+  <PageHeader
+    title="Seamless Integrations That **Unify Your Stack**"
+    description="Your ERP doesn't exist in isolation. We connect Odoo with every system in your technology stack — payment gateways, eCommerce, shipping, banking, CRM, and custom APIs."
+  image="/images/heroes/hero-odoo-integration.png"
+  button={{ enable: true, label: "EXPLORE INTEGRATIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

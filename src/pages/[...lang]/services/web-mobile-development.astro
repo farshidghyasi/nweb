@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "Web & Mobile Solutions That **Delight Users**",
+  description: "Beautiful, responsive digital experiences built with modern frameworks for exceptional performance and engagement.",
+  list: [
+    {
+      icon: "Monitor",
+      title: "Corporate Websites & Portals",
+      description: "Modern, SEO-optimized websites that represent your brand professionally and convert visitors into leads."
+    },
+    {
+      icon: "AppWindow",
+      title: "Web Applications",
+      description: "Complex, interactive web apps built with React, Next.js, and modern frameworks for smooth, app-like experiences."
+    },
+    {
+      icon: "ShoppingBag",
+      title: "eCommerce Platforms",
+      description: "Custom online stores and marketplaces with integrated payments, inventory management, and analytics."
+    },
+    {
+      icon: "Smartphone",
+      title: "Native iOS & Android",
+      description: "High-performance native apps built with Swift and Kotlin for the best possible mobile user experience."
+    },
+    {
+      icon: "Layers",
+      title: "Cross-Platform Apps",
+      description: "Build once, deploy everywhere with React Native and Flutter — reducing time-to-market without sacrificing quality."
+    },
+    {
+      icon: "Briefcase",
+      title: "Enterprise Mobile Apps",
+      description: "Field service apps, sales tools, inventory scanners, and workflow applications for your mobile workforce."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/webmob-responsive.png",
+      imagePosition: "left",
+      title: "Design-First — **User Experience Matters**",
+      description: "Every project starts with user research and UX design. We create intuitive interfaces that people actually enjoy using — because beautiful design drives adoption, and adoption drives ROI.",
+      stats: [
+        { label: "User Satisfaction Rate", value: "96%" },
+        { label: "Projects Delivered", value: "500+" },
+      ],
+      button: {
+        enable: true,
+        label: "Discuss Your App Idea",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/webmob-ux-design.png",
+      imagePosition: "right",
+      title: "Performance & Accessibility **Built In**",
+      description: "We don't bolt on performance or accessibility — they're engineered from the start. Responsive layouts that work on every device, WCAG-compliant accessibility, and optimized load times for global reach.",
+      features: [
+        "User-centered design validated with real user testing.",
+        "Responsive layouts that work flawlessly on every device.",
+        "WCAG accessibility compliance and performance optimization.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Portfolio",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Have an App **Idea?**",
+  description: "From concept to launch — tell us what you're building and we'll make it happen with world-class design and engineering.",
+  background: "/src/assets/images/cta/cta-web-mobile.png",
+  button: {
+    enable: true,
+    label: "DISCUSS YOUR PROJECT",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "500+",
+    description: "Web & mobile <br /> apps delivered",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="Web & Mobile App Development Services" description="Beautiful, responsive websites and native mobile apps by NETLINKS. React, Next.js, Swift, Kotlin, React Native — design-first development for exceptional user experiences." keywords={["web development services", "mobile app development", "React development", "Next.js development", "responsive web design", "native mobile apps", "cross-platform development", "UI/UX design services"]}>
+  <PageHeader
+    title="Stunning Web & Mobile Apps That **Drive Results**"
+    description="In today's mobile-first world, your digital presence is your competitive advantage. We design and develop websites and mobile apps that delight users and deliver business outcomes."
+  image="/images/heroes/hero-web-mobile.png"
+  button={{ enable: true, label: "DISCUSS YOUR PROJECT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

@@ -1,0 +1,124 @@
+---
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import type { NavigationLink } from "@/types";
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils";
+import CustomButton from "@/components/CustomButton.astro";
+import Icons from "@/helpers/Icons.astro";
+
+const menu = Astro.props.menu as NavigationLink;
+const enabledMenus = menu.menus?.filter((menu) => menu.enable) || [];
+
+const IsMultiColMenu = enabledMenus.length >= 2;
+const hasCta = menu.cta && menu.cta.enable;
+---
+
+<div
+  class:list={[
+    "hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden rounded-xl border bg-white shadow-xl opacity-0 transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:fixed lg:h-fit",
+    {
+      "lg:left-1/2 lg:-translate-x-1/2 lg:w-[1100px]": IsMultiColMenu && hasCta,
+      "lg:right-0 lg:w-[780px]": IsMultiColMenu && !hasCta,
+      "lg:left-0 lg:w-fit": !IsMultiColMenu,
+    },
+  ]}>
+  <div class="md:flex">
+    {
+      menu.menus && enabledMenus.length > 0 && (
+        <div
+          class:list={[
+            "flex-1 min-w-0 p-2 md:p-4 lg:flex lg:flex-row lg:gap-x-2",
+          ]}>
+          {menu.menus
+            .filter((menu) => menu.enable)
+            .map((menuGroup) => (
+              <ul
+                class:list={[
+                  "flex-1 min-w-0 [&>li:not(:first-child)>a]:pt-1",
+                  {
+                    "w-full md:w-[320px]": !IsMultiColMenu,
+                  },
+                ]}>
+                {menuGroup.children?.map((child) => (
+                  <li role="menuitem">
+                    <a
+                      {...{
+                        rel: child.url?.startsWith("http")
+                          ? child.rel || "noopener noreferrer"
+                          : child.rel || undefined,
+                        target: child.url?.startsWith("http")
+                          ? child.target || "_blank"
+                          : child.target || undefined,
+                      }}
+                      target={
+                        child.url?.startsWith("http") ? "_blank" : undefined
+                      }
+                      href={getLocaleUrlCTM(
+                        child.url || Astro.url.origin,
+                        Astro.currentLocale,
+                      )}
+                      class="group/item flex gap-x-3 rounded-lg px-3 py-2.5 text-inherit transition-colors hover:bg-slate-50">
+                      {child.icon && (
+                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-100 text-slate-600 transition-colors group-hover/item:bg-white group-hover/item:text-primary group-hover/item:shadow-sm">
+                          <Icons
+                            icon={child.icon as any}
+                            class="h-4 w-4"
+                          />
+                        </span>
+                      )}
+                      <div class="min-w-0">
+                        {child.name && (
+                          <div
+                            class="text-sm font-semibold tracking-normal text-slate-900"
+                            set:html={child.name}
+                          />
+                        )}
+                        {child.description && (
+                          <p
+                            class="mt-0.5 text-xs leading-relaxed text-slate-500"
+                            set:html={child.description}
+                          />
+                        )}
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+        </div>
+      )
+    }
+
+    {
+      menu.cta && menu.cta.enable && (
+        <div
+          class="w-full space-y-4 border-l border-slate-100 bg-slate-50 p-5 md:w-[280px] md:shrink-0">
+          {menu.cta.image && (
+            <OptimizedImage
+              width={260}
+              src={menu.cta.image}
+              class="h-auto w-full rounded-xl object-cover object-center"
+            />
+          )}
+          <div class="space-y-1.5">
+            {menu.cta.title && (
+              <div class="text-base font-semibold tracking-normal text-slate-900" set:html={menu.cta.title} />
+            )}
+            {menu.cta.description && (
+              <p
+                class="text-sm leading-relaxed text-slate-500"
+                set:html={menu.cta.description}
+              />
+            )}
+          </div>
+          {menu.cta.button?.enable && (
+            <CustomButton
+              {...menu.cta.button}
+              content={menu.cta.button}
+              class=""
+            />
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>

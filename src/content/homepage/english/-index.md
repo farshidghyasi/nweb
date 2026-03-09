@@ -1,0 +1,21 @@
+---
+title: "NETLINKS"
+metaTitle: "NETLINKS — Odoo ERP Implementation & Enterprise Technology Partner"
+metaDescription: "Enterprise technology partner delivering Odoo ERP, custom software, AI automation, and digital transformation. Offices in Virginia, UAE & Afghanistan. 4,500+ clients globally. ISO 9001, ISO 27001 certified."
+keywords:
+  - "NETLINKS"
+  - "Odoo ERP implementation"
+  - "Odoo implementation partner"
+  - "enterprise technology partner"
+  - "custom software development"
+  - "AI automation solutions"
+  - "digital transformation"
+  - "Odoo partner Virginia"
+  - "ERP implementation Washington DC"
+  - "Odoo partner UAE"
+  - "IT company Afghanistan"
+  - "ERP consulting USA"
+  - "Odoo consulting Canada"
+  - "ISO certified technology company"
+  - "Odoo gold partner"
+---

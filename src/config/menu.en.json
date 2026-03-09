@@ -1,0 +1,420 @@
+{
+  "main": [
+    {
+      "enable": true,
+      "name": "Home",
+      "weight": 0,
+      "url": "/"
+    },
+    {
+      "enable": true,
+      "name": "Solutions",
+      "weight": 1,
+      "hasMegaMenu": true,
+      "cta": {
+        "enable": true,
+        "image": "/images/logo-2x.png",
+        "title": "Transform Your Business",
+        "description": "See how NETLINKS can streamline your operations with Odoo ERP.",
+        "button": {
+          "enable": true,
+          "hoverEffect": "text-flip",
+          "label": "Schedule a Consultation",
+          "url": "/contact/",
+          "rel": "",
+          "target": ""
+        }
+      },
+      "menus": [
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "LayoutGrid",
+              "name": "Odoo ERP Overview",
+              "description": "Complete enterprise resource planning platform.",
+              "url": "/solutions/odoo-erp/"
+            },
+            {
+              "enable": true,
+              "icon": "Users",
+              "name": "CRM",
+              "description": "Manage leads, pipeline, and customer relationships.",
+              "url": "/solutions/crm/"
+            },
+            {
+              "enable": true,
+              "icon": "TrendingUp",
+              "name": "Sales Management",
+              "description": "Streamline quotations, orders, and sales workflows.",
+              "url": "/solutions/sales-management/"
+            },
+            {
+              "enable": true,
+              "icon": "Calculator",
+              "name": "Accounting",
+              "description": "Full-featured financial management and reporting.",
+              "url": "/solutions/accounting/"
+            },
+            {
+              "enable": true,
+              "icon": "ShoppingCart",
+              "name": "Purchase Management",
+              "description": "Automate procurement and vendor management.",
+              "url": "/solutions/purchase-management/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "Package",
+              "name": "Inventory Management",
+              "description": "Real-time warehouse and stock optimization.",
+              "url": "/solutions/inventory-management/"
+            },
+            {
+              "enable": true,
+              "icon": "Monitor",
+              "name": "Point of Sale",
+              "description": "Modern POS integrated with your back office.",
+              "url": "/solutions/point-of-sale/"
+            },
+            {
+              "enable": true,
+              "icon": "UserCheck",
+              "name": "Human Resources",
+              "description": "Employee management, payroll, and recruitment.",
+              "url": "/solutions/hr/"
+            },
+            {
+              "enable": true,
+              "icon": "ClipboardList",
+              "name": "Project Management",
+              "description": "Plan, track, and deliver projects on time.",
+              "url": "/solutions/project-management/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Services",
+      "weight": 2,
+      "hasMegaMenu": true,
+      "cta": {
+        "enable": true,
+        "image": "/images/logo-2x.png",
+        "title": "Need Expert Help?",
+        "description": "Our 400+ technology experts are ready to accelerate your growth.",
+        "button": {
+          "enable": true,
+          "hoverEffect": "text-flip",
+          "label": "Talk to an Expert",
+          "url": "/contact/",
+          "rel": "",
+          "target": ""
+        }
+      },
+      "menus": [
+        {
+          "enable": true,
+          "title": "Odoo Services",
+          "children": [
+            {
+              "enable": true,
+              "icon": "Rocket",
+              "name": "Odoo Implementation",
+              "description": "End-to-end ERP deployment and go-live.",
+              "url": "/services/odoo-implementation/"
+            },
+            {
+              "enable": true,
+              "icon": "Code",
+              "name": "Odoo Customization",
+              "description": "Tailored modules and workflows for your business.",
+              "url": "/services/odoo-customization/"
+            },
+            {
+              "enable": true,
+              "icon": "Link",
+              "name": "Odoo Integration",
+              "description": "Connect Odoo with your existing systems.",
+              "url": "/services/odoo-integration/"
+            },
+            {
+              "enable": true,
+              "icon": "RefreshCw",
+              "name": "Odoo Migration",
+              "description": "Seamless upgrade from legacy ERP systems.",
+              "url": "/services/odoo-migration/"
+            },
+            {
+              "enable": true,
+              "icon": "Layers",
+              "name": "Custom Software",
+              "description": "Bespoke applications built for your needs.",
+              "url": "/services/custom-software-development/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "title": "AI & Digital",
+          "children": [
+            {
+              "enable": true,
+              "icon": "Smartphone",
+              "name": "Web & Mobile Development",
+              "description": "Responsive web and native mobile apps.",
+              "url": "/services/web-mobile-development/"
+            },
+            {
+              "enable": true,
+              "icon": "Bot",
+              "name": "Agentic AI & Automation",
+              "description": "Intelligent automation and AI-powered workflows.",
+              "url": "/services/agentic-ai-automation/"
+            },
+            {
+              "enable": true,
+              "icon": "Brain",
+              "name": "AI & Technology Consulting",
+              "description": "Strategic AI roadmap and technology advisory.",
+              "url": "/services/ai-consulting/"
+            },
+            {
+              "enable": true,
+              "icon": "Zap",
+              "name": "Digital Transformation",
+              "description": "Modernize operations and accelerate growth.",
+              "url": "/services/digital-transformation/"
+            },
+            {
+              "enable": true,
+              "icon": "Megaphone",
+              "name": "Digital Marketing",
+              "description": "Data-driven marketing strategies and execution.",
+              "url": "/services/digital-marketing/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Industries",
+      "weight": 3,
+      "hasMegaMenu": true,
+      "menus": [
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "Factory",
+              "name": "Manufacturing",
+              "description": "Streamline production, inventory, and quality control.",
+              "url": "/industries/manufacturing/"
+            },
+            {
+              "enable": true,
+              "icon": "ShoppingBag",
+              "name": "Retail & eCommerce",
+              "description": "Unify POS, online sales, and customer management.",
+              "url": "/industries/retail-ecommerce/"
+            },
+            {
+              "enable": true,
+              "icon": "Briefcase",
+              "name": "Professional Services",
+              "description": "Manage projects, billing, and client relationships.",
+              "url": "/industries/professional-services/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "Landmark",
+              "name": "Public Sector",
+              "description": "Transparent governance and citizen service delivery.",
+              "url": "/industries/public-sector/"
+            },
+            {
+              "enable": true,
+              "icon": "Heart",
+              "name": "Nonprofits",
+              "description": "Donor management, grants, and program tracking.",
+              "url": "/industries/nonprofits/"
+            },
+            {
+              "enable": true,
+              "icon": "Wrench",
+              "name": "Trades & Field Services",
+              "description": "Job scheduling, dispatch, and mobile workforce.",
+              "url": "/industries/trades-field-services/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Company",
+      "weight": 4,
+      "hasMegaMenu": true,
+      "menus": [
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "Building2",
+              "name": "About Us",
+              "description": "20+ years of enterprise technology expertise.",
+              "url": "/about/"
+            },
+            {
+              "enable": true,
+              "icon": "Award",
+              "name": "Why Netlinks",
+              "description": "What sets us apart from other technology partners.",
+              "url": "/company/why-netlinks/"
+            },
+            {
+              "enable": true,
+              "icon": "Users",
+              "name": "Our Customers",
+              "description": "4,500+ businesses trust us worldwide.",
+              "url": "/company/customers/"
+            },
+            {
+              "enable": true,
+              "icon": "GitBranch",
+              "name": "Implementation Methodology",
+              "description": "Our proven process for delivering results.",
+              "url": "/company/implementation-methodology/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "icon": "FileText",
+              "name": "Blog",
+              "description": "Insights, guides, and industry thought leadership.",
+              "url": "/blog/"
+            },
+            {
+              "enable": true,
+              "icon": "HelpCircle",
+              "name": "FAQ",
+              "description": "Answers to commonly asked questions.",
+              "url": "/company/faq/"
+            },
+            {
+              "enable": true,
+              "icon": "Mail",
+              "name": "Contact Us",
+              "description": "Get in touch with our team today.",
+              "url": "/contact/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "label": "Services",
+      "list": [
+        {
+          "enable": true,
+          "name": "Odoo Implementation",
+          "url": "/services/odoo-implementation/",
+          "weight": 0
+        },
+        {
+          "enable": true,
+          "name": "Odoo Customization",
+          "url": "/services/odoo-customization/",
+          "weight": 1
+        },
+        {
+          "enable": true,
+          "name": "Custom Software",
+          "url": "/services/custom-software-development/",
+          "weight": 2
+        },
+        {
+          "enable": true,
+          "name": "AI & Automation",
+          "url": "/services/agentic-ai-automation/",
+          "weight": 3
+        },
+        {
+          "enable": true,
+          "name": "Digital Transformation",
+          "url": "/services/digital-transformation/",
+          "weight": 4
+        },
+        {
+          "enable": true,
+          "name": "Digital Marketing",
+          "url": "/services/digital-marketing/",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "label": "Company",
+      "list": [
+        {
+          "enable": true,
+          "name": "About Us",
+          "url": "/about/",
+          "weight": 0
+        },
+        {
+          "enable": true,
+          "name": "Why Netlinks",
+          "url": "/company/why-netlinks/",
+          "weight": 1
+        },
+        {
+          "enable": true,
+          "name": "Blog",
+          "url": "/blog/",
+          "weight": 2
+        },
+        {
+          "enable": true,
+          "name": "Customers",
+          "url": "/company/customers/",
+          "weight": 3
+        },
+        {
+          "enable": true,
+          "name": "Contact",
+          "url": "/contact/",
+          "weight": 4
+        },
+        {
+          "enable": true,
+          "name": "FAQ",
+          "url": "/company/faq/",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

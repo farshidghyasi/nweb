@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "Customization That **Fits Your Business**",
+  description: "When standard Odoo modules don't cover your needs, we build custom solutions that integrate seamlessly with the platform.",
+  list: [
+    {
+      icon: "Puzzle",
+      title: "Custom Module Development",
+      description: "Purpose-built modules for your specific processes — fully integrated with the Odoo ecosystem and upgrade-safe."
+    },
+    {
+      icon: "Workflow",
+      title: "Workflow Automation",
+      description: "Automate approval chains, task routing, and business processes with custom workflow rules that save time and reduce errors."
+    },
+    {
+      icon: "BarChart3",
+      title: "Custom Reports & Dashboards",
+      description: "Tailored KPI dashboards, financial reports, and real-time analytics built directly into Odoo for data-driven decisions."
+    },
+    {
+      icon: "Layout",
+      title: "UI/UX Enhancements",
+      description: "Customized interfaces that match your team's workflow — intuitive, efficient, and designed for each user role."
+    },
+    {
+      icon: "Link",
+      title: "Third-Party Integrations",
+      description: "Connect Odoo with payment gateways, shipping providers, CRM tools, eCommerce platforms, and any existing software."
+    },
+    {
+      icon: "ShieldCheck",
+      title: "Upgrade-Safe Code",
+      description: "Clean, maintainable code following Odoo best practices — your customizations survive version updates without rework."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/custom-code-dev.png",
+      imagePosition: "left",
+      title: "Business Logic, **Not Just Code**",
+      description: "Our developers don't just write code — they understand business processes. This dual expertise means your customizations solve real problems and deliver genuine efficiency gains, not just technical features.",
+      stats: [
+        { label: "Custom Modules Delivered", value: "1,200+" },
+        { label: "Avg. Efficiency Gain", value: "40%" },
+      ],
+      button: {
+        enable: true,
+        label: "Discuss Your Requirements",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/custom-tailored-solution.png",
+      imagePosition: "right",
+      title: "Development Standards You Can **Trust**",
+      description: "Every custom module follows strict quality standards — comprehensive testing, full documentation, version control, and upgrade-safe architecture. Your investment is protected for the long term.",
+      features: [
+        "Git-based development workflow with code reviews.",
+        "Automated testing before every deployment.",
+        "Complete documentation for maintenance and future development.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Process",
+        url: "/company/implementation-methodology/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Need Odoo **Customized?**",
+  description: "Tell us what your standard Odoo can't do yet — we'll design and build a solution that fits perfectly.",
+  background: "/src/assets/images/cta/cta-odoo-customization.png",
+  button: {
+    enable: true,
+    label: "DISCUSS YOUR REQUIREMENTS",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "100%",
+    description: "Upgrade-safe <br /> customizations",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="Odoo Customization & Module Development Services" description="Custom Odoo modules, workflow automation, tailored reports, and UI enhancements by NETLINKS. Upgrade-safe customizations that fit your exact business processes." keywords={["Odoo customization", "custom Odoo modules", "Odoo development services", "Odoo workflow automation", "tailored ERP solutions", "Odoo UI customization", "bespoke Odoo development", "Odoo customization company"]}>
+  <PageHeader
+    title="Tailored Odoo Solutions for **Your Unique Business**"
+    description="Every business is different. We customize and extend Odoo to fit your exact processes — from custom modules and automated workflows to tailored reports and integrations."
+  image="/images/heroes/hero-customization.png"
+  button={{ enable: true, label: "DISCUSS YOUR REQUIREMENTS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

@@ -1,0 +1,75 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const faqs = [
+  {
+    category: "General",
+    items: [
+      { q: "What does NETLINKS do?", a: "NETLINKS is a global enterprise technology company providing Odoo ERP implementation, custom software development, AI & automation solutions, web & mobile development, and digital transformation consulting. We serve 4,500+ clients across 50+ countries." },
+      { q: "Where is NETLINKS located?", a: "Our headquarters are in Virginia, USA, with offices in UAE, Afghanistan, and India. We serve clients worldwide with global delivery capabilities." },
+      { q: "How long has NETLINKS been in business?", a: "NETLINKS was founded in 2005 — we have 20+ years of technology experience and a team of 400+ certified experts." },
+    ],
+  },
+  {
+    category: "Odoo ERP",
+    items: [
+      { q: "What is Odoo ERP?", a: "Odoo is the world's most popular open-source ERP platform with 82+ integrated business applications covering sales, CRM, accounting, HR, inventory, manufacturing, and more — all working together seamlessly." },
+      { q: "Is NETLINKS a certified Odoo Partner?", a: "Yes, NETLINKS is an official certified Odoo Partner with deep expertise across all Odoo modules and versions." },
+      { q: "How long does an Odoo implementation take?", a: "A typical implementation takes 8–16 weeks, depending on scope, modules, customization needs, and data complexity. We provide detailed timelines during discovery." },
+      { q: "Can you migrate from our existing ERP?", a: "Absolutely. We've migrated organizations from SAP, Oracle, Microsoft Dynamics, QuickBooks, and many other systems to Odoo with zero data loss and minimal disruption." },
+    ],
+  },
+  {
+    category: "Projects & Pricing",
+    items: [
+      { q: "How much does an implementation cost?", a: "Costs vary based on modules, users, customization, and complexity. We offer transparent pricing with no hidden fees. Contact us for a tailored quote." },
+      { q: "Do you provide ongoing support?", a: "Yes, we offer flexible support plans including dedicated support teams, SLA-based response times, monthly optimization reviews, and continuous improvement services." },
+      { q: "Can you work with our existing IT team?", a: "Absolutely. We collaborate with internal IT teams regularly, providing the specialized expertise your team needs while maintaining knowledge transfer throughout." },
+    ],
+  },
+];
+
+const ctaContent = {
+  enable: true,
+  title: "Still Have **Questions?**",
+  description: "Our team is here to help. Schedule a free consultation and get personalized answers to all your questions.",
+  background: "/src/assets/images/cta/cta-faq.png",
+  button: { enable: true, label: "ASK US ANYTHING", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "24hr", description: "Average response <br /> time", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Frequently Asked Questions" description="Answers to common questions about NETLINKS services, Odoo ERP, pricing, timelines, and support." keywords={["NETLINKS FAQ", "Odoo ERP questions", "ERP implementation FAQ", "Odoo pricing questions", "ERP support FAQ", "technology consulting FAQ"]}>
+  <PageHeader title="Frequently Asked **Questions**" description="Get answers to the most common questions about our services, pricing, methodology, and support." image="/images/heroes/hero-faq.png" button={{ enable: true, label: "STILL HAVE QUESTIONS?", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+
+  <section class="py-20 md:py-32">
+    <div class="container">
+      <div class="mx-auto max-w-4xl space-y-16">
+        {faqs.map((category) => (
+          <div class="space-y-8" data-aos="fade-up-sm">
+            <h2 class="h4 border-b pb-4 text-primary">{category.category}</h2>
+            <div class="space-y-6">
+              {category.items.map((faq) => (
+                <details class="group rounded-2xl bg-theme-light p-6 transition-all">
+                  <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark transition-colors group-open:text-primary">
+                    <span class="pr-4">{faq.q}</span>
+                    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-300 text-gray-400 transition-transform group-open:rotate-45 group-open:border-primary group-open:text-primary">+</span>
+                  </summary>
+                  <p class="mt-4 leading-relaxed text-gray-600">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction content={ctaContent} />
+</Base>

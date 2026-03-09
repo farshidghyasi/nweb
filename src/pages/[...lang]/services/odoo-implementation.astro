@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "A Proven Methodology for **ERP Success**",
+  description: "Our implementation framework has been refined across 4,500+ client engagements to eliminate risk and accelerate time-to-value.",
+  list: [
+    {
+      icon: "Search",
+      title: "Discovery & Requirements",
+      description: "Stakeholder interviews, process mapping, pain point identification, and success criteria definition. We invest in understanding before building."
+    },
+    {
+      icon: "Settings",
+      title: "Solution Design",
+      description: "Architecture design, module selection, integration mapping, data migration strategy, and detailed timeline planning."
+    },
+    {
+      icon: "Database",
+      title: "Build & Configure",
+      description: "Iterative development with sprint demos and continuous feedback. Configuration, customization, integration, and trial data migrations."
+    },
+    {
+      icon: "ClipboardCheck",
+      title: "Testing & Validation",
+      description: "User acceptance testing, integration testing, performance testing, security review, and comprehensive data validation."
+    },
+    {
+      icon: "Rocket",
+      title: "Training & Go-Live",
+      description: "Role-based training, administrator certification, go-live support with on-site team, and hypercare with rapid response."
+    },
+    {
+      icon: "HeadphonesIcon",
+      title: "Continuous Improvement",
+      description: "Monthly check-ins, optimization reviews, feature enhancement planning, performance monitoring, and ongoing user support."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/impl-erp-dashboard.png",
+      imagePosition: "left",
+      title: "Certified Odoo Partner — **Proven Expertise**",
+      description: "NETLINKS is an official Odoo partner with 20+ years of enterprise ERP experience. Our 400+ technology experts have delivered thousands of successful implementations across manufacturing, retail, services, and public sector organizations worldwide.",
+      stats: [
+        { label: "Successful Implementations", value: "4,500+" },
+        { label: "Average Go-Live Timeline", value: "12 weeks" },
+      ],
+      button: {
+        enable: true,
+        label: "Schedule a Consultation",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/impl-business-transform.png",
+      imagePosition: "right",
+      title: "Not Just Deployment — **Business Transformation**",
+      description: "We don't just install software. We analyze your workflows, eliminate inefficiencies, and design an Odoo environment that drives measurable business outcomes. Every implementation is tailored to your industry, processes, and growth objectives.",
+      features: [
+        "Agile project management with phased delivery milestones.",
+        "Industry-specific configurations for manufacturing, retail, and services.",
+        "Full integration with your existing tools — payment, shipping, accounting.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Methodology",
+        url: "/company/implementation-methodology/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Implement **Odoo ERP?**",
+  description: "Get a personalized implementation assessment and project roadmap. See how NETLINKS can transform your operations with Odoo.",
+  background: "/src/assets/images/cta/cta-odoo-implementation.png",
+  button: {
+    enable: true,
+    label: "GET YOUR FREE ASSESSMENT",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "100%",
+    description: "Data migration <br /> success rate",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="Odoo ERP Implementation Services — Certified Partner" description="End-to-end Odoo ERP implementation by NETLINKS — from discovery and configuration to data migration, training, and go-live support. 4,500+ successful deployments." keywords={["Odoo implementation services", "ERP implementation partner", "Odoo deployment", "ERP go-live support", "Odoo data migration", "ERP training", "Odoo certified partner", "enterprise ERP implementation"]}>
+  <PageHeader
+    title="End-to-End ERP Implementation That **Delivers Results**"
+    description="From discovery and planning to go-live and beyond — NETLINKS delivers Odoo implementations that are on time, on budget, and drive measurable ROI from day one."
+  image="/images/heroes/hero-erp.png"
+  button={{ enable: true, label: "GET A FREE CONSULTATION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

@@ -1,0 +1,38 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Complete Warehouse **Control**",
+  description: "Real-time visibility, automated processes, and powerful analytics to keep your supply chain running flawlessly.",
+  list: [
+    { icon: "Building", title: "Multi-Warehouse", description: "Manage inventory across unlimited locations with inter-warehouse transfers, drop-shipping, and cross-docking." },
+    { icon: "ScanLine", title: "Barcode & RFID", description: "Streamline picking, packing, and shipping with mobile barcode scanning and RFID integration." },
+    { icon: "RefreshCw", title: "Smart Reordering", description: "Automated rules based on lead times, safety stock, and demand forecasting keep you stocked without overstock." },
+    { icon: "Hash", title: "Lot & Serial Tracking", description: "Full traceability from supplier to customer with lot numbers, serial numbers, and expiration dates." },
+    { icon: "Route", title: "Routes & Operations", description: "Configure complex fulfillment routes — make-to-order, make-to-stock, kit assemblies, and more." },
+    { icon: "DollarSign", title: "Real-Time Valuation", description: "Automatic inventory valuation with FIFO, LIFO, and average cost methods integrated with accounting." },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Transform **Your Warehouse?**",
+  description: "See how Odoo Inventory can give you real-time control over your entire supply chain.",
+  background: "/src/assets/images/cta/cta-inventory.png",
+  button: { enable: true, label: "GET A FREE INVENTORY DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "99.5%", description: "Inventory accuracy <br /> with Odoo", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo Inventory Management" description="Real-time warehouse and stock optimization with Odoo Inventory — multi-location tracking, barcode scanning, and automated reordering by NETLINKS." keywords={["Odoo inventory", "warehouse management system", "stock optimization", "barcode inventory", "multi-location inventory", "automated reordering", "Odoo WMS", "supply chain management"]}>
+  <PageHeader title="The Right Stock, Right Place, **Right Time**" description="Take full control of your warehouse operations with Odoo's modern inventory management. Real-time tracking, automated processes, and intelligent analytics." image="/images/heroes/hero-inventory.png" button={{ enable: true, label: "OPTIMIZE YOUR INVENTORY", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <CallToAction content={ctaContent} />
+</Base>

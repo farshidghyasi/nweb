@@ -1,0 +1,68 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FunFact from "@/layouts/components/sections/FunFact.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import TestimonialSection from "@/layouts/components/sections/TestimonialSection.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "What Sets NETLINKS **Apart**",
+  description: "There are many technology firms. Here's why 4,500+ organizations chose us.",
+  list: [
+    { icon: "Award", title: "20+ Years of Experience", description: "Founded in 2005, we've navigated two decades of technology evolution — always at the cutting edge, always delivering." },
+    { icon: "Users", title: "400+ Certified Experts", description: "Not just developers — certified Odoo consultants, AI engineers, business analysts, and project managers." },
+    { icon: "ShieldCheck", title: "ISO Certified", description: "ISO 9001 (Quality), ISO 27001 (Security), ISO 12207 (Software Lifecycle) certified — meeting the highest international standards." },
+    { icon: "Globe", title: "Global Delivery", description: "Offices in Virginia, UAE, Afghanistan, and India. We follow the sun to deliver coverage single-location firms can't match." },
+    { icon: "Layers", title: "End-to-End Capabilities", description: "ERP, custom software, AI, web & mobile, digital transformation — one partner for all your technology needs." },
+    { icon: "Target", title: "Client-First Philosophy", description: "We measure success by your success. Long-term partnerships, responsive support, and measurable business outcomes." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/wn-proven-methodology.png", imagePosition: "left",
+      title: "Proven Methodology, **Proven Results**",
+      description: "Our implementation methodology has been refined across thousands of projects. We combine Agile flexibility with enterprise discipline to deliver projects that are on time, on budget, and exceed expectations.",
+      stats: [{ label: "Faster Than Industry Average", value: "40%" }, { label: "Client Satisfaction", value: "98%" }],
+      button: { enable: true, label: "See Our Methodology", url: "/implementation-methodology/", variant: "fill", hoverEffect: "text-flip" },
+    },
+    {
+      image: "/images/features/sections/wn-full-spectrum-tech.png", imagePosition: "right",
+      title: "One Partner for **Everything Technology**",
+      description: "Unlike boutique specialists, NETLINKS covers the entire technology spectrum. This means no handoffs between vendors, no integration gaps, and no finger-pointing. Just one team that understands your entire technology ecosystem.",
+      features: [
+        "ERP implementation and customization experts.",
+        "AI and automation engineers for next-gen solutions.",
+        "Custom software developers for bespoke business tools.",
+      ],
+      button: { enable: true, label: "Start a Conversation", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Experience the **NETLINKS Difference?**",
+  description: "Join 4,500+ organizations that trust NETLINKS for their technology transformation. Let's talk about your goals.",
+  background: "/src/assets/images/cta/cta-why-netlinks.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "4,500+", description: "Organizations <br /> trust NETLINKS", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Why Choose NETLINKS — Certified Odoo Partner" description="Discover why 4,500+ organizations choose NETLINKS as their enterprise technology partner. ISO 9001, ISO 27001, ISO 12207 certified. Global reach and proven results." keywords={["why NETLINKS", "ISO 9001 certified", "ISO 27001 certified", "ISO 12207 certified", "Odoo gold partner", "enterprise technology partner", "certified ERP company", "best Odoo implementation partner"]}>
+  <PageHeader title="Why 4,500+ Organizations Choose **NETLINKS**" description="Certified expertise. Proven methodology. Global delivery. See what sets NETLINKS apart from every other technology partner." image="/images/heroes/hero-company.png" button={{ enable: true, label: "GET STARTED WITH US", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FunFact />
+  <FeaturesSectionTwo content={featuresContent} variant="grey" />
+  <FeaturesSectionFour content={showcaseContent as any} />
+  <TestimonialSection variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

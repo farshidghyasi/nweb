@@ -1,0 +1,60 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Sell Smarter with **Odoo Sales**",
+  description: "From quotation to payment — every step automated, tracked, and optimized for maximum revenue.",
+  list: [
+    { icon: "FileText", title: "Professional Quotations", description: "Create beautiful, branded quotations in minutes with product configurators, optional items, and electronic signatures." },
+    { icon: "ShoppingBag", title: "Order Management", description: "Convert quotes to sales orders with one click. Automatic inventory allocation, delivery scheduling, and invoicing." },
+    { icon: "Repeat", title: "Subscription Management", description: "Manage recurring revenue with automated billing, renewals, and upsell tracking for predictable growth." },
+    { icon: "BarChart2", title: "Sales Analytics", description: "Real-time dashboards showing revenue by product, team, region, and time period. Forecast with confidence." },
+    { icon: "Globe", title: "eCommerce Integration", description: "Seamlessly connect your online store with back-office operations for unified omnichannel selling." },
+    { icon: "Award", title: "Sales Gamification", description: "Motivate your team with targets, leaderboards, and achievements that drive performance and engagement." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/sales-pipeline-mgmt.png", imagePosition: "left",
+      title: "Quote to Cash in **Record Time**",
+      description: "Odoo Sales eliminates manual handoffs between your sales team, warehouse, and accounting. When a deal closes, inventory is allocated, delivery is scheduled, and invoices are generated — automatically.",
+      stats: [{ label: "Faster Quote Turnaround", value: "60%" }, { label: "Order Processing Time Saved", value: "45%" }],
+      button: { enable: true, label: "See Odoo Sales in Action", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+    {
+      image: "/images/features/sections/sales-forecast-analytics.png", imagePosition: "right",
+      title: "Sell Everywhere, **Manage From One Place**",
+      description: "Whether your customers buy through your website, mobile app, sales team, or retail store — Odoo Sales gives you unified order management, pricing, and reporting across all channels.",
+      features: ["Unified pricing rules and discount policies across all channels.", "Customer-specific pricelists and tiered pricing.", "Multi-currency and multi-company support built in."],
+      button: { enable: true, label: "Schedule a Demo", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Accelerate **Your Sales?**",
+  description: "See how Odoo Sales Management can streamline your entire sales process — from first quote to final payment.",
+  background: "/src/assets/images/cta/cta-sales.png",
+  button: { enable: true, label: "SCHEDULE A FREE DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "4,500+", description: "Businesses trust <br /> NETLINKS", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo Sales Management — Quote to Cash" description="Streamline quotations, orders, and invoicing with Odoo Sales Management — implemented by NETLINKS for maximum efficiency." keywords={["Odoo sales management", "quotation management", "sales order software", "invoicing automation", "Odoo sales module", "sales workflow optimization", "order management system", "B2B sales software"]}>
+  <PageHeader title="Sell Smarter, **Not Harder**" description="Transform your sales operations with Odoo's integrated sales management platform. From quotation to payment, every step is automated." image="/images/heroes/hero-sales.png" button={{ enable: true, label: "BOOST YOUR SALES", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent} />
+  <CallToAction content={ctaContent} />
+</Base>

@@ -1,0 +1,53 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Unified Commerce, **Every Channel**",
+  description: "Connect your physical stores, online shop, and back office into one seamless operation.",
+  list: [
+    { icon: "Globe", title: "Omnichannel Commerce", description: "Sell online, in-store, and via mobile with unified inventory, pricing, and customer data across every channel." },
+    { icon: "Store", title: "Modern POS", description: "Intuitive point of sale that works online and offline. Multi-store management from a single dashboard." },
+    { icon: "ShoppingCart", title: "eCommerce Platform", description: "Beautiful online stores with product configurators, customer portals, and integrated payment processing." },
+    { icon: "Package", title: "Inventory Management", description: "Real-time stock visibility across all locations with automated reordering and barcode scanning." },
+    { icon: "Heart", title: "Customer Loyalty", description: "Built-in loyalty programs, gift cards, member pricing, and personalized promotions to drive repeat business." },
+    { icon: "TrendingUp", title: "Retail Analytics", description: "Sales by channel, product, location, and time period — real-time insights to optimize your retail strategy." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/retail-omnichannel.png", imagePosition: "right",
+      title: "One Platform for **All Your Channels**",
+      description: "Whether your customers discover you online, walk into your store, or order through your app — NETLINKS ensures every interaction is connected. One inventory, one customer profile, one source of truth.",
+      features: ["Unified pricing and promotions across online and offline.", "Real-time inventory sync prevents overselling.", "Customer purchase history visible at every touchpoint."],
+      button: { enable: true, label: "See Retail Solutions", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Unify **Your Retail?**",
+  description: "See how NETLINKS can connect your stores, eCommerce, and operations into one powerful platform.",
+  background: "/src/assets/images/cta/cta-retail.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "98%", description: "Client satisfaction <br /> rate", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="ERP for Retail & eCommerce — Odoo Solutions" description="Unified retail and eCommerce solutions with Odoo — POS, inventory, eCommerce, and omnichannel management by NETLINKS." keywords={["retail ERP", "eCommerce ERP", "Odoo retail", "omnichannel retail", "POS integration", "retail inventory management", "online store management", "unified commerce platform"]}>
+  <PageHeader title="Retail Reimagined, **Fully Connected**" description="The modern retail landscape demands a unified experience across every channel. NETLINKS makes that happen." image="/images/heroes/hero-retail.png" button={{ enable: true, label: "EXPLORE RETAIL SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

@@ -1,0 +1,38 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Everything You Need to **Sell In-Store**",
+  description: "A powerful, intuitive POS that works online and offline — fully integrated with your entire business.",
+  list: [
+    { icon: "Wifi", title: "Works Offline", description: "Continue processing sales without internet. Data syncs automatically when connection is restored—no lost transactions." },
+    { icon: "Store", title: "Multi-Store", description: "Manage multiple stores, warehouses, and pricelists from a single back-office dashboard with real-time visibility." },
+    { icon: "CreditCard", title: "Integrated Payments", description: "Accept credit cards, cash, mobile payments, and gift cards with integrated payment processing." },
+    { icon: "Heart", title: "Customer Loyalty", description: "Built-in loyalty programs, gift cards, and customer-specific pricing to drive repeat business." },
+    { icon: "UtensilsCrossed", title: "Restaurant Mode", description: "Table management, floor plans, split bills, and kitchen display integration for food service businesses." },
+    { icon: "TrendingUp", title: "Live Reporting", description: "Sales by product, employee, time period, and store — all updated live in your Odoo dashboard." },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Modernize **Your Point of Sale?**",
+  description: "See how Odoo POS can unify your retail operations and deliver a better experience for your customers and staff.",
+  background: "/src/assets/images/cta/cta-pos.png",
+  button: { enable: true, label: "GET A FREE POS DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "4,500+", description: "Businesses powered <br /> by NETLINKS", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo POS — Modern Point of Sale System" description="Modern POS system integrated with inventory, accounting, and customer data — Odoo POS implemented by NETLINKS." keywords={["Odoo POS", "point of sale system", "retail POS software", "restaurant POS", "integrated POS", "cloud POS system", "Odoo point of sale", "modern POS solution"]}>
+  <PageHeader title="Modern Retail, **Simplified**" description="A powerful POS system that works online and offline — seamlessly integrated with your inventory, accounting, and customer management." image="/images/heroes/hero-pos.png" button={{ enable: true, label: "SEE POS IN ACTION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <CallToAction content={ctaContent} />
+</Base>

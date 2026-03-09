@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "Data-Driven Marketing That **Delivers**",
+  description: "Comprehensive digital marketing services that drive qualified traffic, generate high-quality leads, and accelerate growth.",
+  list: [
+    {
+      icon: "Search",
+      title: "Search Engine Optimization",
+      description: "Dominate organic search with technical SEO, content strategy, link building, and local SEO that drives sustainable, long-term growth."
+    },
+    {
+      icon: "MousePointerClick",
+      title: "Search Engine Marketing",
+      description: "Strategic Google Ads and Bing Ads campaigns targeting high-intent keywords — maximizing click-through rates and delivering measurable ROI."
+    },
+    {
+      icon: "FileText",
+      title: "Content Marketing",
+      description: "Blog posts, whitepapers, case studies, and thought leadership that establishes authority and nurtures prospects through the buying journey."
+    },
+    {
+      icon: "Share2",
+      title: "Social Media Marketing",
+      description: "Build brand awareness across LinkedIn, Facebook, Instagram, and industry platforms with targeted content and advertising."
+    },
+    {
+      icon: "Mail",
+      title: "Email Marketing & Automation",
+      description: "Personalized email campaigns, automated sequences, and marketing automation workflows that nurture leads and retain customers."
+    },
+    {
+      icon: "Percent",
+      title: "Conversion Optimization",
+      description: "Maximize existing traffic value with landing page optimization, A/B testing, and user experience improvements."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/dm-campaign-analytics.png",
+      imagePosition: "left",
+      title: "Revenue Attribution, **Not Vanity Metrics**",
+      description: "We don't do vanity metrics. Every marketing initiative is tied to concrete business outcomes — leads generated, pipeline influenced, and revenue attributed. You'll always know exactly what your marketing investment delivers.",
+      stats: [
+        { label: "Average Lead Increase", value: "3x" },
+        { label: "Avg. ROI on Ad Spend", value: "400%" },
+      ],
+      button: {
+        enable: true,
+        label: "Grow Your Business",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/dm-growth-strategy.png",
+      imagePosition: "right",
+      title: "Tech + Marketing — **Under One Roof**",
+      description: "As a technology company that also provides marketing services, we bring a unique advantage: deep technical expertise combined with marketing strategy. We build the landing pages, implement analytics, configure the CRM, and run the campaigns.",
+      features: [
+        "Full-stack capability: landing pages, analytics, CRM, and campaigns.",
+        "Data-driven decisions backed by real-time analytics and reporting.",
+        "Integrated approach that aligns marketing with sales pipeline.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Approach",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to **Grow?**",
+  description: "Get a marketing audit and strategy session. We'll identify the highest-impact opportunities to drive qualified leads and revenue.",
+  background: "/src/assets/images/cta/cta-digital-marketing.png",
+  button: {
+    enable: true,
+    label: "GET YOUR MARKETING AUDIT",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "3x",
+    description: "Average lead <br /> increase",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="Digital Marketing Services" description="Data-driven marketing by NETLINKS — SEO, SEM, content marketing, social media, email automation, and conversion optimization. Focused on leads and revenue, not vanity metrics." keywords={["digital marketing services", "SEO services", "search engine marketing", "content marketing", "social media marketing", "email marketing automation", "conversion optimization", "B2B digital marketing"]}>
+  <PageHeader
+    title="Marketing That Drives **Qualified Leads & Revenue**"
+    description="In a crowded digital landscape, standing out demands a strategic, data-driven approach. We deliver marketing services focused on one thing: measurable business growth."
+  image="/images/heroes/hero-digital-marketing.png"
+  button={{ enable: true, label: "GET A MARKETING AUDIT", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent} />
+  <CallToAction content={ctaContent} />
+</Base>

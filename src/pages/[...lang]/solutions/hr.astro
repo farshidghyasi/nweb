@@ -1,0 +1,53 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Everything HR Needs, **One Platform**",
+  description: "Manage your entire employee lifecycle — from recruitment to retirement — with Odoo's comprehensive HR suite.",
+  list: [
+    { icon: "UserPlus", title: "Recruitment", description: "Post jobs, track applications, schedule interviews, and manage hiring with visual Kanban boards." },
+    { icon: "FolderOpen", title: "Employee Records", description: "Centralized database with documents, contracts, skills, and org charts — always up to date." },
+    { icon: "DollarSign", title: "Payroll", description: "Automated payroll processing with tax calculations, deductions, and multi-country compliance." },
+    { icon: "Clock", title: "Time & Attendance", description: "Track hours, manage time-off requests, and monitor attendance with flexible approval workflows." },
+    { icon: "Receipt", title: "Expenses", description: "Mobile expense submission with receipt scanning, approval chains, and seamless accounting integration." },
+    { icon: "Star", title: "Appraisals", description: "Schedule reviews, set goals, and track development with structured performance management." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/hr-employee-lifecycle.png", imagePosition: "left",
+      title: "People Management, **Perfected**",
+      description: "Odoo HR connects recruitment, onboarding, payroll, benefits, time tracking, and performance into one fluid system. No more switching between disconnected tools for basic HR tasks.",
+      stats: [{ label: "HR Admin Time Saved", value: "60%" }, { label: "Employee Self-Service Adoption", value: "95%" }],
+      button: { enable: true, label: "See Odoo HR in Action", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Modernize **Your HR?**",
+  description: "See how Odoo HR can streamline your people operations and give employees the self-service tools they expect.",
+  background: "/src/assets/images/cta/cta-hr.png",
+  button: { enable: true, label: "GET A FREE HR DEMO", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "400+", description: "Technology experts <br /> on our team", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="Odoo Human Resources" description="Complete HR management with Odoo — recruitment, payroll, time tracking, and expense management by NETLINKS." keywords={["Odoo HR", "human resources management", "payroll software", "recruitment management", "employee management system", "time tracking software", "Odoo workforce management", "HR automation"]}>
+  <PageHeader title="People Management, **Perfected**" description="Manage your entire employee lifecycle with Odoo's comprehensive HR suite. From recruitment to payroll to performance — everything in one integrated platform." image="/images/heroes/hero-hr.png" button={{ enable: true, label: "EXPLORE HR SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent} />
+  <CallToAction content={ctaContent} />
+</Base>

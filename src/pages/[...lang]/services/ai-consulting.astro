@@ -1,0 +1,125 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const featuresContent = {
+  enable: true,
+  title: "Strategic Consulting **Services**",
+  description: "Expert guidance to navigate AI adoption, build technology roadmaps, and maximize your IT investments.",
+  list: [
+    {
+      icon: "Microscope",
+      title: "AI Readiness Assessment",
+      description: "We evaluate your data maturity, infrastructure, team capabilities, and processes to identify where AI delivers the highest impact."
+    },
+    {
+      icon: "Map",
+      title: "Technology Roadmap",
+      description: "A clear, actionable plan aligning technology investments with business goals — prioritized by ROI, feasibility, and strategic importance."
+    },
+    {
+      icon: "Scale",
+      title: "Vendor & Platform Selection",
+      description: "Unbiased guidance on choosing the right tools, platforms, and vendors for your specific needs — without vendor lock-in."
+    },
+    {
+      icon: "Database",
+      title: "Data Strategy & Governance",
+      description: "Build the data foundation AI requires — including data quality, governance frameworks, privacy compliance, and architecture."
+    },
+    {
+      icon: "Users",
+      title: "Change Management",
+      description: "Manage the human side of transformation — stakeholder buy-in, training programs, adoption strategies, and cultural alignment."
+    },
+    {
+      icon: "Target",
+      title: "ROI-Focused Advisory",
+      description: "Practical, actionable outcomes — not just reports. Every recommendation targets specific, measurable business value."
+    },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/aic-strategy-session.png",
+      imagePosition: "left",
+      title: "20+ Years of **Enterprise Experience**",
+      description: "Navigating the technology landscape requires strategic vision, not just technical skills. Our consultants bring decades of enterprise experience across industries — providing vendor-agnostic advice focused entirely on your best interests.",
+      stats: [
+        { label: "Years of Experience", value: "20+" },
+        { label: "Industries Served", value: "15+" },
+      ],
+      button: {
+        enable: true,
+        label: "Book a Strategy Session",
+        url: "/contact/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+    {
+      image: "/images/features/sections/aic-model-deployment.png",
+      imagePosition: "right",
+      title: "Strategy **Plus** Execution",
+      description: "Unlike pure consultancies, we don't just advise — we build and implement. Our team combines strategic thinking with deep technical execution capability, ensuring your plans translate into real, measurable results.",
+      features: [
+        "End-to-end capability from strategy to implementation.",
+        "Global perspective with local, hands-on delivery.",
+        "Vendor-agnostic recommendations without conflicts of interest.",
+      ],
+      button: {
+        enable: true,
+        label: "See Our Approach",
+        url: "/company/why-netlinks/",
+        variant: "fill",
+        hoverEffect: "text-flip",
+      },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Need Technology **Guidance?**",
+  description: "Book a strategy session with our senior consultants. We'll help you make informed decisions about AI, technology investments, and digital transformation.",
+  background: "/src/assets/images/cta/cta-ai-consulting.png",
+  button: {
+    enable: true,
+    label: "BOOK A STRATEGY SESSION",
+    url: "/contact/",
+    hoverEffect: "text-flip",
+  },
+  stats: {
+    title: "20+",
+    description: "Years of enterprise <br /> experience",
+    avatars: [
+      "/images/customers/avatar/1.jpg",
+      "/images/customers/avatar/2.jpg",
+      "/images/customers/avatar/3.jpg",
+    ],
+  },
+};
+---
+
+<Base title="AI & Technology Consulting — Enterprise Strategy" description="Strategic technology advisory by NETLINKS — AI readiness assessment, technology roadmaps, vendor selection, data strategy, and change management. 20+ years of enterprise expertise." keywords={["AI consulting", "technology consulting", "IT strategy consulting", "digital transformation advisory", "AI readiness assessment", "technology roadmap", "enterprise IT consulting", "data strategy consulting"]}>
+  <PageHeader
+    title="Strategic Technology Advisory That **Drives Results**"
+    description="Navigate AI adoption, build technology roadmaps, and maximize your IT investments with expert guidance from consultants who don't just advise — they build and implement."
+  image="/images/heroes/hero-ai-consulting.png"
+  button={{ enable: true, label: "BOOK AN AI STRATEGY SESSION", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }}
+  />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

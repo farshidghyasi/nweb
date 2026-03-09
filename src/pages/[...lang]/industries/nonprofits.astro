@@ -1,0 +1,53 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import PageHeader from "@/layouts/components/PageHeader.astro";
+import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
+import CallToAction from "@/layouts/components/sections/CallToAction.astro";
+
+export function getStaticPaths() { return generatePaths(); }
+
+const featuresContent = {
+  enable: true,
+  title: "Technology That **Amplifies Impact**",
+  description: "Streamline operations, improve donor relationships, and demonstrate the impact your funders demand.",
+  list: [
+    { icon: "Heart", title: "Donor Management", description: "Track donors, manage campaigns, process donations, and build lasting relationships with customized CRM." },
+    { icon: "Award", title: "Grant Management", description: "Track applications, milestones, deliverables, budgets, and reporting requirements across multiple funders." },
+    { icon: "ClipboardList", title: "Program Management", description: "Plan, execute, and monitor programs with tools that track outcomes and real-world impact metrics." },
+    { icon: "DollarSign", title: "Fund Accounting", description: "Restricted vs. unrestricted fund tracking and financial reports that meet funder requirements." },
+    { icon: "Users", title: "Volunteer Management", description: "Recruit, schedule, and manage volunteers with dedicated workflows and communication tools." },
+    { icon: "BarChart3", title: "Impact Reporting", description: "Custom dashboards and reports that demonstrate program impact to boards, donors, and stakeholders." },
+  ],
+};
+
+const showcaseContent = {
+  enable: true,
+  items: [
+    {
+      image: "/images/features/sections/npo-impact-metrics.png", imagePosition: "right",
+      title: "We Understand **Mission-Driven Work**",
+      description: "NETLINKS has served hundreds of nonprofits and international organizations, including projects across developing nations. We understand the unique constraints, compliance requirements, and impact measurement needs of mission-driven organizations.",
+      features: ["Experience with USAID, World Bank, and UN-funded projects.", "Grant compliance and restricted fund management expertise.", "Solutions that scale from local NGOs to international organizations."],
+      button: { enable: true, label: "Talk to Our Nonprofit Team", url: "/contact/", variant: "fill", hoverEffect: "text-flip" },
+    },
+  ],
+};
+
+const ctaContent = {
+  enable: true,
+  title: "Ready to Amplify **Your Impact?**",
+  description: "See how NETLINKS can help your organization do more with less — and prove it to stakeholders.",
+  background: "/src/assets/images/cta/cta-nonprofit.png",
+  button: { enable: true, label: "SCHEDULE A CONSULTATION", url: "/contact/", hoverEffect: "text-flip" },
+  stats: { title: "500+", description: "Nonprofits <br /> served globally", avatars: ["/images/customers/avatar/1.jpg", "/images/customers/avatar/2.jpg", "/images/customers/avatar/3.jpg"] },
+};
+---
+
+<Base title="ERP for Nonprofits — Odoo Solutions" description="Technology solutions for nonprofits and NGOs — donor management, grant tracking, and impact reporting by NETLINKS." keywords={["nonprofit ERP", "NGO technology solutions", "donor management software", "grant tracking system", "nonprofit CRM", "impact reporting tool", "fundraising management", "Odoo for nonprofits"]}>
+  <PageHeader title="Maximize Impact, **Minimize Overhead**" description="Nonprofits need to do more with less. NETLINKS delivers technology that streamlines operations and provides the transparency funders demand." image="/images/heroes/hero-nonprofit.png" button={{ enable: true, label: "EXPLORE NONPROFIT SOLUTIONS", url: "/contact/", variant: "fill", hoverEffect: "text-flip" }} />
+  <FeaturesSectionTwo content={featuresContent} />
+  <FeaturesSectionFour content={showcaseContent as any} variant="grey" />
+  <CallToAction content={ctaContent} />
+</Base>

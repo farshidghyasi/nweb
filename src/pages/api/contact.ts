@@ -87,6 +87,7 @@ async function createOdooLead(fields: {
               email_from: email,
               phone: phone || "",
               partner_name: company || "",
+              function: position || "",
               description: notes,
               type: "lead",
             },

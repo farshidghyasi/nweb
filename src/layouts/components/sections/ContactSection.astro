@@ -82,49 +82,4 @@ if (!enable) return null;
     </div>
   </div>
 </section>
-<section>
-  <div class="container">
-    {
-      list && (
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
-          {list.map((item, index) => (
-            <div
-              class="bg-theme-light space-y-4 rounded-xl px-5 py-16 text-center"
-              data-aos="fade-up-sm"
-              data-aos-delay={(index + 100) * 100}>
-              {item.icon && (
-                <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white">
-                  <svg width="0" height="0" class="absolute">
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_16965_13074"
-                        x1="14.8748"
-                        y1="1.41699"
-                        x2="14.8748"
-                        y2="26.917"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="var(--color-primary)" />
-                        <stop offset="1" stop-color="white" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
 
-                  <Icons
-                    icon={item.icon as any}
-                    class="mx-auto block h-8 w-8 text-blue-500 [&_path]:stroke-[url(#paint0_linear_16965_13074)]"
-                  />
-                </div>
-              )}
-              {item.title && (
-                <h3 class="h5 mb-4" set:html={markdownify(item.title)} />
-              )}
-              {item.description && (
-                <p set:html={markdownify(item.description)} />
-              )}
-            </div>
-          ))}
-        </div>
-      )
-    }
-  </div>
-</section>

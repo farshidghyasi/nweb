@@ -413,6 +413,18 @@
           "name": "FAQ",
           "url": "/company/faq/",
           "weight": 5
+        },
+        {
+          "enable": true,
+          "name": "Privacy Policy",
+          "url": "/company/privacy-policy/",
+          "weight": 6
+        },
+        {
+          "enable": true,
+          "name": "Terms of Use",
+          "url": "/company/terms-of-use/",
+          "weight": 7
         }
       ]
     }

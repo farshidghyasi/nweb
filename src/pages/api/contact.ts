@@ -7,8 +7,11 @@ async function createOdooLead(fields: {
   name: string;
   email: string;
   company?: string;
+  position?: string;
   phone?: string;
-  message: string;
+  industry?: string;
+  interests?: string;
+  message?: string;
 }) {
   const url      = (process.env.ODOO_URL      || import.meta.env.ODOO_URL      || "https://netlinks-erp.odoo.com").trim();
   const db       = (process.env.ODOO_DB       || import.meta.env.ODOO_DB       || "netlinksaf-netlinks-erp-v15-main-6588773").trim();
@@ -48,10 +51,13 @@ async function createOdooLead(fields: {
   if (!uid) throw new Error("Odoo auth failed: invalid credentials or API key");
 
   // Step 2: create crm.lead
-  const { name, email, phone, company, message } = fields;
-  const leadTitle = `Website Inquiry: ${name}`;
+  const { name, email, phone, company, position, industry, interests, message } = fields;
+  const leadTitle = `Website Inquiry: ${name}${interests ? ` — ${interests.split(", ").slice(0, 2).join(", ")}` : ""}`;
   const notes = [
-    message,
+    message || "",
+    interests ? `\nInterested in: ${interests}` : "",
+    industry ? `Industry: ${industry}` : "",
+    position ? `Job Position: ${position}` : "",
     company ? `Company: ${company}` : "",
     phone ? `Phone: ${phone}` : "",
   ]
@@ -115,11 +121,14 @@ export const POST: APIRoute = async ({ request }) => {
     const name = (body.name || "").trim();
     const email = (body.email || "").trim();
     const company = (body.company || "").trim();
+    const position = (body.position || "").trim();
     const phone = (body.phone || "").trim();
+    const industry = (body.industry || "").trim();
+    const interests = (body.interests || "").trim();
     const message = (body.message || "").trim();
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -130,7 +139,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Create Odoo lead
-    const leadId = await createOdooLead({ name, email, company, phone, message });
+    const leadId = await createOdooLead({ name, email, company, position, phone, industry, interests, message });
     console.log(`[contact] Odoo lead ${leadId} created | ${email}`);
 
     return new Response(

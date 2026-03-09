@@ -1,6 +1,6 @@
 ---
 import type { Section } from "@/types";
-import ContactForm from "../widgets/ContactForm.astro";
+import TwoStepContactForm from "../widgets/TwoStepContactForm.astro";
 import { getEntryCTM } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import overrideObjects from "@/lib/utils/overrideObjects.ts";
@@ -78,95 +78,9 @@ if (!enable) return null;
           )
         }
       </div>
-      {form && <ContactForm class="col-span-7" form={form} />}
+      <TwoStepContactForm />
     </div>
   </div>
-  <!-- https://preline.co/docs/select.html -->
-  <script>
-    import {
-      formspreeSubmit,
-      netlifySubmit,
-      formSubmit,
-      odooSubmit,
-      isFormFilled,
-      setMessage,
-      validateSelectTag,
-    } from "@/lib/utils/FormHandle";
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById(
-        "contact-form",
-      ) as HTMLFormElement | null;
-
-      let selectTags = form?.querySelectorAll(
-        "[input-wrapper]:not(.hidden) select[data-hs-select]",
-      ) as NodeListOf<HTMLSelectElement>;
-
-      selectTags.forEach((tag) => {
-        tag.addEventListener("change", () => {
-          // Ensure only visible select tag value should submitted
-          selectTags.forEach((tag) => {
-            const name = tag.getAttribute("data-name");
-            tag.setAttribute("name", name || "");
-          });
-
-          validateSelectTag(tag);
-        });
-      });
-
-      form?.addEventListener("submit", async (e: Event) => {
-        e.preventDefault();
-
-        const provider = form?.getAttribute("data-provider") || "";
-        const action = form?.getAttribute("data-action") || "";
-
-        selectTags = form?.querySelectorAll(
-          "[input-wrapper]:not(.hidden) select[data-hs-select]",
-        ) as NodeListOf<HTMLSelectElement>;
-
-        // Validate all preline select tags
-        selectTags.forEach(validateSelectTag);
-
-        if (isFormFilled(form)) {
-          setMessage("Form Submitting!...", true, true, form);
-
-          try {
-            switch (provider) {
-              case "netlify":
-                await netlifySubmit(form, action);
-                break;
-              case "formsubmit.co":
-                await formSubmit({
-                  form,
-                  action,
-                });
-                break;
-              case "odoo":
-                await odooSubmit(form, action);
-                break;
-              case "formspree":
-                await formspreeSubmit(
-                  Object.fromEntries(new FormData(form).entries()),
-                  5000,
-                  form,
-                );
-                break;
-              default:
-                throw new Error("Unknown form provider.");
-            }
-          } catch (error) {
-            setMessage(
-              error +
-                "! Please email us directly at [info@netlinks.net](mailto:info@netlinks.net)",
-              false,
-              false,
-              form,
-            );
-          }
-        }
-      });
-    });
-  </script>
 </section>
 <section>
   <div class="container">

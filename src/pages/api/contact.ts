@@ -145,6 +145,39 @@ export const POST: APIRoute = async ({ request }) => {
       }
     }
 
+    // ── Anti-spam: Cloudflare Turnstile verification ──────────────────────────
+    const turnstileToken = body["cf-turnstile-response"] || "";
+    const turnstileSecret = (process.env.TURNSTILE_SECRET_KEY || import.meta.env.TURNSTILE_SECRET_KEY || "").trim();
+
+    if (turnstileSecret && turnstileToken) {
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          secret: turnstileSecret,
+          response: turnstileToken,
+        }),
+      });
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success) {
+        console.log("[contact] SPAM blocked: Turnstile verification failed", verifyData["error-codes"]);
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: "Security verification failed. Please refresh and try again.",
+          }),
+          { status: 403, headers: { "Content-Type": "application/json" } }
+        );
+      }
+    } else if (turnstileSecret && !turnstileToken) {
+      // Secret is configured but no token was sent — likely a bot bypassing the widget
+      console.log("[contact] SPAM blocked: no Turnstile token provided");
+      return new Response(
+        JSON.stringify({ success: true, leadId: 0 }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
     const name = (body.name || "").trim();
     const email = (body.email || "").trim();
     const company = (body.company || "").trim();

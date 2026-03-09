@@ -194,6 +194,9 @@
         </label>
       </div>
 
+      <!-- Cloudflare Turnstile -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAACoLEed8WnPZbHH_" data-theme="light" data-size="normal"></div>
+
       <!-- Buttons -->
       <div class="flex gap-3 pt-2">
         <button type="button" id="btn-back" class="btn btn-outline flex-1 cursor-pointer py-4 text-center uppercase tracking-wider">
@@ -408,6 +411,7 @@
         // Anti-spam fields
         website: formData.get("website"),
         _form_ts: formData.get("_form_ts"),
+        "cf-turnstile-response": formData.get("cf-turnstile-response"),
       };
 
       // Disable submit button
@@ -445,6 +449,10 @@
         btnSubmit.textContent = "Send Message";
         btnSubmit.removeAttribute("disabled");
         btnSubmit.classList.remove("opacity-60");
+        // Reset Turnstile widget for retry
+        if (typeof (window as any).turnstile !== "undefined") {
+          (window as any).turnstile.reset();
+        }
       }
     });
 
@@ -461,3 +469,6 @@
     }
   });
 </script>
+
+<!-- Cloudflare Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

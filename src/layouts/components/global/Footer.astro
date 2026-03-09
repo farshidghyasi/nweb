@@ -31,26 +31,19 @@ const copyrightText = copyright.text || t("footerBlock.copyright");
           <Logo />
           {footerDescription && <p set:html={markdownify(footerDescription)} />}
         </div>
-        <div class="mt-10 flex gap-2">
-          {
-            downloadButtons?.map((b) => (
-              <a
-                href={b.url}
-                target={b.target || "_blank"}
-                rel={b.rel || "noopener noreferrer"}
-                class="inline-block">
-                {b.image && (
-                  <OptimizedImage
-                    src={b.image}
-                    alt="download"
-                    width={150}
-                    height={48}
-                    class="z-10 w-full"
-                  />
-                )}
-              </a>
-            ))
-          }
+        <!-- ISO Certifications -->
+        <div class="mt-8 space-y-3">
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-500">Certifications</p>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span class="text-xs font-medium text-slate-700">ISO 9001:2015</span>
+            </div>
+            <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="text-xs font-medium text-slate-700">ISO 27001:2022</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -134,14 +127,35 @@ const copyrightText = copyright.text || t("footerBlock.copyright");
     </div>
   </div>
 
-  <!-- Brand Name -->
+  <!-- Copyright & Social Icons Bar -->
+  <div class="container">
+    <div
+      class="text-text-default flex w-full flex-wrap items-center justify-between gap-x-8 gap-y-3 pt-2 pb-4">
+      {
+        config.settings.copyright && config.settings.copyright.enable && (
+          <div
+            class="prose-styles opacity-80"
+            set:html={markdownify(copyrightText, true)}
+          />
+        )
+      }
+      <SocialComponent
+        layout="minimal"
+        class="*:h-6 *:w-6"
+        linkType="follow"
+        list={social.main.filter((social) => social.enable)}
+      />
+    </div>
+  </div>
+
+  <!-- Brand Name Watermark -->
   <div
-    class="relative after:absolute after:inset-0 after:h-full after:bg-linear-to-b after:from-transparent after:to-white md:mt-16">
+    class="relative after:absolute after:inset-0 after:h-full after:bg-linear-to-b after:from-transparent after:to-white">
     {
       brandName && (
         <div class="overflow-hidden text-[clamp(1rem,90%,25rem)]">
           <div
-            class="text-primary responsive-brand-text mx-auto text-center leading-[0.8] font-bold uppercase max-md:py-5"
+            class="responsive-brand-text mx-auto text-center leading-[0.8] font-bold lowercase max-md:py-5"
             set:html={brandName}
           />
           <div class="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-[calc(70%+1.5rem)] w-full">
@@ -156,23 +170,6 @@ const copyrightText = copyright.text || t("footerBlock.copyright");
         </div>
       )
     }
-    <div
-      class="sm:translate-x-centered text-text-default z-10 container flex w-full flex-wrap justify-between gap-x-8 gap-y-3 pb-6 sm:absolute sm:bottom-0 sm:py-8">
-      {
-        config.settings.copyright && config.settings.copyright.enable && (
-          <div
-            class="prose-styles z-10 sm:opacity-80"
-            set:html={markdownify(copyrightText, true)}
-          />
-        )
-      }
-      <SocialComponent
-        layout="minimal"
-        class="*:h-6 *:w-6"
-        linkType="follow"
-        list={social.main.filter((social) => social.enable)}
-      />
-    </div>
   </div>
 
   <script>

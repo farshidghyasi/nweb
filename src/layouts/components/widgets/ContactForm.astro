@@ -293,6 +293,7 @@ const noteStyles = {
         formspreeSubmit,
         netlifySubmit,
         formSubmit,
+        odooSubmit,
         isFormFilled,
         setMessage,
         validateSelectTag,
@@ -368,6 +369,9 @@ const noteStyles = {
                     action,
                   });
                   break;
+                case "odoo":
+                  await odooSubmit(form, action);
+                  break;
                 case "formspree":
                   await formspreeSubmit(
                     Object.fromEntries(new FormData(form).entries()),
@@ -381,7 +385,7 @@ const noteStyles = {
             } catch (error) {
               setMessage(
                 error +
-                  "! Please use this mail - [folex-astro-theme@gmail.com](mailto:folex-astro-theme@gmail.com) to submit a ticket!",
+                  "! Please email us directly at [info@netlinks.net](mailto:info@netlinks.net)",
                 false,
                 false,
                 form,

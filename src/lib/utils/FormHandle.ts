@@ -280,3 +280,45 @@ export const netlifySubmit = async (form: HTMLFormElement, action: string) => {
     throw error;
   }
 };
+
+/**
+ * Submits form data to our Vercel serverless function which creates an Odoo CRM lead.
+ *
+ * @param form - The form element.
+ * @param action - The API endpoint (e.g. /api/contact).
+ */
+export const odooSubmit = async (form: HTMLFormElement, action: string) => {
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  try {
+    const response = await fetch(action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success === "true" || result.success === true) {
+      setMessage("default", true, false, form);
+      formReset(form);
+    } else {
+      setMessage(
+        result.message || "Something went wrong. Please try again.",
+        false,
+        false,
+        form,
+      );
+    }
+  } catch (error) {
+    setMessage(
+      "Network error. Please try again or email us at info@netlinks.net.",
+      false,
+      false,
+      form,
+    );
+  }
+};

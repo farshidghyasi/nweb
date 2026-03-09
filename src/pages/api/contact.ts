@@ -119,6 +119,32 @@ async function createOdooLead(fields: {
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
+
+    // ── Anti-spam: honeypot check ─────────────────────────────────────────────
+    // If the hidden "website" field has any value, it's a bot
+    if (body.website) {
+      console.log("[contact] SPAM blocked: honeypot triggered");
+      // Return fake success to not tip off the bot
+      return new Response(
+        JSON.stringify({ success: true, leadId: 0 }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // ── Anti-spam: time check ─────────────────────────────────────────────────
+    // Reject submissions under 3 seconds from page load
+    const formTs = parseInt(body._form_ts || "0", 10);
+    if (formTs > 0) {
+      const elapsed = Date.now() - formTs;
+      if (elapsed < 3000) {
+        console.log(`[contact] SPAM blocked: too fast (${elapsed}ms)`);
+        return new Response(
+          JSON.stringify({ success: true, leadId: 0 }),
+          { status: 200, headers: { "Content-Type": "application/json" } }
+        );
+      }
+    }
+
     const name = (body.name || "").trim();
     const email = (body.email || "").trim();
     const company = (body.company || "").trim();

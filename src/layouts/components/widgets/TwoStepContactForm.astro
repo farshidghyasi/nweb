@@ -9,6 +9,14 @@
 
 <div class="col-span-7">
   <form id="contact-form" class="relative" novalidate>
+    <!-- Anti-spam: honeypot field (hidden from humans, bots auto-fill it) -->
+    <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+      <label for="website">Website</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <!-- Anti-spam: timestamp to detect speed bots -->
+    <input type="hidden" id="_form_ts" name="_form_ts" />
+
     <!-- Step indicators -->
     <div class="mb-8 flex items-center justify-between">
       <div class="flex items-center gap-3" id="step-indicator-1">
@@ -283,6 +291,10 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
+
+    // Set anti-spam timestamp on page load
+    const tsField = document.getElementById("_form_ts") as HTMLInputElement;
+    if (tsField) tsField.value = String(Date.now());
     const step1 = document.getElementById("form-step-1")!;
     const step2 = document.getElementById("form-step-2")!;
     const successEl = document.getElementById("form-success")!;
@@ -393,6 +405,9 @@
         industry: formData.get("industry"),
         interests: interests.join(", "),
         message: formData.get("message"),
+        // Anti-spam fields
+        website: formData.get("website"),
+        _form_ts: formData.get("_form_ts"),
       };
 
       // Disable submit button

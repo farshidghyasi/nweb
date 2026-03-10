@@ -85,5 +85,23 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      minify: "terser",
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          passes: 2,
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes("lucide")) {
+              return "lucide";
+            }
+          },
+        },
+      },
+    },
   },
 });

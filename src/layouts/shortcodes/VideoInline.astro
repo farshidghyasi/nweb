@@ -106,7 +106,14 @@ poster = poster && (await bgOptimizedImage(poster));
         (async () => {
           try {
             const { default: Plyr } = await import("plyr");
-            await import("plyr/dist/plyr.css");
+            const plyrCssUrl = (await import("plyr/dist/plyr.css?url")).default;
+            if (!document.getElementById("plyr-css-injected")) {
+              const link = document.createElement("link");
+              link.id = "plyr-css-injected";
+              link.rel = "stylesheet";
+              link.href = plyrCssUrl;
+              document.head.appendChild(link);
+            }
 
             Plyr.setup(".video-inline-player");
           } catch (error) {

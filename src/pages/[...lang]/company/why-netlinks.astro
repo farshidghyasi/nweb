@@ -3,12 +3,32 @@ import Base from "@/layouts/Base.astro";
 import { generatePaths } from "@/lib/utils/i18nUtils";
 import PageHeader from "@/layouts/components/PageHeader.astro";
 import FeaturesSectionTwo from "@/layouts/components/sections/FeaturesSectionTwo.astro";
+import Customers from "@/layouts/components/sections/Customers.astro";
 import FeaturesSectionFour from "@/layouts/components/sections/FeaturesSectionFour.astro";
 import CallToAction from "@/layouts/components/sections/CallToAction.astro";
 
 export function getStaticPaths() {
   return generatePaths();
 }
+
+const partnersContent = {
+  enable: true,
+  description: "Our Valued Partners:",
+  marquee: {
+    elementWidthAuto: true,
+    pauseOnHover: true,
+    reverse: false,
+    duration: "100s",
+  },
+  list: [
+    { src: "/images/partners/odoo.png", alt: "Odoo" },
+    { src: "/images/partners/oracle.png", alt: "Oracle" },
+    { src: "/images/partners/dell.png", alt: "Dell" },
+    { src: "/images/partners/sophos.png", alt: "Sophos" },
+    { src: "/images/partners/vmware.png", alt: "VMware" },
+    { src: "/images/partners/veeam.png", alt: "Veeam" },
+  ],
+};
 
 const featuresContent = {
   enable: true,
@@ -153,8 +173,9 @@ const ctaContent = {
       hoverEffect: "text-flip",
     }}
   />
-  <FeaturesSectionTwo content={featuresContent} variant="white" />
-  <FeaturesSectionFour content={showcaseContentOne as any} variant="grey" />
-  <FeaturesSectionFour content={showcaseContentTwo as any} variant="white" />
+  <Customers content={partnersContent as any} variant="white" />
+  <FeaturesSectionTwo content={featuresContent} variant="grey" />
+  <FeaturesSectionFour content={showcaseContentOne as any} variant="white" />
+  <FeaturesSectionFour content={showcaseContentTwo as any} variant="grey" />
   <CallToAction content={ctaContent} />
 </Base>

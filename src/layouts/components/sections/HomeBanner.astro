@@ -149,6 +149,8 @@ const videoButton = buttons?.find((button: any) => button.type === "video");
           class="absolute top-[30%] -left-36 -z-10 h-100 w-212.5 rotate-[-40deg] opacity-15 md:top-[-300px] md:left-[-550px] md:h-300 md:opacity-5"
           alt="Vector"
           src={lineShape}
+          loading="eager"
+          fetchpriority="high"
         />
       )
     }

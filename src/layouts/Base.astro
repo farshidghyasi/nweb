@@ -44,7 +44,7 @@ const sectionSpacingClass =
 <!doctype html>
 <html lang={config.settings.multilingual.defaultLanguage || "en"}>
   <Head {...Astro.props} structuredData={structuredData} />
-  <body>
+  <body class="bg-body text-text-default">
     {!Astro.props.homepage && <PageLoader />}
     <Header {...Astro.props} hasGradientShape={hasGradientShape} />
     <main class:list={[sectionSpacingClass, Astro.props.class]}>
